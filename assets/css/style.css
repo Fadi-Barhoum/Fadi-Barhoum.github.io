@@ -60,20 +60,24 @@ html {
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block;
 }
-
+/*525354*/
 body {
   margin: 0;
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #212529;
+  color: #fff;
   text-align: left;
-  background-color: #fff;
+  background-color: #323639;
 }
 
 [tabindex="-1"]:focus {
   outline: 0 !important;
+}
+
+.brand-title {
+  color: #40c7e8;
 }
 
 hr {
@@ -82,6 +86,9 @@ hr {
   overflow: visible;
 }
 
+h6 {
+  color: #fff;
+}
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   margin-bottom: 0.5rem;
@@ -168,7 +175,7 @@ a {
 }
 
 a:hover {
-  color: #f51330;
+  color: #1d8099;
   text-decoration: none;
 }
 
@@ -434,6 +441,7 @@ hr {
   margin-bottom: 1rem;
   border: 0;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-color: #fff;
 }
 
 small,
@@ -2779,8 +2787,8 @@ fieldset:disabled a.btn {
 
 .btn-primary:hover {
   color: #fff;
-  background-color: #f63750;
-  border-color: #f62b45;
+  background-color: #1d8099;
+  border-color: #31c2e6;
 }
 
 .btn-primary:focus, .btn-primary.focus {
@@ -2796,13 +2804,13 @@ fieldset:disabled a.btn {
 .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
 .show > .btn-primary.dropdown-toggle {
   color: #fff;
-  background-color: #f62b45;
-  border-color: #f51f3a;
+  background-color: #1d8099;
+  border-color: #31c2e6;
 }
 
 .btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus,
 .show > .btn-primary.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.2rem rgba(249, 116, 133, 0.5);
+  box-shadow: 0 0 0 0.2rem rgb(49 194 230);
 }
 
 .btn-secondary {
@@ -10968,7 +10976,7 @@ a.text-dark:hover, a.text-dark:focus {
 p {
   font-size: calc(13px + (14 - 13) * ((100vw - 300px) / (1300 - 300)));
   opacity: .8;
-  color: #444;
+  color: #fff;
 }
 
 .title {
@@ -10988,7 +10996,7 @@ p {
 }
 
 .info {
-  color: #6c757d;
+  color: #fff;
   font-size: 14px;
 }
 
@@ -10999,7 +11007,7 @@ p {
 .info span {
   font-weight: 600;
   font-size: 14px;
-  color: #343a40;
+  color: #fff;
 }
 
 .line {
@@ -11067,6 +11075,7 @@ p {
 
 .card {
   margin-bottom: 30px;
+  background-color:  #525354;
 }
 
 .card .card-header {
