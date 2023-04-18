@@ -1,0 +1,81 @@
+.resume {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.resume a {
+    position: relative;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.5);
+    overflow: hidden;
+    text-decoration: none;
+    transition: 1s;
+    -webkit-box-reflect: below 1px
+    linear-gradient(transparent,transparent,#000);
+}
+
+.resume a:hover {
+    background: var(--clr);
+    box-shadow: 0 0 10px var(--clr),
+    0 0 30px var(--clr),
+    0 0 60px var(--clr),
+    0 0 100px var(--clr);
+}
+
+.resume a::before {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 400%;
+    background: var(--clr);
+    transition: 1s;
+    animation:  animate 2s linear infinite;
+    animation-delay: calc(-0.33s * var(--i));
+}
+
+.resume a:hover::before {
+    width: 120%;
+}
+
+.resume a::after{
+    content: '';
+    position: absolute;
+    inset: 4px;
+    background: #0e1538;
+    transition: 0.5s;
+}
+
+.resume a:hover::after {
+    background: var(--clr);
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.resume a span {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.resume a:hover span {
+    opacity: 1;
+}
+
+@media screen and  (max-width: 600px) {
+    .resume {
+        display: block;
+    }
+}

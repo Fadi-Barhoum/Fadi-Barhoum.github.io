@@ -1,0 +1,326 @@
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/***ff5522 
+rgb(255 85 34)
+255,85,34
+*/
+
+body {
+    font: normal 16px/1.5;
+    background-image: linear-gradient(135deg, #485461 0%, #28313b 74%);
+    color: #fff;
+    overflow-x: hidden;
+    padding-bottom: 5px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.timeline {
+    background-color: rgba(255,255,255,0.09);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 25px 45px rgba(255,255,255,0.1);
+    backdrop-filter: blur(20px);
+    padding: 50px 0;
+    max-width: 1300px;
+    margin: 2rem auto;
+    border-radius: 10px;
+    position: relative;
+}
+
+@keyframes zoomInOut {
+    0%, 100% {
+        transform: scale(0.5);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+.timeline ul li {
+    list-style-type: none;
+    position: relative;
+    width: 6px;
+    margin: 0 auto;
+    padding-top: 50px;
+    background-color: rgba(255,255,255,0.09);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 25px 45px rgba(255,255,255,0.1);
+   /* backdrop-filter: blur(20px);*/
+    border-radius: 10px;
+}
+
+.timeline ul li::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: inherit;
+    z-index: 1;
+}
+
+.timeline ul li div {
+    position: relative;
+    bottom: 0;
+    width: 400px;
+    padding: 2rem;
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    color: #000;
+    margin: 1rem 0
+}
+
+.timeline ul li div::before {
+    content: '';
+    position: absolute;
+    bottom: 7px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+.timeline ul li div::after {
+    content: '';
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    height: 100%;
+    left: 20%;
+    animation: zoomInOut 8s linear infinite;
+    z-index: -1;
+}
+
+.timeline ul li:nth-child(odd) div {
+    left: 45px;
+}
+
+.timeline ul li:nth-child(odd) div::before {
+    left: -15px;
+    border-width: 8px 16px 8px 0;
+    border-color: transparent #000 transparent transparent;
+}
+
+.timeline ul li:nth-child(even) div {
+    left: -429px;
+}
+
+.timeline ul li:nth-child(even) div::before {
+    right: -15px;
+    border-width: 8px 0px 8px 16px;
+    border-color: transparent transparent transparent #000;
+}
+
+.timeline ul li div img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50px;
+    box-shadow: 0px 0px 12px 3px rgb(255 255 255 / 40%);
+    margin-top: -10rem;
+    margin-bottom: 4%;
+}
+
+h4 {
+    display: block;
+    margin-top: -1rem;
+    float: right;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+h5 {
+    font-size: larger;
+    font-weight: 800;
+    margin-top: 8px;
+}
+
+.timeline ul li div p {
+    color: #fff;
+}
+
+.timeline ul li::after {
+    transition: background 0.5s ease-in-out;
+}
+
+.timeline ul li.in-view::after {
+    background-color: #000;
+}
+
+.timeline ul li div {
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.timeline ul li:nth-child(odd) div{
+    transform: translate3d(200px,0,0);
+}
+
+.timeline ul li:nth-child(even) div{
+    transform: translate3d(-200px,0,0);
+}
+
+.timeline ul li.in-view div {
+    transform: none;
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/** media screen */
+
+@media screen and  (max-width: 900px) {
+    .timeline ul li div {
+        width: 300px;
+    }
+
+    .timeline ul li:nth-child(even) div {
+        left: -330px;
+    }
+}
+
+@media screen and  (max-width: 600px) {
+    .timeline ul li {
+        margin-left: 20px;
+    }
+    .timeline ul li div {
+        width: calc(100vw - 91px);
+    }
+
+    .timeline ul li:nth-child(odd) div::before{
+        display: none;
+    }
+
+    .timeline ul li:nth-child(even) div {
+        left: 45px;
+        border-width: 8px 16px 8px 0;
+        border-color: transparent #000 transparent transparent;
+    }
+
+    .timeline ul li:nth-child(even) div::before {
+        display: none;
+    }
+
+}
+
+.timeline-clippy ul li::after {
+    width: 40px;
+    height: 40px;
+    border-radius: 0;
+}
+
+.timeline-rhombus ul li::after {
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+} 
+
+.timeline-rhombus ul li div::after {
+    bottom: 12px;
+}
+
+.timeline-star ul li::after {
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%,68% 57%, 79% 91%, 50% 70%, 21% 91%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.timeline-heptagon ul li::after {
+    clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
+}
+
+.timeline-infinite ul li::after {
+    animation: scaleAnimation 2s infinite;
+}
+
+@keyframes scaleAnimation {
+    0% {
+        transform: translateX(-50%) scale(1);
+    }
+    50% {
+        transform: translateX(-50%) scale(1.25);
+    }
+    100% {
+        transform: translateX(-50%) scale(1);
+    }
+}
+
+#education {
+    background-color: rgba(255,85,34,0.09);
+    border: 2px solid rgba(255,85,34,0.1);
+    box-shadow: 0 25px 45px rgba(255,85,34,0.1);
+}
+
+#experience {
+    background-color: rgba(0,204,255,0.09);
+    border: 2px solid rgba(0,204,255,0.1);
+    box-shadow: 0 25px 45px rgba(0,204,255,0.1);
+}
+
+#skills {
+    background-color: rgba(71,255,34,0.09);
+    border: 2px solid rgba(71,255,34,0.1);
+    box-shadow: 0 25px 45px rgba(71,255,34,0.1);
+}
+
+#certificate {
+    background-color: rgba(34,38,255,0.09);
+    border: 2px solid rgba(34,38,255,0.1);
+    box-shadow: 0 25px 45px rgba(34,38,255,0.1);
+}
+
+#references {
+    background-color: rgba(222,255,34,0.09);
+    border: 2px solid rgba(222,255,34,0.1);
+    box-shadow: 0 25px 45px rgba(222,255,34,0.1);
+}
+
+#education ul li div h4 {
+    color: #ff5522;
+}
+
+#experience ul li div h4 {
+    color: #00ccff;
+}
+
+#certificate ul li div h4 {
+    color: #2226ff;
+}
+
+#references ul li div h4 {
+    color: #deff22;
+}
+/*
+#education ul li div {
+    box-shadow: 0px 0px 12px 3px rgb(255 34 187/ 40%);
+}
+
+#experience ul li div {
+    box-shadow: 0px 0px 12px 3px rgb(0 204 255/ 40%);
+}
+
+#skills ul li div {
+    box-shadow: 0px 0px 12px 3px rgb(71 255 34/ 40%);
+}
+
+#certificate ul li div {
+    box-shadow: 0px 0px 12px 3px rgb(34 38 255/ 40%);
+}
+
+#references ul li div {
+    box-shadow: 0px 0px 12px 3px rgb(222 255 34/ 40%);
+}
+*/
+/*
+#education ul li.in-view::after {
+    background-color: #ff5522;
+}
+*/
