@@ -34,7 +34,7 @@
     height: 400%;
     background: var(--clr);
     transition: 1s;
-    animation:  animate 2s linear infinite;
+    animation:  animate 5s linear infinite;
     animation-delay: calc(-0.33s * var(--i));
 }
 
