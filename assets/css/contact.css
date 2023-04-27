@@ -18,9 +18,7 @@
 }
 
 .contact p {
-    float: left;
-    margin-left: 2%;
-    width: 60%;
+    width: 100%;
 }
 
 .inner .pers_img {
@@ -54,11 +52,6 @@
         width: 1%;
     }
     
-    .contact p {
-        float: left;
-        margin-left: 2%;
-        width: 77%;
-    }
 }
 
 @media only screen and (max-width: 700px) {
@@ -71,11 +64,7 @@
         margin-left: 2%;
         width: 1%;
     }
-    .contact p {
-        float: left;
-        margin-left: 2%;
-        width: 95%;
-    }
+
     .inner .pers_img {
         width: 100px;
         /* border-radius: 50%; */
@@ -108,9 +97,9 @@
     padding: 11px 19px;
     margin: 10px 20px;
     animation: animate 3s linear infinite;
-    text-shadow: 0 0 50px #0072ff,
-    0 0 100px #0072ff,
-    0 0 200px #0072ff;
+    text-shadow: 0 0 50px #F5EAEA,
+                0 0 100px #67f1f1,
+                0 0 200px #95e492;
 }
 
 #facebook {
