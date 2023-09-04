@@ -58,5 +58,5 @@
 
     window.addEventListener('load',callbackFuncRemove)
     window.addEventListener('resize',callbackFuncRemove)
-    window.addEventListener('scroll',callbackFuncRemove)
+   // window.addEventListener('scroll',callbackFuncRemove)
 })()

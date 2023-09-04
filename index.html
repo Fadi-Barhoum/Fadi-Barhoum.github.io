@@ -1,93 +1,978 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="Fadi Barhoum Portfolio.">
-        <meta name="author" content="Fadi">
-        <title>Fadi Barhoum</title>
-        <!-- Main style-->
-        <link rel="stylesheet" href="assets/css/main.css">
 
-        <!-- Nav style-->
-        <link rel="stylesheet" href="assets/css/nav.css">  
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-        <!-- clock style-->
-        <link rel="stylesheet" href="assets/css/clock.css"> 
-    </head>
-    <body> 
+  <title>adi Barhoum Portfolio</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
 
-        <!-- Navegation -->
-            <div class="container">
-                <div class="navbar">
-                <div class="menu">
-                    <h3 class="logo">Fadi<span> Barhoum</span></h3>
-                    <div class="hamburger-menu">
-                    <div class="bar"></div>
-                    </div>
-                </div>
-                </div>
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+    <!-- skills CSS File -->
+    <link href="assets/css/skills.css" rel="stylesheet">
+
+
+    <!-- clock CSS File -->
+    <link href="assets/css/clock.css" rel="stylesheet">
+
+
+    <!-- Portfolio CSS File -->
+    <link href="assets/css/portfolio.css" rel="stylesheet">
+
+
+    <!-- skills CSS File --><!--
+    <link href="assets/css/fill_skills.css" rel="stylesheet">-->
+
+
+  <!-- =======================================================
+  * Template Name: iPortfolio
+  * Updated: May 30 2023 with Bootstrap v5.3.0
+  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body id="hidbody">
+
+  <!-- ======= Mobile nav toggle button ======= -->
+  <i id="blur" class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="d-flex flex-column">
+
+      <div class="profile">
+        <img src="assets/img/profile-img.jpg" alt="" class="img-fluid rounded-circle">
+        <h1 class="text-light"><a href="index.html">Fadi Barhoum</a></h1>
+        <div class="social-links mt-3 text-center">
+          <a href="https://www.linkedin.com/in/fadi-barhoum/" class="linkedin" title="Linkedin"  target="_blank"><i class="bx bxl-linkedin"></i></a>
+          <a href="https://www.facebook.com/fadi.barhoum.93" class="facebook" title="Facebook"  target="_blank"><i class="bx bxl-facebook"></i></a>
+          <a href="https://www.instagram.com/fadi.barhoum.fb/" class="instagram" title="instagram"  target="_blank"><i class="bx bxl-instagram"></i></a>
+          <a href="mailto: fadi.barhoum.fb@gmail.com" class="Email" title="Email"  target="_blank"><i class="bx bxl-gmail"></i></a>
+          <a href="./assets/cv/Fadi_Barhoum_CV.pdf" class="download" title="Download my CV" download=""><i class="bx bx-download"></i></a>
+        </div>
+      </div>
+
+      <nav id="navbar" class="nav-menu navbar">
+        <ul>
+          <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
+          <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
+          <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
+          <li><a href="#training_certificates" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Training & Certificates</span></a></li>
+          <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
+          <li><a href="#testimonials" class="nav-link scrollto"><i class="bx bx-server"></i> <span>References</span></a></li>
+          <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+
+    <div class="hero-container" data-aos="fade-in">
+
+      <h1>Fadi Barhoum</h1>
+      <p><span class="typed" data-typed-items="Software Engineer, Web Developer"></span></p>
+
+              <!-- ====== Clock ======= -->
+
+              <div class="clock">
+                <div class="circle" id="sc" style="--clr:#fff;"><i></i></div>
+                <div class="circle circle2" id="mn" style="--clr:#149ddd;"><i></i></div>
+                <div class="circle circle3" id="hr" style="--clr:#173b6c;"><i></i></div>
         
-                <div class="main-container">
-                    <div class="main">
-                        <header>
-                        <div class="overlay">
-                            <div class="inner">
-                                <!-- clock -->  
-                                <a href="about.html">
-                                <div class="clock">
-                                    <div class="circle" id="sc" style="--clr:#04fc43;"><i></i></div>
-                                    <div class="circle circle2" id="mn" style="--clr:#67f1f1;"><i></i></div>
-                                    <div class="circle circle3" id="hr" style="--clr:#ff2972;"><i></i></div>
-
-                                    <span style="--i:1;"> <b> 1 </b> </span>
-                                    <span style="--i:2;"> <b> 2 </b> </span>
-                                    <span style="--i:3;"> <b> 3 </b> </span>
-                                    <span style="--i:4;"> <b> 4 </b> </span>
-                                    <span style="--i:5;"> <b> 5 </b> </span>
-                                    <span style="--i:6;"> <b> 6 </b> </span>
-                                    <span style="--i:7;"> <b> 7 </b> </span>
-                                    <span style="--i:8;"> <b> 8 </b> </span>
-                                    <span style="--i:9;"> <b> 9 </b> </span>
-                                    <span style="--i:10;"> <b> 10 </b> </span>
-                                    <span style="--i:11;"> <b> 11 </b> </span>
-                                    <span style="--i:12;"> <b> 12 </b> </span>
-                                </div>
-                                </a>
-                            </div>
-                        </div>
-                        </header>
-                    </div>
-                    
-                    
-                    
-
-                    <div class="shadow one"></div>
-                    <div class="shadow two"></div>
-                </div>
+                <span style="--i:1;"> <b> 1 </b> </span>
+                <span style="--i:2;"> <b> 2 </b> </span>
+                <span style="--i:3;"> <b> 3 </b> </span>
+                <span style="--i:4;"> <b> 4 </b> </span>
+                <span style="--i:5;"> <b> 5 </b> </span>
+                <span style="--i:6;"> <b> 6 </b> </span>
+                <span style="--i:7;"> <b> 7 </b> </span>
+                <span style="--i:8;"> <b> 8 </b> </span>
+                <span style="--i:9;"> <b> 9 </b> </span>
+                <span style="--i:10;"> <b> 10 </b> </span>
+                <span style="--i:11;"> <b> 11 </b> </span>
+                <span style="--i:12;"> <b> 12 </b> </span>
+              </div>
         
-                <div class="links">
-                    <ul>
-                        <li>
-                        <a href="index.html" style="--i: 0.05s;">Home</a>
-                        </li>
-                        <li>
-                        <a href="about.html" style="--i: 0.1s;">About</a>
-                        </li>
-                        <li>
-                        <a href="resume.html" style="--i: 0.15s;">Resume</a>
-                        </li>
-                        <li>
-                        <a href="web.html" style="--i: 0.2s;">Portfolio</a>
-                        </li>
-                        <li>
-                        <a href="contact.html" style="--i: 0.3s;">Contact</a>
-                        </li>
-                    </ul>
-                </div>
+            <!-- ========= End clock =======-->
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>About</h2>
+          <p>Talented and experienced full stack developer with expertise in PHP, MYSQL, MVC frameworks, front-end development, and a wide range of soft skills. Seeking a challenging, exciting, and fulfilling role with a successful and growing organization.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4" data-aos="fade-right">
+            <img src="assets/img/profile-img.jpg" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+            <h3>Web Developer.</h3>
+            <p class="fst-italic">
+            <!--  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+              magna aliqua. -->
+            </p>
+            <div class="row">
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>7 Jun 1993</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+963 930 781 446</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Damascus, Syria</span></li>
+                </ul>
+              </div>
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>30</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>fadi.barhoum.fb@gmail.com</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Gender:</strong> <span>Male</span></li>
+                </ul>
+              </div>
+            </div>
+            <p>
+              I am doing a master's in web science at Syrian Virtual University. 
+              I graduated from Damascus university as a software engineer. 
+              I have been interested in the web for many years, which is why I chose to study for a master's in web sciences at SVU. 
+              I have good communication skills. I like working in a team. 
+              I am very good at the English Language. 
+              I have been working as a web developer for 5 years. 
+              I had a 1-year of experience in CodeIgniter, 2 years of experience in Laravel, and 2 years of experience in WordPress. 
+              I also have 2 years of experience in software development with CSSD charity. 
+              I have been doing many different jobs outside the software developer but I think they have many benefits. 
+              For example, I learned how to coordinate large teams and gained time management skills. 
+              I want to be fluent in web skills in the next year. 
+              Seeking a position as a web developer where I can apply for my master’s in Web Science with my five years of experience and use my ability to solve problems in difficult situations.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+
+
+    <!-- ======= Skills Section ======= -->
+    <section id="skills" class="skills section-bg">
+      <div class="container">
+        <div class="section-title">
+          <h2>Skills</h2>
+        </div>
+        <div class="my-skills row">
+          <div class="card">
+            <img src="./assets/img/skills/php.png" alt="">
+            <h6>PHP</h6>
+          </div>
+          <div class="card">
+              <img src="./assets/img/skills/html.png" alt="">
+              <h6>HTML</h6>
+          </div>
+          <div class="card">
+              <img src="./assets/img/skills/css.png" alt="">
+              <h6>CSS</h6>
+          </div>
+          <div class="card">
+              <img src="./assets/img/skills/mysql.png" alt="">
+              <h6>MYSQL</h6>
+          </div>
+          <div class="card">
+              <img src="./assets/img/skills/javascript.png" alt="">
+              <h6>JavaScript</h6>
+          </div>
+          <div class="card">
+              <img src="./assets/img/skills/jQuery.png" alt="">
+              <h6>jQuery</h6>
+          </div>
+          <div class="card">
+              <img src="./assets/img/skills/wordpress.png" alt="">
+              <h6>WordPress</h6>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Skills Section -->
+
+    <!-- ======= Knowledge Section ======= -->
+    <section class="skills section-bg">
+      <div class="container">
+        <div class="section-title">
+          <h2>Knowledge</h2>
+        </div>
+        <div class="my-skills row">
+          <div class="card">
+            <img src="./assets/img/skills/laravel.png" alt="">
+            <h6>Laravel</h6>
+          </div>
+          <div class="card">
+              <img src="./assets/img/skills/codeigniter.png" alt="">
+              <h6>CodeIgniter</h6>
+          </div>
+          <div class="card">
+              <img src="./assets/img/skills/bootstrap.png" alt="">
+              <h6>BootStrap</h6>
+          </div>
+          <div class="card">
+              <img src="./assets/img/skills/gsap.svg" alt="">
+              <h6>GSAP</h6>
+          </div>
+          <div class="card">
+              <img src="./assets/img/skills/sass.png" alt="">
+              <h6>SASS</h6>
+          </div>
+          <div class="card">
+              <img src="./assets/img/skills/typescript.png" alt="">
+              <h6>Typescript</h6>
+          </div>
+          <div class="card">
+              <img src="./assets/img/skills/three-js.png" alt="">
+              <h6>Three.js</h6>
+          </div>
+          <div class="card">
+              <img src="./assets/img/skills/react.png" alt="">
+              <h6>React</h6>
+          </div>
+          <div class="card">
+              <img src="./assets/img/skills/redux.png" alt="">
+              <h6>Redux</h6>
+          </div>
+          <div class="card">
+              <img src="./assets/img/skills/nextjs.svg" alt="">
+              <h6>Next.js</h6>
+          </div>
+          <div class="card">
+              <img src="./assets/img/skills/vue-js.png" alt="">
+              <h6>Vue.js</h6>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Knowledge Section -->
+
+    <!-- ======= Soft Skills Section ======= -->
+    <section class="skills section-bg">
+      <div class="container">
+        <div class="section-title">
+          <h2>Soft Skills</h2>
+        </div>
+          <div class="my-skills row">
+            <div class="card">
+              <img src="./assets/img/skills/time-management.png" alt="">
+              <h6>Time Management</h6>
+          </div>
+          <div class="card">
+              <img src="./assets/img/skills/teamwork.png" alt="">
+              <h6>Teamwork</h6>
+          </div>
+          <div class="card">
+              <img src="./assets/img/skills/Leadership.png" alt="">
+              <h6>Leadership</h6>
+          </div>
+          <div class="card">
+              <img src="./assets/img/skills/Problem-solving.png" alt="">
+              <h6>Problem Solving</h6>
+          </div>
+          <div class="card">
+              <img src="./assets/img/skills/Creativity.png" alt="">
+              <h6>Creativity</h6>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Soft Skills Section -->
+
+
+    <!-- ======= Resume Section ======= -->
+    <section id="resume" class="resume">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Resume</h2>
+          <!--
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          -->
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6" data-aos="fade-up">
+
+            <h3 class="resume-title">Education</h3>
+            <div class="resume-item">
+              <h4>Master in Web Science</h4>
+              <h5>2018 - Present</h5>
+              <p><em>Syrian Virtual University, Damascus, Syria</em>
+                <a href="https://svuonline.org/en/program/mws" class="external" target="_blank"><i class="bx bx-link-external"></i></a> 
+              </p>
+            </div>
+            <div class="resume-item">
+              <h4>Information Technology - Software Engineering</h4>
+              <h5>2012 - 2018</h5>
+              <p><em>Damascus University, Damascus, Syria</em>
+                <a href="https://damascusuniversity.edu.sy/ite/" class="external" target="_blank"><i class="bx bx-link-external"></i></a> 
+              </p>
             </div>
 
-        <script src="assets/js/nav.js"></script>
-        <script src="assets/js/clock.js"></script>
-    </body>
+            <h3 class="resume-title">Activities</h3>
+            <div class="resume-item">
+              <h4>Volunteer</h4>
+              <h5>2019 - Present</h5>
+              <p><em>The Sacred Hearts Society (Monastery), Damascus, Syria </em></p>
+              <ul>
+                <li>Work to assist the less vulnerable groups in Syrian society</li>
+                <li>Writing projects to the supporting authorities to obtain financing. </li>
+                <li>Overseeing financial matters.</li>
+                <h6> <strong>Projects:</strong></h6>
+                <li>Supporting the children of Eastern Ghouta in rural Damascus with winter jackets and stationery</li>
+                <li>Support for the unaccompanied elderly</li>
+                <li>Educating children and their parents in Jaramana schools about the dangers of addiction</li>
+                <li>Raise and educate the youthy</li>
+              </ul>
+            </div>
+
+            <div class="resume-item">
+              <h4>Volunteer</h4>
+              <h5>2019 - 2022</h5>
+              <p><em>GOPA-DERD, Damascus, Syria </em>
+                <a href="https://gopaderd.org/en/" class="external" target="_blank"><i class="bx bx-link-external"></i></a> 
+              </p>
+              <ul>
+                <li>ORV Team</li>
+              </ul>
+            </div>
+
+
+            <div class="resume-item">
+              <h4>Volunteer</h4>
+              <h5>2016 - 2019</h5>
+              <p><em>Charitable Society for Sustainable Development, Damascus, Syria </em>
+                <a href="https://cssd-ngos.org/" class="external" target="_blank"><i class="bx bx-link-external"></i></a>
+              </p>
+              <ul>
+                <li>Planning for new projects.</li>
+                <li>Needs survey. </li>
+                <li>Follow up and evaluate.</li>
+              </ul>
+            </div>
+
+          </div>
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="resume-title">Professional Experience</h3>
+
+            <div class="resume-item">
+              <h4>Web Developer</h4>
+              <h5>2018 - Present</h5>
+              <p><em>Freelancer</em></p>
+              <ul>
+                <li>Meeting with customers to agree to functional requirements.</li>
+                <li>Built database depends on functional requirements. </li>
+                <li>Develop Web User Interface design (UI).</li>
+                <li>Creating software documentation</li>
+                <li>Develop websites</li>
+              </ul>
+            </div>
+
+            <div class="resume-item">
+              <h4>Software Developer</h4>
+              <h5>2019 - 2023</h5>
+              <p><em>Charitable Society for Sustainable Development, Damascus, Syria</em>
+                <a href="https://cssd-ngos.org/" class="external" target="_blank"><i class="bx bx-link-external"></i></a>
+              </p>
+              <ul>
+                <li>Develop applications and software services, which increased
+                  productivity by 45%.</li>
+                <li>Suggest technical solutions which increase work
+                  manageable 80%. </li>
+                <li>Creating software documentation</li>
+                <li>Software Security</li>
+              </ul>
+            </div>
+            
+            <div class="resume-item">
+              <h4>Web Developer</h4>
+              <h5>2021 - 2022</h5>
+              <p><em>Masar Syria, Damascus, Syria</em>
+                <a href="https://www.facebook.com/Masar2018" class="external" target="_blank"><i class="bx bx-link-external"></i></a>
+              </p>
+              <ul>
+                <li>Meeting with customers To agree to functional requirements.</li>
+                <li>Built database depends on functional requirements. </li>
+                <li>Develop Web User Interface design (UI)</li>
+                <li>Creating software documentation</li>
+                <li>Develop websites</li>
+                <li>Researched and recommended new technologies and
+                  techniques, resulting in a 30% improvement in performance</li>
+              </ul>
+            </div>
+
+            <div class="resume-item">
+              <h4>Social Worker</h4>
+              <h5>2021 - Present</h5>
+              <p><em>The Sacred Hearts Society (Organization Center), Damascus, Syria</em></p>
+              <ul>
+                <li>Planning for new projects.</li>
+                <li>Needs survey. </li>
+                <li>Follow up and evaluate</li>
+                <li>Visit beneficiaries</li>
+                <li>Suggest technical solutions which increase work 
+                  manageable 20%</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Resume Section -->
+
+    <!-- ======= Training & Certificate Section ======= -->
+    <section id="training_certificates" class="resume section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Training & Certificates</h2>
+          <!--
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          -->
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6" data-aos="fade-up">
+
+            <div class="resume-item">
+              <h4>ENGLISH</h4>
+              <h5>Mar 2021 - Mar 2022</h5>
+              <p>
+                <em>Advanced Language and Training Center</em>
+                <a href="https://www.facebook.com/profile.php?id=100064771954240" class="external" target="_blank"><i class="bx bx-link-external"></i></a>
+              </p>
+            </div>
+
+            <div class="resume-item">
+              <h4>BENEFICIARIES DATABASE MANAGEMENT</h4>
+              <h5>May 2021</h5>
+              <p>
+                <em>UNDP</em>
+                <a href="https://www.undp.org/" class="external" target="_blank"><i class="bx bx-link-external"></i></a>
+              </p>
+            </div>
+
+            <div class="resume-item">
+              <h4>FOOD SECURITY AND LIVELIHOOD</h4>
+              <h5>Jan 2021</h5>
+              <p>
+                <em>Forum for Development, Culture, and Dialogue</em>
+                <a href="https://fdcd.org/" class="external" target="_blank"><i class="bx bx-link-external"></i></a>
+              </p>
+            </div>
+
+            <div class="resume-item">
+              <h4>THE SPHERE PROJECT </h4>
+              <h5>Dec 2020</h5>
+              <p>
+                <em>Forum for Development, Culture, and Dialogue</em>
+                <a href="https://fdcd.org/" class="external" target="_blank"><i class="bx bx-link-external"></i></a>
+              </p>
+            </div>
+
+            <div class="resume-item">
+              <h4>PSYCHOSOCIAL SUPPORT</h4>
+              <h5>Mar 2020</h5>
+              <p>
+                <em>Forum for Development, Culture, and Dialogue</em>
+                <a href="https://fdcd.org/" class="external" target="_blank"><i class="bx bx-link-external"></i></a>
+              </p>
+            </div>
+
+            <div class="resume-item">
+              <h4>SOFT SKILLS</h4>
+              <h5>Oct 2019</h5>
+              <p>
+                <em>UNDP</em>
+                <a href="https://www.undp.org/" class="external" target="_blank"><i class="bx bx-link-external"></i></a>
+              </p>
+            </div>
+
+            <div class="resume-item">
+              <h4>PROPOSAL WRITING</h4>
+              <h5>Sep 2019</h5>
+              <p>
+                <em>UNDP</em>
+                <a href="https://www.undp.org/" class="external" target="_blank"><i class="bx bx-link-external"></i></a>
+              </p>
+            </div>
+
+            <div class="resume-item">
+              <h4>PROTECTION, PSYCHOSOCIAL SUPPORT AND REFERRALS</h4>
+              <h5>Mar 2019</h5>
+              <p>
+                <em>Forum for Development, Culture, and Dialogue</em>
+                <a href="https://fdcd.org/" class="external" target="_blank"><i class="bx bx-link-external"></i></a>
+              </p>
+            </div>
+
+            <div class="resume-item">
+              <h4>PSYCHOSOCIAL SUPPORT TO CHILDREN IN EMERGENCY</h4>
+              <h5>Apr 2020</h5>
+              <p>
+                <em>Forum for Development, Culture, and Dialogue</em>
+                <a href="https://fdcd.org/" class="external" target="_blank"><i class="bx bx-link-external"></i></a>
+              </p>
+            </div>
+
+            <div class="resume-item">
+              <h4>ENGLISH</h4>
+              <h5>Sep 2017 - Feb 2018</h5>
+              <p>
+                <em>Linguaphone</em>
+                <a href="https://linguaphone.co.uk/" class="external" target="_blank"><i class="bx bx-link-external"></i></a>
+              </p>
+            </div>
+
+          </div>
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="resume-item">
+              <h4>MINIMUM STANDARDS FOR HUMANITARIAN ACTION THE SPHERE PROJECT</h4>
+              <h5>Dec 2017</h5>
+              <p>
+                <em>The Charitable Society for Sustainable Development</em>
+                <a href="https://cssd-ngos.org/" class="external" target="_blank"><i class="bx bx-link-external"></i></a>
+              </p>
+            </div>
+
+            <div class="resume-item">
+              <h4>CHILD PROTECTION AND ACTIVITY PLANNING</h4>
+              <h5>Nov 2017</h5>
+              <p>
+                <em>The Charitable Society for Sustainable Development</em>
+                <a href="https://cssd-ngos.org/" class="external" target="_blank"><i class="bx bx-link-external"></i></a>
+              </p>
+            </div>
+
+            <div class="resume-item">
+              <h4>CHILD SAFEGUARDING POLICY</h4>
+              <h5>Nov 2017</h5>
+              <p>
+                <em>The Middle East Council of Churches</em>
+                <a href="https://www.mecc.org/" class="external" target="_blank"><i class="bx bx-link-external"></i></a>
+              </p>
+            </div>
+
+            <div class="resume-item">
+              <h4>LOGICAL FRAMEWORK APPROACH-PROJECT CYCLE MANAGEMENT </h4>
+              <h5>Sep 2017</h5>
+              <p>
+                <em>Syrian-European Business Consultancy</em>
+                <a href="https://www.sebcsyria.com/" class="external" target="_blank"><i class="bx bx-link-external"></i></a>
+              </p>
+            </div>
+
+            <div class="resume-item">
+              <h4>BASIC CHILD PROTECTION</h4>
+              <h5>Aug 2017</h5>
+              <p>
+                <em>The Charitable Society for Sustainable Development</em>
+                <a href="https://cssd-ngos.org/" class="external" target="_blank"><i class="bx bx-link-external"></i></a>
+              </p>
+            </div>
+
+            <div class="resume-item">
+              <h4>DIPLOMA ASSOCIATE OF NEURO LINGUISTIC PROGRAMMING</h4>
+              <h5>Feb 2015 - Mar 2015</h5>
+              <p>
+                <em>International Center for Human Construction</em>
+                <a href="http://www.ichc.info/" class="external" target="_blank"><i class="bx bx-link-external"></i></a>
+              </p>
+            </div>
+
+            <div class="resume-item">
+              <h4>TIME MANAGEMENT</h4>
+              <h5>Mar 2015</h5>
+              <p>
+                <em>International Center for Human Construction</em>
+                <a href="http://www.ichc.info/" class="external" target="_blank"><i class="bx bx-link-external"></i></a>
+              </p>
+            </div>
+
+            <div class="resume-item">
+              <h4>ENTREPRENEURIAL SKILLS & BUSINESS MANAGEMENT </h4>
+              <h5>Aug 2014</h5>
+              <p>
+                <em>Syrian-European Business Consultancy</em>
+                <a href="https://www.sebcsyria.com/" class="external" target="_blank"><i class="bx bx-link-external"></i></a>
+              </p>
+            </div>
+
+            <div class="resume-item">
+              <h4>MOBILE MAINTENANCE</h4>
+              <h5>May 2014 - Jul 2014</h5>
+              <p>
+                <em>New Horizons</em>
+                <a href="https://www.newhorizons.com/" class="external" target="_blank"><i class="bx bx-link-external"></i></a>
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Resume Section -->
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Portfolio</h2>
+        </div>
+        
+        <div class="myportfolio-container">
+
+          <div class="box">
+            <img src="./assets/img/portfolio/Logos/3nab.png" alt="">
+              <div class="title">
+                <span>3nab Cafe</span>
+              </div>
+              <div class="contant">
+                <p>
+                  Cafe and restaurant dynamic menu.
+                </p>
+                <div class="links">
+                  <a href="assets/img/portfolio/gifs/3nab.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bxs-file-gif"></i></a>
+                  <a href="https://3nab.cafe/" target="_blank" title="Website link"><i class="bx bx-link-external"></i></a>
+                </div>
+              </div>
+          </div>
+
+          <div class="box">
+            <img src="./assets/img/portfolio/Logos/ssdf.jpg" alt="">
+              <div class="title">
+                <span>SSDF</span>
+              </div>
+              <div class="contant">
+                <p>
+                  Site that enables beneficiaries to submit projects to the SSDF Charitable Committee for evaluation and decision regarding financing. <br>
+                            Management can be done through the control panel:<br>
+                            - Add beneficiaries to submit their projects.<br>
+                            - Add and control questions as in Google Forms.<br>
+                            - Requesting additional matters from the beneficiaries, questions, and documents.<br>
+                            - Project evaluation.<br>
+                            - Add outgoing payments to beneficiaries.<br>
+                            - View the funding volume for each project and all projects and the remaining amounts.<br>
+                            - Conduct follow-ups through follow-up forms added by the administration.<br>
+                            - Add publications to the news page.<br>
+                            - Adding and modifying board members.<br>
+                            - Add and edit volunteers.<br>
+                            - The site also arranges projects automatically according to the questions set by the administration.<br>
+                            Note: The site is finished and we are waiting for the content from the SSDF management to add it to the site and upload to the server.
+                        
+                </p>
+                <div class="links">
+                  <a href="assets/img/portfolio/gifs/ssdf.gif" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bxs-file-gif"></i></a>
+                  <a target="_blank" title="Not available"><i class="bx bx-unlink no-link"></i></a>
+                </div>
+              </div>
+          </div>
+
+          <div class="box">
+            <img src="./assets/img/portfolio/Logos/cssd.png" alt="">
+              <div class="title">
+                <span>CSSD</span>
+              </div>
+              <div class="contant">
+                <p>
+                  A website to display information about the Charitable Society for Sustainable Development and a blog for the Society 
+                                The control panel enables the administration to control the display and modification of its volunteers, members of its board of directors, success stories, and stories by its volunteers.
+                </p>
+                <div class="links">
+                  <a href="assets/img/portfolio/gifs/cssd.gif" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bxs-file-gif"></i></a>
+                  <a href="https://cssd-ngos.org/" target="_blank" title="Website link"><i class="bx bx-link-external"></i></a>
+                </div>
+              </div>
+          </div>
+
+          <div class="box">
+            <img src="./assets/img/portfolio/Logos/bluebus.jpg" alt="">
+              <div class="title">
+                <span> Blue Bus</span>
+              </div>
+              <div class="contant">
+                <p>
+                  A web application like Swvl. <br>
+                  Users can book a seat on a trip. <br>
+                  The administration can control everything related to the trips.
+                </p>
+                <div class="links">
+                  <a href="assets/img/portfolio/gifs/bluebus.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bxs-file-gif"></i></a>
+                  <a href="https://bluebus.sy/" target="_blank" title="Website link"><i class="bx bx-link-external"></i></a>
+                </div>
+              </div>
+          </div>
+
+          <div class="box">
+            <img src="./assets/img/portfolio/Logos/elite.png" alt="">
+              <div class="title">
+                <span>Elite Wherego</span>
+              </div>
+              <div class="contant">
+                <p>
+                  A website to display information about the Elite Wherego company in the UAE, which is a delivery company. <br>
+                                Through it, the user can submit a complaint or request to join the work team or to the drivers by filling out a form on the site specified by the company
+                                He can also log in and view all his previous orders that he requested through the company's application
+                                The control panel attached to the site enables the administration to view all the previous information
+                </p>
+                <div class="links">
+                  <a href="assets/img/portfolio/gifs/elite.gif" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bxs-file-gif"></i></a>
+                  <a href="https://elitewherego.com/" target="_blank" title="Website link"><i class="bx bx-link-external"></i></a>
+                </div>
+              </div>
+          </div>
+
+          <div class="box">
+            <img src="./assets/img/portfolio/Logos/aplus.png" class="no-bg" alt="">
+              <div class="title">
+                <span>Aplus Resturant</span>
+              </div>
+              <div class="contant">
+                <p>
+                  A website for "Aplus" Restaurant and Café to display meals and drinks. <br>
+                  The visitor can specify what he requested, and the site shows him the value of the invoice, plus taxes.
+                </p>
+                <div class="links">
+                  <a href="assets/img/portfolio/gifs/aplus.gif" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bxs-file-gif"></i></a>
+                  <a target="_blank" title="Not available"><i class="bx bx-unlink no-link"></i></a>
+                </div>
+              </div>
+          </div>
+
+          <div class="box">
+            <img src="./assets/img/portfolio/Logos/jory.png" class="no-bg" alt="">
+              <div class="title">
+                <span>Jory Café</span>
+              </div>
+              <div class="contant">
+                <p>
+                  A website for "JORY" Café to display meals and drinks.<br>
+                        The café management can add important events and display them to users.<br>
+                        The visitor can specify what he requested, and the site shows him the value of the invoice, plus taxes.
+                </p>
+                <div class="links">
+                  <a href="assets/img/portfolio/gifs/jory.gif" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bxs-file-gif"></i></a>
+                  <a target="_blank" title="Not available"><i class="bx bx-unlink no-link"></i></a>
+                </div>
+              </div>
+          </div>
+
+          <div class="box">
+            <img src="./assets/img/portfolio/Logos/casacafe.png" alt="">
+              <div class="title">
+                <span>Casa Café</span>
+              </div>
+              <div class="contant">
+                <p>
+                  A website for "CASA" Restaurants and Café in the UAE to display meals and drinks.<br>
+                  The visitor can specify what he requested, and the site shows him the value of the invoice, plus taxes.
+                </p>
+                <div class="links">
+                  <a href="assets/img/portfolio/gifs/casacafe.gif" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bxs-file-gif"></i></a>
+                  <a target="_blank" title="Not available"><i class="bx bx-unlink no-link"></i></a>
+                </div>
+              </div>
+          </div>
+
+          <div class="box">
+            <img src="./assets/img/portfolio/Logos/yawna.png" class="no-bg" alt="">
+              <div class="title">
+                <span>Yawna</span>
+              </div>
+              <div class="contant">
+                <p>
+                  A presentation site for the researcher "Raymond Wihbe" in which he records information about the Aramaic language and the antiquities of the Maaloula city.
+                </p>
+                <div class="links">
+                  <a href="assets/img/portfolio/gifs/yawna.gif" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bxs-file-gif"></i></a>
+                  <a href="https://yawna.org/" target="_blank" title="Website link"><i class="bx bx-link-external"></i></a>
+                </div>
+              </div>
+          </div>
+
+          
+        </div>
+
+
+
+      </div>
+    </section><!-- End Portfolio Section -->
+
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>References</h2>
+        </div>
+
+        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-item" data-aos="fade-up">
+                <p>
+                  <strong>The Charitable Society for Sustainable Development </strong><br>
+                  +963 944 293 081<br>
+                  magdrdwanlyoussi@yahoo.com<br>
+                </p>
+                <img src="assets/img/ref/majd.jpg" class="testimonial-img" alt="">
+                <h3>MAGD RADWANIAN</h3>
+                <h4>CEO </h4>
+              </div>
+            </div><!-- End testimonial item -->
+           
+            <div class="swiper-slide">
+              <div class="testimonial-item" data-aos="fade-up">
+                <p>
+                  <strong>Masar Syria </strong><br>
+                  +971 526 652 992<br>
+                  nourkalaji@gmail.com<br>
+                </p>
+                <img src="assets/img/ref/nour.jpg" class="testimonial-img" alt="">
+                <h3> NOUR KALAJI</h3>
+                <h4>Marketing Maneger </h4>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item" data-aos="fade-up">
+                <p>
+                  <strong>Elite WhereGo </strong><br>
+                  +971 568 367 796<br>
+                  tarekad@elitewherego.com<br>
+                </p>
+                <img src="assets/img/ref/tarek.jpg" class="testimonial-img" alt="">
+                <h3>TAREK ADAWES</h3>
+                <h4>CEO </h4>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item" data-aos="fade-up">
+                <p>
+                  <strong>3nab Cafe</strong><br>
+                  +963 944 279 355<br>
+                  fmctrade@outlook.com<br>
+                </p>
+                <img src="assets/img/ref/fridy.jpg" class="testimonial-img" alt="">
+                <h3>Fridy Mctrade</h3>
+                <h4>Owner </h4>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item" data-aos="fade-up">
+                <p>
+                  <strong>The Sacred Hearts Society</strong><br>
+                  +963 991 304 541<br>
+                  dassaf58@gmail.com<br>
+                </p>
+                <img src="assets/img/ref/diab.jpg" class="testimonial-img" alt="">
+                <h3>DIAB AL ASSAF</h3>
+                <h4>Coordinator </h4>
+              </div>
+            </div><!-- End testimonial item -->
+            
+
+            <div class="swiper-slide">
+              <div class="testimonial-item" data-aos="fade-up">
+                <p>
+                  <strong>Yawna </strong><br>
+                  +963 998 828 799<br>
+                  yawnaaramic@gmail.com<br>
+                </p>
+                <img src="assets/img/ref/rimon.jpg" class="testimonial-img" alt="">
+                <h3>RIMON WEHBI</h3>
+                <h4>CEO </h4>
+              </div>
+            </div><!-- End testimonial item -->
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section><!-- End Testimonials Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact section-bg us">
+      <div class="container">
+
+        <div class="social">
+          <a href="https://www.linkedin.com/in/fadi-barhoum/" class="linkedin" title="Linkedin"  target="_blank"><i class="bx bxl-linkedin"></i></a>
+          <a href="https://www.facebook.com/fadi.barhoum.93" class="facebook" title="Facebook"  target="_blank"><i class="bx bxl-facebook"></i></a>
+          <a href="https://www.instagram.com/fadi.barhoum.fb/" class="instagram" title="instagram"  target="_blank"><i class="bx bxl-instagram"></i></a>
+          <a href="mailto: fadi.barhoum.fb@gmail.com" class="Email" title="Email"  target="_blank"><i class="bx bxl-gmail"></i></a>
+          <a href="tel:+963930781446" class="Mobile" title="Mobile"  target="_blank"><i class="bx bx-phone-call"></i></a>
+          <a href="https://wa.me/963930781446" class="whatsapp" title="whatsapp"  target="_blank"><i class="bx bxl-whatsapp"></i></a>
+          <a href="./assets/cv/Fadi_Barhoum_CV.pdf" class="download" title="Download my CV" download=""><i class="bx bx-download"></i></a>
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+  </main><!-- End #main -->
+  
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright"><span>Fadi</span> Barhoum</div>
+      <div class="credits">Web Developer</div>
+    </div>
+  </footer><!-- End  Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Template clock JS File -->
+  <script src="assets/js/clock.js"></script>
+
+  <!-- Template skills JS File -->
+  <script src="assets/js/skills.js"></script>
+
+</body>
+
 </html>

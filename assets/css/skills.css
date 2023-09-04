@@ -10,120 +10,28 @@
 
 .skills .card {
     position: relative;
-    width: 220px;
-    height: 250px;
+    width: 120px;
+    height: 200px;
     /* background: #2a2a2a; */
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #28313b; 
+    background-color: #f5f8fd;
     /* box-shadow: 0px 0px 12px 3px rgb(71 255 34/ 40%); */
-    backdrop-filter: blur(5px);
-    border-radius: 10px;
+    /* backdrop-filter: blur(5px); */
+    /* border-radius: 10px; */
+    border: none;
+    margin: auto;
+    text-align: center;
 }
 
-.skills .card .percent {
-    position: relative;
-    width: 150px;
-    height: 150px;
-}
 
-.skills .card .percent svg {
-    position: relative;
-    width: 150px;
-    height: 150px;
-    transform: rotate(270deg);
-}
-
-.skills .card .percent svg circle {
+.skills .card img {
     width: 100%;
-    height: 100%;
-    fill: transparent;
-    stroke-width: 2;
-    stroke: rgba(103, 241, 241, 0.5);
-    transform: translate(5px,5px);
 }
 
-.skills .card .percent svg circle:nth-child(2) {
-    stroke: var(--clr);
-    stroke-dasharray: 440;
-    stroke-dashoffset: calc(440 - (440* var(--num))/100);
-    opacity: 0;
-}
-
-.skills .card .percent svg circle.in-view:nth-child(2) {
-    animation: fadeIn 1s linear forwards;
-    animation-delay: 2s;
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-.dot.in-view {
+.skills .card h6 {
     position: absolute;
-    inset: 5px;
-    z-index: 10;
-    animation: animateDot 2s linear forwards;
+    bottom: 0;
 }
 
-@keyframes animateDot {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(calc(3.6deg * var(--num)));
-    }
-}
-
-.dot.in-view::before {
-    content: '';
-    position: absolute;
-    top: -5px;
-    left: 50%;
-    transform: translate(-50%);
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: var(--clr);
-    box-shadow: 0 0 10px var(--clr),
-    0 0 30px var(--clr);
-}
-
-.number {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    opacity: 0;
-}
-.number.in-view {
-    animation: fadeIn 1s linear forwards;
-    animation-delay: 2s;
-}
-.number h2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 700;
-    font-size: 2.5em;
-}
-
-.number h2 span {
-    font-weight: 200;
-    font-size: 0.5em;
-}
-
-.number p {
-    font-weight: 300;
-    font-size: 0.75em;
-    letter-spacing: 2px;
-    text-transform: uppercase
-}
