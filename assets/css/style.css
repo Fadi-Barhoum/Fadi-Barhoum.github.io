@@ -83,6 +83,11 @@ h6 {
   overflow-y: auto;
 }
 
+#header::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 0;
+}
+
 #header .profile img {
   margin: 15px auto;
   display: block;

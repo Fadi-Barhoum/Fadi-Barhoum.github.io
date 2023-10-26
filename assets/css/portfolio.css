@@ -71,4 +71,7 @@
     .myportfolio-container {
         columns: 1;
     }
+    .box img {
+        height: fit-content;
+    }
 }
