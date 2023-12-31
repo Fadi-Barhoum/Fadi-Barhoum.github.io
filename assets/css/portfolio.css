@@ -1,7 +1,7 @@
 .myportfolio-container {
     width: 100%;
     margin: 0px auto;
-    columns: 3;
+    columns: 2;
     column-gap: 10px;
 }
 
