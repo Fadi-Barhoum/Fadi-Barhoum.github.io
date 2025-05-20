@@ -29,11 +29,11 @@
     object-fit: contain;
     margin-bottom: -21px;
     object-fit: cover;
+    border-radius: 16px 16px 0 0;
 }
 
 .box .no-bg {
     background-color: #bbbaba;
-    border-radius: 16px 16px 0 0;
     object-fit: contain;
 }
 
