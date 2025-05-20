@@ -19,6 +19,8 @@
     padding: 25px;
     margin-bottom: 10px;
     break-inside: avoid;
+    background: #050d18;
+    border-radius: 16px;    
 }
 
 .box img {
@@ -26,17 +28,21 @@
     height: 170px;
     object-fit: contain;
     margin-bottom: -21px;
+    object-fit: cover;
 }
 
 .box .no-bg {
-    background-color: #0000004f;
+    background-color: #bbbaba;
+    border-radius: 16px 16px 0 0;
+    object-fit: contain;
 }
 
 .box .contant {
-    background-color: #050d18;
+    background-color: #212431;
     padding: 15px;
     color: #fff;
     border-radius: 10px;
+    border-radius: 0 0 16px 16px;
 }
 
 .box .title {
