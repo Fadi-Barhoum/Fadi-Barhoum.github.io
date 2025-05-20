@@ -321,6 +321,7 @@ section {
 }
 
 .section-title {
+  text-align: center;
   padding-bottom: 30px;
 }
 
@@ -334,14 +335,15 @@ section {
 }
 
 .section-title h2::after {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 50px;
-  height: 3px;
-  background: #149ddd;
-  bottom: 0;
-  left: 0;
+  content: '';
+    position: absolute;
+    width: 60px;
+    height: 4px;
+    background: #149ddd;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
 }
 
 .section-title p {
@@ -351,37 +353,88 @@ section {
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
-.about .content h3 {
+.about {
+  background-color: #F5F7FA;
+  padding: 60px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.about .section-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.about .section-title h2 {
+  font-size: 2.8rem;
   font-weight: 700;
-  font-size: 26px;
+  color: #173b6c;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.about .section-title h2::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 4px;
+    background: #149ddd;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.about .job-title {
+  font-size: 1.8rem;
+  font-weight: 700;
   color: #173b6c;
 }
 
-.about .content ul {
+.about .intro {
+  font-style: italic;
+  color: #6B7280;
+  margin-bottom: 20px;
+}
+
+.about .about-details ul {
   list-style: none;
   padding: 0;
 }
 
-.about .content ul li {
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
+.about .about-details ul li {
+  margin-bottom: 12px;
+  font-size: 1rem;
+  color: #1E2A38;
 }
 
-.about .content ul strong {
-  margin-right: 10px;
+.about .about-details ul li strong {
+  display: inline-block;
+  width: 100px;
+  font-weight: 600;
+  color: #1E2A38;
 }
 
-.about .content ul i {
-  font-size: 16px;
-  margin-right: 5px;
-  color: #149ddd;
-  line-height: 0;
+.about .about-details ul li span {
+  color: #6B7280;
 }
 
-.about .content p:last-child {
-  margin-bottom: 0;
+.about .bio {
+  margin-top: 20px;
+  color: #374151;
+  font-size: 1rem;
+  line-height: 1.6;
 }
+
+.about img {
+  max-width: 250px;
+  border: 5px solid #173b6c;
+  padding: 5px;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+}
+
 
 /*--------------------------------------------------------------
 # Facts
