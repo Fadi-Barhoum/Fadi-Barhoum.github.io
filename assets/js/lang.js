@@ -714,6 +714,11 @@ const translations = {
       interestedInReferences: "Interested in speaking with my references?",
       referencesOnRequest: "References available on request",
       builtWith: "Built with",
+      visitSite: "Visit Site",
+      viewDemo: "View Demo",
+      viewGallery: "View Gallery",
+      viewCode: "View Code",
+      current: "Current",
       getInTouch: "Get In Touch"
     }
   },
@@ -1350,7 +1355,7 @@ const translations = {
         { name: "نور قلعجي", position: "مدير التسويق", company: "Masar Syria"},
         { name: "طارق عداوس", position: "المدير التنفيذي", company: "Elite WhereGo" },
         { name: "فريدي مكتراد", position: "المالك", company: "3nab Cafe" },
-        { name: "دياب العساف", position: "المنسق", company: "The Sacred Hearts Society"  },
+        { name: "دياب العساف", position: "المنسق", company: "جمعية القلبين الأقدسين" },
         { name: "ريمون وهبي", position: "المدير التنفيذي", company: "Yawna"  }
       ]
     },
@@ -1406,6 +1411,11 @@ const translations = {
       interestedInReferences: "هل تريد التحدث مع مراجعي؟",
       referencesOnRequest: "بيانات التواصل مع المراجع متاحة عند الطلب",
       builtWith: "بُني باستخدام",
+      visitSite: "زيارة الموقع",
+      viewDemo: "عرض توضيحي",
+      viewGallery: "معرض الصور",
+      viewCode: "عرض الكود",
+      current: "حالي",
       getInTouch: "تواصل معي"
     }
   }

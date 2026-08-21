@@ -625,9 +625,9 @@ const TypeWriter = {
   getTexts() {
     // Try to get from LanguageManager translations
     if (typeof LanguageManager !== 'undefined' && LanguageManager.t && LanguageManager.t.hero) {
-      return LanguageManager.t.hero.typedItems || ['Software Engineer', 'Web Developer', 'Full Stack Developer'];
+      return LanguageManager.t.hero.typedItems || ['IT Consultant', 'Senior Full Stack Developer', 'Digital Transformation Specialist'];
     }
-    return ['Software Engineer', 'Web Developer', 'Full Stack Developer'];
+    return ['IT Consultant', 'Senior Full Stack Developer', 'Digital Transformation Specialist'];
   },
 
   // Reinitialize with new language texts
@@ -729,6 +729,9 @@ const Experience = {
     const lang = typeof LanguageManager !== 'undefined' && LanguageManager.t
       ? LanguageManager.t.resume
       : null;
+    const commonLang = typeof LanguageManager !== 'undefined' && LanguageManager.t
+      ? LanguageManager.t.common || {}
+      : {};
 
     if (!lang || !lang.experienceItems) {
       console.log('No experience items found');
@@ -760,7 +763,7 @@ const Experience = {
         <div class="timeline-content">
           <div class="timeline-header">
             <span class="timeline-date">${exp.period}</span>
-            ${isPresent ? '<span class="timeline-badge">Current</span>' : ''}
+            ${isPresent ? `<span class="timeline-badge">${commonLang.current || 'Current'}</span>` : ''}
           </div>
           <h3 class="timeline-title">${exp.title}</h3>
           <h4 class="timeline-company">${exp.company}</h4>
@@ -825,6 +828,9 @@ const Experience = {
     const lang = typeof LanguageManager !== 'undefined' && LanguageManager.t
       ? LanguageManager.t.resume
       : null;
+    const commonLang = typeof LanguageManager !== 'undefined' && LanguageManager.t
+      ? LanguageManager.t.common || {}
+      : {};
 
     if (!lang || !lang.activitiesItems) {
       console.log('No activities items found');
@@ -865,7 +871,7 @@ const Experience = {
         <div class="timeline-content">
           <div class="timeline-header">
             <span class="timeline-date">${act.period}</span>
-            ${isPresent ? '<span class="timeline-badge">Current</span>' : ''}
+            ${isPresent ? `<span class="timeline-badge">${commonLang.current || 'Current'}</span>` : ''}
           </div>
           <h3 class="timeline-title">${act.title}</h3>
           <h4 class="timeline-company">${act.organization}</h4>
@@ -1034,9 +1040,9 @@ const Portfolio = {
             <div class="portfolio-overlay">
               <div class="overlay-content">
                 <div class="overlay-actions">
-                  ${hasLink ? `<a href="${item.link}" target="_blank" class="btn-icon" title="Visit Site"><i class="bx bx-link-external"></i></a>` : ''}
-                  ${hasGif ? `<a href="${item.gif}" target="_blank" class="btn-icon" title="View Demo"><i class="bx bx-play-circle"></i></a>` : ''}
-                  ${hasGallery ? `<a href="${item.gallery[0]}" target="_blank" class="btn-icon" title="View Gallery"><i class="bx bx-images"></i></a>` : ''}
+                  ${hasLink ? `<a href="${item.link}" target="_blank" class="btn-icon" title="${commonLang.visitSite || 'Visit Site'}"><i class="bx bx-link-external"></i></a>` : ''}
+                  ${hasGif ? `<a href="${item.gif}" target="_blank" class="btn-icon" title="${commonLang.viewDemo || 'View Demo'}"><i class="bx bx-play-circle"></i></a>` : ''}
+                  ${hasGallery ? `<a href="${item.gallery[0]}" target="_blank" class="btn-icon" title="${commonLang.viewGallery || 'View Gallery'}"><i class="bx bx-images"></i></a>` : ''}
                 </div>
               </div>
             </div>
@@ -1066,6 +1072,9 @@ const Portfolio = {
     const lang = typeof LanguageManager !== 'undefined' && LanguageManager.t
       ? LanguageManager.t.github?.items
       : [];
+    const commonLang = typeof LanguageManager !== 'undefined' && LanguageManager.t
+      ? LanguageManager.t.common || {}
+      : {};
 
     console.log('Rendering', portfolioData.githubProjects.length, 'github projects');
 
@@ -1098,8 +1107,8 @@ const Portfolio = {
             <div class="portfolio-overlay">
               <div class="overlay-content">
                 <div class="overlay-actions">
-                  <a href="${item.github}" target="_blank" class="btn-icon" title="View Code"><i class="bx bxl-github"></i></a>
-                  ${hasGallery ? `<a href="${item.gallery[0]}" target="_blank" class="btn-icon" title="View Gallery"><i class="bx bx-images"></i></a>` : ''}
+                  <a href="${item.github}" target="_blank" class="btn-icon" title="${commonLang.viewCode || 'View Code'}"><i class="bx bxl-github"></i></a>
+                  ${hasGallery ? `<a href="${item.gallery[0]}" target="_blank" class="btn-icon" title="${commonLang.viewGallery || 'View Gallery'}"><i class="bx bx-images"></i></a>` : ''}
                 </div>
               </div>
             </div>

@@ -219,7 +219,8 @@ const portfolioData = {
       gallery: null
     },
     // TODO: stack not confirmed - add builtWith for "clay-design" to lang.js (EN + AR)
-    { id: "clay-design", category: "webapp", featured: false, logo: "assets/img/portfolio/Logos/cd.png", gif: null, link: "https://claydesign.ae/", gallery: null },
+    // TODO: Clay Design logo missing - restore Logos/cd.png and swap this back off the placeholder
+    { id: "clay-design", category: "webapp", featured: false, logo: "assets/img/portfolio/default.png", gif: null, link: "https://claydesign.ae/", gallery: null },
     {
       id: "3nab-cafe",
       category: "webapp",
