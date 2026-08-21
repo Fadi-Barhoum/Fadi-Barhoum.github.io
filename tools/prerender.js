@@ -82,7 +82,8 @@ class El {
 const CONTAINERS = [
   'technical-skills', 'soft-skills',
   'work-timeline', 'education-timeline', 'activities-timeline',
-  'portfolio-grid', 'certificates-grid', 'references-grid'
+  'enterprise-list', 'webapp-list', 'website-list', 'github-list',
+  'certificates-grid', 'references-grid'
 ];
 const STATS = ['cert-total', 'cert-orgs', 'cert-years', 'ref-total', 'ref-companies'];
 
@@ -132,8 +133,7 @@ Skills.renderSoftSkills();
 Experience.renderWorkExperience();
 Experience.renderEducation();
 Experience.renderActivities();
-Portfolio.renderPortfolioItems();
-Portfolio.renderGithubProjects();
+Portfolio.render();
 Certificates.init();
 Testimonials.init();
 

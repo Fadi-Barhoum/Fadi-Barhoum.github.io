@@ -32,19 +32,13 @@
   <link href="assets/img/favicon.svg" rel="icon" type="image/svg+xml">
   <link href="assets/img/profile-img.jpg" rel="apple-touch-icon">
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Fonts: self-hosted IBM Plex subsets, declared in site.css -->
+  <link rel="preload" href="assets/fonts/archivo-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <meta name="theme-color" content="#06171A">
 
-  <!-- Boxicons -->
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-
-  <!-- AOS Animation -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-  <!-- Custom CSS -->
-  <link href="assets/css/modern.css" rel="stylesheet">
+  <!-- Stylesheet -->
+  <link href="assets/css/site.css" rel="stylesheet">
 
   <!-- Structured data -->
   <script type="application/ld+json">
@@ -93,144 +87,747 @@
 
 <body>
 
-  <!-- Cursor -->
-  <div class="cursor"></div>
-  <div class="cursor-follower"></div>
+  <a class="skip-link" href="#main" data-i18n-common="skipToContent">Skip to content</a>
 
-  <!-- Loader -->
-  <div class="loader">
-    <div class="loader-inner">
-      <div class="loader-circle"></div>
-      <span class="loader-text">FB</span>
-    </div>
-  </div>
+  <div class="glow a" aria-hidden="true"></div>
+  <div class="glow b" aria-hidden="true"></div>
+  <div class="field" id="field" aria-hidden="true"></div>
 
-  <!-- Navigation -->
-  <nav class="navbar" id="navbar">
-    <div class="nav-container">
-      <a href="#" class="nav-logo">
-        <span class="logo-text">FB</span>
-      </a>
+  <nav>
+    <div class="wrap">
+      <a href="#home" class="brand" data-i18n-profile="name">Fadi<span>.</span>Barhoum</a>
 
-      <ul class="nav-menu" id="nav-menu">
-        <li><a href="#home" class="nav-link active">Home</a></li>
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#skills" class="nav-link">Skills</a></li>
-        <li><a href="#experience" class="nav-link">Experience</a></li>
-        <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
-        <li><a href="#certificates" class="nav-link">Certificates</a></li>
-        <li><a href="#testimonials" class="nav-link">References</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-      </ul>
-
-      <div class="nav-actions">
-        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-          <i class="bx bx-moon"></i>
-        </button>
-        <button class="lang-toggle" id="lang-toggle" aria-label="Toggle language">
-          <span>AR</span>
-        </button>
-        <a href="assets/cv/Fadi_Barhoum_CV.pdf" class="btn btn-primary nav-cta" download>
-          <span>Download CV</span>
-          <i class="bx bx-download"></i>
-        </a>
+      <div class="navlinks" id="nav-menu">
+        <a href="#work" class="nav-link" data-i18n-nav="portfolio">Systems</a>
+        <a href="#skills" class="nav-link" data-i18n-skills="title">Skills</a>
+        <a href="#experience" class="nav-link" data-i18n-nav="experience">Experience</a>
+        <a href="#certificates" class="nav-link" data-i18n-nav="training">Certificates</a>
+        <a href="#about" class="nav-link" data-i18n-nav="about">About</a>
+        <a href="#contact" class="nav-link" data-i18n-nav="contact">Contact</a>
       </div>
 
-      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <div class="nav-right">
+        <button class="langbtn" id="lang-toggle" aria-label="التبديل إلى العربية"><span>AR</span></button>
+        <a class="btn p nav-cta" href="assets/cv/Fadi_Barhoum_CV.pdf" download style="padding:9px 18px;font-size:13px"><span data-i18n="contact.downloadCV">Download CV</span></a>
+        <button class="navtoggle" id="nav-toggle" aria-label="Menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section id="home" class="hero">
-    <div class="hero-bg">
-      <div class="hero-gradient"></div>
-      <div class="hero-grid"></div>
-      <div class="floating-shapes">
-        <div class="shape shape-1"></div>
-        <div class="shape shape-2"></div>
-        <div class="shape shape-3"></div>
-        <div class="shape shape-4"></div>
-      </div>
-    </div>
+  <main id="main">
 
-    <div class="container hero-content">
-      <div class="hero-text" data-aos="fade-up">
-        <span class="hero-greeting">Hello, I'm</span>
-        <h1 class="hero-name">Fadi Barhoum</h1>
-        <div class="hero-title-wrapper">
-          <span class="hero-title" id="typed-output"></span>
-          <span class="typed-cursor">|</span>
-        </div>
-        <p class="hero-description">
-          I build enterprise platforms for UAE government and private sector organisations &mdash; bilingual
-          systems for service assessment, process management, strategic performance and national identity
-          integration.
-        </p>
-        <div class="hero-cta">
-          <a href="#portfolio" class="btn btn-primary">
-            <span>View My Work</span>
-            <i class="bx bx-right-arrow-alt"></i>
-          </a>
-          <a href="#contact" class="btn btn-outline">
-            <span>Get In Touch</span>
-          </a>
-        </div>
-      </div>
-
-      <div class="hero-image" data-aos="fade-left" data-aos-delay="200">
-        <div class="hero-image-wrapper">
-          <div class="hero-image-glow"></div>
-          <img src="assets/img/profile-img.jpg" alt="Fadi Barhoum" class="hero-img">
-          <div class="hero-image-border"></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="hero-scroll">
-      <a href="#about" class="scroll-indicator">
-        <span>Scroll Down</span>
-        <i class="bx bx-chevron-down"></i>
-      </a>
-    </div>
-
-    <div class="hero-social">
-      <a href="https://www.linkedin.com/in/fadi-barhoum/" target="_blank" aria-label="LinkedIn">
-        <i class="bx bxl-linkedin"></i>
-      </a>
-      <a href="https://github.com/Fadi-Barhoum" target="_blank" aria-label="GitHub">
-        <i class="bx bxl-github"></i>
-      </a>
-      <a href="mailto:en.fadi.barhoum@gmail.com" aria-label="Email">
-        <i class="bx bx-envelope"></i>
-      </a>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="section about">
-    <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <span class="section-subtitle">Get To Know</span>
-        <h2 class="section-title">About Me</h2>
-      </div>
-
-      <div class="about-content">
-        <div class="about-image" data-aos="fade-right">
-          <div class="about-image-wrapper">
-            <img src="assets/img/profile-img.jpg" alt="About Fadi Barhoum">
-            <div class="about-experience-badge">
-              <span class="badge-number">8</span>
-              <span class="badge-text">Years of Experience</span>
-            </div>
+  <!-- Hero -->
+  <section id="home" style="padding:0">
+    <div class="wrap">
+      <div class="hero">
+        <div>
+          <div class="eyebrow rv" data-i18n="hero.location">Dubai, United Arab Emirates</div>
+          <h1 class="rv hero-name"><span class="hero-given" data-i18n-profile="name">Fadi Barhoum</span><em data-i18n="hero.tagline">builds the systems governments run on.</em></h1>
+          <p class="role rv"><b>IT Consultant</b><span class="sep">·</span>Government Digital Transformation<span class="sep">·</span><b>Senior Full Stack Developer</b></p>
+          <p class="lede rv hero-description">
+            I build enterprise platforms for UAE government and private sector organisations &mdash; bilingual
+            systems for service assessment, process management, strategic performance and national identity
+            integration.
+          </p>
+          <div class="cta rv">
+            <a class="btn p" href="#work" data-i18n="hero.viewWork">See the systems</a>
+            <a class="btn s" href="assets/cv/Fadi_Barhoum_CV.pdf" download><span data-i18n="contact.downloadCV">Download CV</span></a>
           </div>
         </div>
 
-        <div class="about-text" data-aos="fade-left">
-          <h3>IT Consultant &amp; Senior Full Stack Developer</h3>
+        <div class="stage" aria-hidden="true">
+          <div class="stack" id="stack">
+            <svg class="conn" id="conn" viewBox="0 0 400 400"></svg>
+            <div class="layer" data-d="0"><div class="grid-face"></div>
+              <div class="lbl">Presentation</div><div class="name">React 19 &middot; TypeScript</div>
+              <div class="meta">Bilingual RTL / LTR</div><div class="dots"><i></i><i></i><i></i></div></div>
+            <div class="layer" data-d="1"><div class="grid-face"></div>
+              <div class="lbl">Application</div><div class="name">ASP.NET Core 8</div>
+              <div class="meta">Web API &middot; Domain logic</div><div class="dots"><i></i><i></i><i></i></div></div>
+            <div class="layer" data-d="2"><div class="grid-face"></div>
+              <div class="lbl">Data</div><div class="name">SQL Server &middot; EF Core</div>
+              <div class="meta">Migrations &middot; Transactions</div><div class="dots"><i></i><i></i><i></i></div></div>
+            <div class="layer gold" data-d="3"><div class="grid-face"></div>
+              <div class="lbl">Identity</div><div class="name">UAE Pass &middot; LDAP</div>
+              <div class="meta">OAuth 2.0 &middot; PKCE &middot; JWT</div><div class="dots"><i></i><i></i><i></i></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="strip">
+    <div class="wrap">
+      <span><b>8</b> <span data-i18n="strip.years">years</span></span>
+      <span><b>6</b> <span data-i18n="strip.platforms">enterprise platforms</span></span>
+      <span><b>2</b> <span data-i18n="strip.languages">languages, RTL native</span></span>
+      <span><b>.NET 8&ndash;10</b> &middot; React 19 &middot; Laravel 12</span>
+    </div>
+  </div>
+
+  <!-- Work -->
+  <section id="work">
+    <div class="wrap">
+      <div class="shead rv">
+        <div class="eyebrow" data-i18n-section="enterprise">Enterprise Systems</div>
+        <h2 data-i18n="portfolio.enterpriseHeadline">Six platforms, built end to end.</h2>
+        <p id="enterprise-intro">Six enterprise platforms built end to end &mdash; from requirements and architecture through development, deployment and handover. Most are internal government systems, so the work is described rather than shown.</p>
+      </div>
+      <div id="enterprise-list" data-prerendered="en">
+        <!-- PRERENDER:start:enterprise-list -->
+          <details class="sys rv" open="">
+          <summary>
+          <span class="idx">01</span>
+          <span class="t">ZeroX<span class="sub">Government Bureaucracy Reduction Platform</span></span>
+          <span class="plus" aria-hidden="true">+</span>
+          </summary>
+          <div class="sysbody">
+          <div class="chips"><span class="chip">ASP.NET Core 8</span><span class="chip">React 19</span><span class="chip">TypeScript</span><span class="chip">SQL Server</span><span class="chip">Entity Framework Core</span></div>
+          <p class="txt">A bilingual (Arabic/English) platform built for the UAE Ministry of Industry and Advanced Technology, digitising how government services and internal processes are assessed, simplified, and measured before and after reduction.</p>
+          <div class="capgroup"><ul class="caplist"><li><b>UAE Pass Integration:</b>National single sign-on via a custom OAuth 2.0 authorization code flow built to match the ministry's identity gateway</li><li><b>Multi-Axis Assessment:</b>Services scored across five weighted evaluation axes with a matrix-based classification engine</li><li><b>Process Zeroing:</b>Full organizational hierarchy from sector down to individual procedure steps, with automatic before/after reduction comparison</li></ul></div><div class="capgroup"><ul class="caplist"><li><b>Bulk Import:</b>Transactional Excel import that maps flat spreadsheets into a five-level hierarchy with rollback on conflict</li><li><b>Fully Bilingual:</b>Arabic/English with complete RTL support across every screen</li></ul></div>
+          </div></details>
+          <details class="sys rv">
+          <summary>
+          <span class="idx">02</span>
+          <span class="t">Impact7S<span class="sub">Seven-Star Service Excellence Assessment Platform</span></span>
+          <span class="plus" aria-hidden="true">+</span>
+          </summary>
+          <div class="sysbody">
+          <div class="chips"><span class="chip">ASP.NET Core 8</span><span class="chip">React 19</span><span class="chip">TypeScript</span><span class="chip">SQL Server</span><span class="chip">Entity Framework Core</span><span class="chip">Azure OpenAI</span></div>
+          <p class="txt">An enterprise platform for organizational excellence assessment, deployed at UAE government and private sector entities to run the full evaluation cycle from questions and evidence through scoring, improvement planning and follow-up.</p>
+          <div class="capgroup"><ul class="caplist"><li><b>Maturity Scoring Engine:</b>Multi-level weighted scoring across service channels and entity-level evidence, producing a 0–7 star rating</li><li><b>Hybrid Authentication:</b>Enterprise LDAP/Active Directory unified with local accounts behind a single sign-in flow</li><li><b>Granular Permissions:</b>Six roles scoped by service channel and center</li><li><b>Action Planning:</b>Improvement tracking with priorities, follow-ups and Kanban task management</li></ul></div><div class="capgroup"><ul class="caplist"><li><b>AI Assistant:</b>Integrated Azure OpenAI assistant answering questions from the system's own data</li><li><b>Centers Management:</b>Geolocation and interactive mapping for multi-site evaluation</li><li><b>Reporting:</b>Arabic-capable PDF report generation</li></ul></div>
+          </div></details>
+          <details class="sys rv">
+          <summary>
+          <span class="idx">03</span>
+          <span class="t">ImpactSPcx<span class="sub">Process, Service & Customer Experience Management</span></span>
+          <span class="plus" aria-hidden="true">+</span>
+          </summary>
+          <div class="sysbody">
+          <div class="chips"><span class="chip">ASP.NET Core 8</span><span class="chip">React 19</span><span class="chip">TypeScript</span><span class="chip">SQL Server</span><span class="chip">Entity Framework Core</span><span class="chip">Azure OpenAI</span></div>
+          <p class="txt">A digital repository replacing scattered Word and Visio documents with a single governed system for process documentation, service cards, customer journey mapping and measurable before/after improvement — deployed at UAE government and private sector entities.</p>
+          <div class="capgroup"><ul class="caplist"><li><b>Interactive Diagram Editor:</b>RTL-aware process diagramming with undo/redo and image/PDF export</li><li><b>Visio Import:</b>Dependency-free in-browser .vsdx importer built without external libraries</li><li><b>Approval Workflow:</b>Coordinator changes tracked against an audit ledger with automatic rollback on rejection across five action types</li><li><b>Customer Journey Mapping:</b>Current and future state experience mapping with sentiment tracking</li></ul></div><div class="capgroup"><ul class="caplist"><li><b>Service Cards:</b>Complete service documentation covering channels, requirements, fees and timing</li><li><b>AI Assistant:</b>Azure OpenAI assistant querying the system's own data</li><li><b>Export:</b>PDF and Excel output across all modules</li></ul></div>
+          </div></details>
+          <details class="sys rv">
+          <summary>
+          <span class="idx">04</span>
+          <span class="t">ImpactST (S-Track)<span class="sub">Strategic Performance Management Platform</span></span>
+          <span class="plus" aria-hidden="true">+</span>
+          </summary>
+          <div class="sysbody">
+          <div class="chips"><span class="chip">ASP.NET Core 8</span><span class="chip">React 19</span><span class="chip">TypeScript</span><span class="chip">Tailwind CSS</span><span class="chip">SQL Server</span><span class="chip">Entity Framework Core</span><span class="chip">Azure OpenAI</span></div>
+          <p class="txt">A strategy-to-execution platform for government entities, connecting vision and objectives to KPIs, operational plans and verified performance reporting in one governed path.</p>
+          <div class="capgroup"><ul class="caplist"><li><b>Objectives Hierarchy:</b>Parent-scoped strategic objectives with cycle detection and weight-cap enforcement to prevent double-counting across the reporting layer</li><li><b>KPI Formula Engine:</b>Server-side expression evaluator supporting manual, formula-driven and external API data sources, with full audit capture of inputs</li><li><b>Operational Planning:</b>Projects, initiatives and activities with milestones and task tracking</li></ul></div><div class="capgroup"><ul class="caplist"><li><b>Verification Workflow:</b>Department submissions reviewed and approved before entering reports</li><li><b>Executive Dashboards:</b>Strategy maps, department comparison and KPI analytics</li><li><b>Full Audit Log:</b>Every change tracked with optimistic concurrency control</li></ul></div>
+          </div></details>
+          <details class="sys rv">
+          <summary>
+          <span class="idx">05</span>
+          <span class="t">ImpactLS<span class="sub">Software Licensing & Entitlement Platform</span></span>
+          <span class="plus" aria-hidden="true">+</span>
+          </summary>
+          <div class="sysbody">
+          <div class="chips"><span class="chip">ASP.NET Core 10</span><span class="chip">React 19</span><span class="chip">TypeScript</span><span class="chip">SQL Server</span><span class="chip">Entity Framework Core</span></div>
+          <p class="txt">An in-house platform that issues and governs license keys for the company's product suite, letting each client activate the systems they purchased with defined subscription terms and user limits.</p>
+          <div class="capgroup"><ul class="caplist"><li><b>Digitally Signed Licenses:</b>Each license cryptographically signed and verifiable, so altered terms are rejected automatically</li><li><b>Offline Verification:</b>Licensed systems validate entirely on their own, with no network call to a license server — essential for closed government networks</li><li><b>Entitlement Control:</b>Per-client expiry dates and user limits enforced at the product level</li></ul></div><div class="capgroup"><ul class="caplist"><li><b>Multi-Product:</b>Governs four separate company products from one console</li><li><b>Integration Documentation:</b>Full specification authored for consuming product teams</li></ul></div>
+          </div></details>
+          <details class="sys rv">
+          <summary>
+          <span class="idx">06</span>
+          <span class="t">ImpactMS<span class="sub">Mystery Shopping Operations Platform</span></span>
+          <span class="plus" aria-hidden="true">+</span>
+          </summary>
+          <div class="sysbody">
+          <div class="chips"><span class="chip">Laravel 11</span><span class="chip">PHP 8.2</span><span class="chip">React 18</span><span class="chip">MySQL</span><span class="chip">Vite</span></div>
+          <p class="txt">The operations platform powering the company's mystery-shopping service line for UAE government clients — covering questionnaire design, field assignment to shoppers, auditing of submitted reports, and final client reporting.</p>
+          <div class="capgroup"><ul class="caplist"><li><b>Questionnaire Builder:</b>Drag-and-drop builder supporting twelve question types across paged forms</li><li><b>Four-Role Workflow:</b>Administrator, project manager, shopper and auditor, each scoped to their own data</li><li><b>Task State Machine:</b>Nine explicit states with enforced transitions preventing stage skipping</li><li><b>Field Assignment:</b>Location-based visit assignment with interactive mapping</li></ul></div><div class="capgroup"><ul class="caplist"><li><b>Auditing & Scoring:</b>Per-question review with points, comments and validity flags</li><li><b>Client Reporting:</b>Branded PDF reports generated to a corporate design specification</li><li><b>Bilingual:</b>Arabic/English with RTL support</li></ul></div>
+          </div></details>
+        <!-- PRERENDER:end:enterprise-list -->
+      </div>
+
+      <div class="shead sub rv">
+        <div class="eyebrow" data-i18n-section="webapp">Web Applications</div>
+      </div>
+      <div class="apps" id="webapp-list" data-prerendered="en">
+        <!-- PRERENDER:start:webapp-list -->
+          <article class="app rv lead">
+          <h3 class="app-name">Ivari Hair Center</h3>
+          <p class="app-sub">Bilingual E-Commerce & Appointment Booking Platform</p>
+          <div class="chips"><span class="chip">Laravel 12</span><span class="chip">PHP 8.2</span><span class="chip">React 19</span><span class="chip">TypeScript</span><span class="chip">Inertia.js</span><span class="chip">Filament 5</span><span class="chip">Tailwind CSS 4</span><span class="chip">Vite 7</span><span class="chip">MySQL</span></div>
+          <p class="app-headline">A production e-commerce and appointment-booking platform for a Dubai hair centre, selling products with colour and length variants while handling service bookings and installation appointments in one system.</p>
+          <div class="capgroup"><ul class="caplist"><li><b>Dual Payment Gateways:</b>Card payments and buy-now-pay-later instalments, both through a secure server-side redirect flow so no card data touches the server</li><li><b>Three Purchase Flows:</b>Package with appointment, standard product order, standalone booking</li><li><b>Appointment Engine:</b>Work schedules, time slots and availability management</li><li><b>Product Variants:</b>Colour and length variants with custom manual ordering</li><li><b>Admin Console:</b>Filament-based panel covering products, orders, appointments, payments, content</li><li><b>Fully Bilingual:</b>Arabic/English with complete RTL across storefront and checkout</li></ul></div>
+          <p class="sysvisit"><a href="https://ivarihair.com" target="_blank" rel="noopener">Visit Site &rarr;</a></p></article>
+          <article class="app rv lead">
+          <h3 class="app-name">Mar Musa</h3>
+          <p class="app-sub">Multi-Currency Financial Management System</p>
+          <div class="chips"><span class="chip">PHP</span><span class="chip">MariaDB</span><span class="chip">JavaScript</span><span class="chip">PhpSpreadsheet</span><span class="chip">WordPress as application framework</span></div>
+          <p class="app-headline">A custom accounting platform for a non-profit managing a central fund, projects and individual member accounts across five currencies — roughly 20,000 lines of custom PHP behind 65 admin screens and 11 purpose-built database tables.</p>
+          <div class="capgroup"><ul class="caplist"><li><b>Six Transaction Types:</b>Deposits, payments, withdrawals, income, expenses, currency exchange and debts, unified in one ledger</li><li><b>Global Receipt Numbering:</b>A system-wide unique receipt-number constraint enforced across six separate transaction tables</li><li><b>Export & Import:</b>29 endpoints producing Excel, PDF and ZIP reports, plus Excel import templates with data-validated dropdowns bound to live data</li><li><b>Role Separation:</b>Managers see everything, members see only their own records</li><li><b>Receipt Imaging:</b>Photo attachments per transaction with resilient path handling across environments</li><li><b>Four Languages:</b>Arabic, English, French and Italian with full RTL support</li></ul></div>
+          </article>
+          <article class="app rv">
+          <h3 class="app-name">Rihlaty Dashboard</h3>
+          <p class="app-sub">Travel Agency Operations Dashboard</p>
+          <div class="chips"><span class="chip">React 18</span><span class="chip">Vite</span><span class="chip">React Router</span><span class="chip">Custom i18n</span><span class="chip">Client-side PDF generation</span></div>
+          <p class="app-headline">A bilingual front-end admin dashboard for a travel agency that builds tour packages, transport bookings and reusable templates through multi-step wizards, then exports client-ready documents. Built for the same client as the Rihlaty public site, as their separate internal tool.</p>
+          <div class="capgroup"><ul class="caplist"><li><b>Three Multi-Step Wizards:</b>Package builder, template builder, transport builder</li><li><b>Document Export:</b>Proposals, invoices and hotel vouchers exported to PDF in the browser, preserving Arabic text shaping and RTL layout</li><li><b>Date Integrity Engine:</b>Editing hotel nights redistributes the difference across the remaining stay so total nights and departure date stay fixed</li><li><b>Hierarchical Selection:</b>Country to city to hotel to room, with pick order carried through the itinerary and exported documents</li><li><b>Reference Data:</b>Countries, cities, airports, airlines, hotels, rooms and tours</li><li><b>Full Translation Parity:</b>Complete English/Arabic coverage across every screen</li><li><b>Front-End Only:</b>A client-side application with no backend — data persists in browser storage, and the user switcher is a placeholder rather than real authentication</li></ul></div>
+          </article>
+          <article class="app rv">
+          <h3 class="app-name">SSDF</h3>
+          <p class="app-headline">A grant submission and evaluation workflow system for the SSDF charity, serving three distinct user types — beneficiaries, administrators and board members — with automated proposal evaluation and project follow-up tracking.</p>
+          <div class="capgroup"><h4>Beneficiaries:</h4><ul class="caplist"><li><b>Streamlined project submission:</b>Empowers beneficiaries to seamlessly submit project proposals.</li><li><b>Project management capabilities:</b>Enables effective project management through a dedicated section.</li></ul></div><div class="capgroup"><h4>Admin:</h4><ul class="caplist"><li><b>Centralized management dashboard:</b>Comprehensive control panel for managing all aspects of project funding.</li><li><b>Simplified project evaluation:</b>Automated evaluation system for prompt assessment.</li><li><b>Effortless project tracking:</b>Follow-up forms for continuous project monitoring.</li></ul></div><div class="capgroup"><h4>Chairman Members:</h4><ul class="caplist"><li><b>Comprehensive project overview:</b>Access to comprehensive reports on all project aspects.</li><li><b>Strategic decision-making support:</b>Actionable insights for informed strategic decisions.</li></ul></div>
+          </article>
+          <article class="app rv">
+          <h3 class="app-name">Nujoud Express</h3>
+          <p class="app-headline">A laundry operations management system with an admin panel for services and pricing, a customer service dashboard for order intake and tracking, and a reporting module.</p>
+          <div class="capgroup"><ul class="caplist"><li><b>Admin panel:</b>Effortlessly create, edit, and manage services, garment types, and pricing options.</li><li><b>Customer service dashboard:</b>Streamline order intake, track progress, and maintain customer records efficiently.</li><li><b>Reporting module:</b>Generate detailed reports on orders, revenue, inventory, and customer behavior.</li></ul></div>
+          </article>
+          <article class="app rv">
+          <h3 class="app-name">Blue Bus</h3>
+          <div class="chips"><span class="chip">WordPress (custom-coded)</span><span class="chip">PHP</span><span class="chip">MySQL</span><span class="chip">JavaScript</span></div>
+          <p class="app-headline">A seat booking and trip management system with a scheduling control panel and real-time trip information.</p>
+          <div class="capgroup"><ul class="caplist"><li><b>Seamless booking experience:</b>User-friendly web application for booking seats on short trips.</li><li><b>Streamlined trip management:</b>Comprehensive control panel for trip planning and scheduling.</li><li><b>Enhanced transparency:</b>Real-time trip information display.</li></ul></div>
+          <p class="sysvisit"><a href="https://bluebus.sy/" target="_blank" rel="noopener">Visit Site &rarr;</a></p></article>
+          <article class="app rv">
+          <h3 class="app-name">Clay Design</h3>
+          <p class="app-headline">An e-commerce application with cart, secure checkout, and product and order administration. Customers browse collections, view detailed product information and complete purchases on a responsive storefront.</p>
+          <p class="sysvisit"><a href="https://claydesign.ae/" target="_blank" rel="noopener">Visit Site &rarr;</a></p></article>
+          <article class="app rv">
+          <h3 class="app-name">3nab Cafe</h3>
+          <div class="chips"><span class="chip">WordPress</span><span class="chip">PHP</span><span class="chip">MySQL</span></div>
+          <p class="app-headline">Designed a dynamic menu website for 3nab Café & Restaurant, transforming both owner and customer experiences.</p>
+          <div class="capgroup"><h4>Owners enjoy:</h4><ul class="caplist"><li>Seamless menu management through an intuitive interface.</li><li>Enhanced customer engagement with clear product descriptions and pricing.</li><li>Direct customer feedback via an online complaint system.</li></ul></div><div class="capgroup"><h4>Customers benefit from:</h4><ul class="caplist"><li>Exploring the menu conveniently before stepping into the café.</li><li>Making informed choices with detailed descriptions and prices.</li><li>Providing valuable feedback directly to the management.</li></ul></div>
+          <p class="sysvisit"><a href="https://3nab.cafe/" target="_blank" rel="noopener">Visit Site &rarr;</a></p></article>
+          <article class="app rv">
+          <h3 class="app-name">Elite Wherego</h3>
+          <div class="chips"><span class="chip">WordPress (custom-coded)</span><span class="chip">PHP</span><span class="chip">MySQL</span><span class="chip">JavaScript</span></div>
+          <p class="app-headline">A company web platform integrated with the mobile application backend, giving users access to all twelve mobile services directly from the web. Enables users to place orders and manage their accounts seamlessly across web and mobile.</p>
+          <p class="sysvisit"><a href="https://elitewherego.com/" target="_blank" rel="noopener">Visit Site &rarr;</a></p></article>
+        <!-- PRERENDER:end:webapp-list -->
+      </div>
+
+      <div class="shead sub rv">
+        <div class="eyebrow" data-i18n-section="website">Websites</div>
+      </div>
+      <div class="sitelist" id="website-list" data-prerendered="en">
+        <!-- PRERENDER:start:website-list -->
+          <div class="site rv">
+          <h3 class="site-name"><a href="https://rihlaty.com/" target="_blank" rel="noopener">Rihlaty</a></h3>
+          <p class="site-line">Developed a fully functional e-commerce website for trip and travel package bookings.</p>
+          <div class="chips"><span class="chip">WordPress</span><span class="chip">PHP</span><span class="chip">MySQL</span></div></div>
+          <div class="site rv">
+          <h3 class="site-name"><a href="https://cssd-ngos.org/" target="_blank" rel="noopener">CSSD</a></h3>
+          <p class="site-line">Comprehensive website showcasing the organization's mission and impact.</p>
+          <div class="chips"><span class="chip">WordPress</span><span class="chip">PHP</span><span class="chip">MySQL</span></div></div>
+          <div class="site rv">
+          <h3 class="site-name"><a href="https://yawna.org/" target="_blank" rel="noopener">Yawna</a></h3>
+          <p class="site-line">Website showcasing the work of researcher Raymond Wihbe on Aramaic language and Maaloula antiquities.</p>
+          <div class="chips"><span class="chip">WordPress</span><span class="chip">PHP</span><span class="chip">MySQL</span></div></div>
+          <div class="site rv">
+          <h3 class="site-name">Aplus Restaurant</h3>
+          <p class="site-line">User-friendly website with interactive menu and event management.</p>
+          <div class="chips"><span class="chip">WordPress</span><span class="chip">PHP</span><span class="chip">MySQL</span></div></div>
+          <div class="site rv">
+          <h3 class="site-name">Jory Café</h3>
+          <p class="site-line">User-friendly website with interactive menu and event management.</p>
+          <div class="chips"><span class="chip">WordPress</span><span class="chip">PHP</span><span class="chip">MySQL</span></div></div>
+          <div class="site rv">
+          <h3 class="site-name">Casa Café</h3>
+          <p class="site-line">User-friendly website for CASA Cafe & Restaurant in UAE.</p>
+          <div class="chips"><span class="chip">WordPress</span><span class="chip">PHP</span><span class="chip">MySQL</span></div></div>
+          <div class="site rv">
+          <h3 class="site-name"><a href="https://safegategroup.com/" target="_blank" rel="noopener">Safe Gate Group</a></h3>
+          <p class="site-line">A corporate site presenting Safe Gate Group's medical solutions, mission and global reach.</p>
+          <div class="chips"><span class="chip">WordPress</span><span class="chip">PHP</span></div></div>
+          <div class="site rv">
+          <h3 class="site-name"><a href="https://hmlsteelcontracting.com/" target="_blank" rel="noopener">HML Steel</a></h3>
+          <p class="site-line">A corporate site presenting HML Steel's steel construction capabilities and industry track record.</p>
+          <div class="chips"><span class="chip">WordPress</span><span class="chip">PHP</span></div></div>
+          <div class="site rv">
+          <h3 class="site-name"><a href="https://binlahejcontracting.com/" target="_blank" rel="noopener">Bin Lahej</a></h3>
+          <p class="site-line">A corporate site presenting Bin Lahej's construction services, values and completed projects.</p>
+          <div class="chips"><span class="chip">WordPress</span><span class="chip">PHP</span></div></div>
+        <!-- PRERENDER:end:website-list -->
+      </div>
+
+      <div class="shead sub rv">
+        <div class="eyebrow" data-i18n-section="github">Open Source</div>
+      </div>
+      <div class="repos" id="github-list" data-prerendered="en">
+        <!-- PRERENDER:start:github-list -->
+          <div class="repo rv">
+          <h3 class="repo-name"><a href="https://github.com/Fadi-Barhoum/Real-time-Chat-App" target="_blank" rel="noopener">Chat App</a></h3>
+          <p class="app-headline">Real-time chat application using PHP, HTML, CSS, JavaScript, and MySQL. Real-time message delivery to all connected users. User-friendly interface for effortless messaging.</p>
+          <div class="chips"><span class="chip">PHP</span><span class="chip">MySQL</span><span class="chip">JavaScript</span><span class="chip">HTML</span><span class="chip">CSS</span></div>
+          <p class="repolink"><a href="https://github.com/Fadi-Barhoum/Real-time-Chat-App" target="_blank" rel="noopener">View Code &rarr;</a></p></div>
+          <div class="repo rv">
+          <h3 class="repo-name"><a href="https://github.com/Fadi-Barhoum/Images-Generator" target="_blank" rel="noopener">Images Generator</a></h3>
+          <p class="app-headline">Image generation website using HTML, CSS, and JavaScript. Integrated OpenAI API for text-to-image generation. Users can input descriptions and specify image quantity.</p>
+          <div class="chips"><span class="chip">JavaScript</span><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">OpenAI API</span></div>
+          <p class="repolink"><a href="https://github.com/Fadi-Barhoum/Images-Generator" target="_blank" rel="noopener">View Code &rarr;</a></p></div>
+        <!-- PRERENDER:end:github-list -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="alt">
+    <div class="wrap">
+      <div class="shead rv">
+        <div class="eyebrow" data-i18n-common="capability">Capability</div>
+        <h2 data-i18n-skills="title">What I work in.</h2>
+      </div>
+      <div class="rv skill-groups" id="technical-skills" data-prerendered="en">
+        <!-- PRERENDER:start:technical-skills -->
+          <div class="skill-group">
+          <div class="srow">
+          <div class="k skill-group-title">Backend</div>
+          <div class="v skill-names"><span class="skill-name">C#</span><span class="skill-name">ASP.NET Core</span><span class="skill-name">.NET 8</span><span class="skill-name">Web API</span><span class="skill-name">Entity Framework Core</span><span class="skill-name">PHP</span><span class="skill-name">Laravel</span></div>
+          </div></div>
+          <div class="skill-group">
+          <div class="srow">
+          <div class="k skill-group-title">Frontend</div>
+          <div class="v skill-names"><span class="skill-name">React</span><span class="skill-name">TypeScript</span><span class="skill-name">JavaScript</span><span class="skill-name">Vite</span><span class="skill-name">Tailwind CSS</span><span class="skill-name">HTML</span><span class="skill-name">CSS</span><span class="skill-name">Bootstrap</span><span class="skill-name">RTL / Bilingual UI</span></div>
+          </div></div>
+          <div class="skill-group">
+          <div class="srow">
+          <div class="k skill-group-title">Database</div>
+          <div class="v skill-names"><span class="skill-name">SQL Server</span><span class="skill-name">T-SQL</span><span class="skill-name">MySQL</span><span class="skill-name">Database Design</span></div>
+          </div></div>
+          <div class="skill-group">
+          <div class="srow">
+          <div class="k skill-group-title">Integration</div>
+          <div class="v skill-names"><span class="skill-name">REST APIs</span><span class="skill-name">OAuth 2.0</span><span class="skill-name">OpenID Connect</span><span class="skill-name">JWT</span><span class="skill-name">SSO</span><span class="skill-name">LDAP / Active Directory</span><span class="skill-name">Azure OpenAI</span></div>
+          </div></div>
+          <div class="skill-group">
+          <div class="srow">
+          <div class="k skill-group-title">Tools</div>
+          <div class="v skill-names"><span class="skill-name">Git</span><span class="skill-name">IIS</span><span class="skill-name">Windows Server</span><span class="skill-name">Swagger</span><span class="skill-name">Azure</span><span class="skill-name">AWS</span></div>
+          </div></div>
+          <div class="skill-group">
+          <div class="srow">
+          <div class="k skill-group-title">CMS</div>
+          <div class="v skill-names"><span class="skill-name">Sitecore</span><span class="skill-name">WordPress</span></div>
+          </div></div>
+        <!-- PRERENDER:end:technical-skills -->
+      </div>
+      <div class="shead sub rv">
+        <div class="eyebrow" data-i18n-skills="softTitle">Soft Skills</div>
+      </div>
+      <ul class="softlist rv" id="soft-skills" data-prerendered="en">
+        <!-- PRERENDER:start:soft-skills -->
+          <li class="soft-skill">Time Management</li>
+          <li class="soft-skill">Teamwork</li>
+          <li class="soft-skill">Leadership</li>
+          <li class="soft-skill">Problem Solving</li>
+          <li class="soft-skill">Creativity</li>
+        <!-- PRERENDER:end:soft-skills -->
+      </ul>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience">
+    <div class="wrap">
+      <div class="shead rv">
+        <div class="eyebrow" data-i18n-nav="experience">Experience</div>
+        <h2 data-i18n-resume="title">Where the work happened.</h2>
+      </div>
+
+      <div class="tabs rv" role="tablist" aria-label="Experience, education and activities">
+        <button class="tab-btn is-active" data-tab="tab-work" role="tab" aria-selected="true" aria-controls="tab-work"><span data-i18n-resume="experience">Work</span></button>
+        <button class="tab-btn" data-tab="tab-education" role="tab" aria-selected="false" aria-controls="tab-education"><span data-i18n-resume="education">Education</span></button>
+        <button class="tab-btn" data-tab="tab-activities" role="tab" aria-selected="false" aria-controls="tab-activities"><span data-i18n-resume="activities">Activities</span></button>
+      </div>
+
+      <div class="tab-content is-active" id="tab-work" role="tabpanel" tabindex="0">
+        <div class="tl" id="work-timeline" data-prerendered="en">
+          <!-- PRERENDER:start:work-timeline -->
+            <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+            <div class="timeline-header">
+            <span class="timeline-date">10/2025 - Present</span>
+            <span class="timeline-badge">Current</span>
+            </div>
+            <h3 class="timeline-title">IT Consultant</h3>
+            <h4 class="timeline-company">IMPACT iN, Dubai, UAE</h4>
+            <ul class="timeline-list">
+            <li>Lead digital transformation initiatives and technology consulting for government and private sector clients. Design and implement scalable web and mobile solutions with focus on modern architecture and seamless user experiences.</li><li>Conduct comprehensive technology audits covering cloud infrastructure, system integration, database optimization, and cybersecurity compliance. Advise on authentication frameworks, access control, and secure deployment strategies.</li><li>Ensure alignment with global digital service excellence standards, including UAE's regulatory requirements. Perform structured evaluations of system performance and deliver data-driven recommendations for optimization.</li><li>Collaborate cross-functionally across the full project lifecycle, bridging technical and business stakeholders to deliver end-to-end solutions.</li>
+            </ul>
+            </div>
+            </div>
+            <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+            <div class="timeline-header">
+            <span class="timeline-date">04/2024 - 09/2025</span>
+            </div>
+            <h3 class="timeline-title">Full Stack Developer</h3>
+            <h4 class="timeline-company">Elite WhereGO</h4>
+            <ul class="timeline-list">
+            <li>Develop and maintain a comprehensive website showcasing company services and integrating it with a mobile application to enhance user experience.</li><li>Integrated the website with the mobile application, enabling seamless order placement and account management across platforms.</li>
+            </ul>
+            </div>
+            </div>
+            <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+            <div class="timeline-header">
+            <span class="timeline-date">02/2018 - 08/2025</span>
+            </div>
+            <h3 class="timeline-title">Web Developer | Full Stack Developer</h3>
+            <h4 class="timeline-company">Freelancer</h4>
+            <ul class="timeline-list">
+            <li>Collaborates with clients to define functional requirements and project scope.</li><li>Design and develop user-friendly web interfaces that meet client expectations.</li><li>Build and maintain scalable and efficient databases to support website functionality.</li><li>Create comprehensive software documentation for future reference and maintenance.</li><li>Successfully develop and deploy high-quality websites for clients across industries.</li>
+            </ul>
+            </div>
+            </div>
+            <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+            <div class="timeline-header">
+            <span class="timeline-date">01/2021 - 03/2022</span>
+            </div>
+            <h3 class="timeline-title">Web Developer | Full Stack Developer</h3>
+            <h4 class="timeline-company">Masar Syria, Damascus, Syria</h4>
+            <ul class="timeline-list">
+            <li>Collaborated effectively with clients to understand their functional requirements and project scope.</li><li>Successfully designed and developed user-friendly web interfaces that met client expectations.</li><li>Constructed and maintained efficient and scalable databases to support website functionality.</li><li>Created comprehensive software documentation for future reference and maintenance.</li><li>Introduced caching, asset optimisation and database query tuning to reduce page load times across client websites.</li>
+            </ul>
+            </div>
+            </div>
+            <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+            <div class="timeline-header">
+            <span class="timeline-date">09/2019 - 04/2023</span>
+            </div>
+            <h3 class="timeline-title">Software Developer</h3>
+            <h4 class="timeline-company">Charitable Society for Sustainable Development, Damascus, Syria</h4>
+            <ul class="timeline-list">
+            <li>Built and deployed internal software solutions that replaced the organisation's manual, paper-based workflows for beneficiary and programme records.</li><li>Identified recurring operational bottlenecks and delivered technical solutions that consolidated case tracking and reporting into a single system.</li><li>Created comprehensive software documentation to ensure clear understanding and maintainability of code.</li><li>Employed robust security measures to protect the organization's digital assets and data.</li>
+            </ul>
+            </div>
+            </div>
+          <!-- PRERENDER:end:work-timeline -->
+        </div>
+      </div>
+      <div class="tab-content" id="tab-education" role="tabpanel" tabindex="0" hidden>
+        <div class="tl" id="education-timeline" data-prerendered="en">
+          <!-- PRERENDER:start:education-timeline -->
+            <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+            <div class="timeline-header">
+            <span class="timeline-date">2012 - 2018</span>
+            </div>
+            <h3 class="timeline-title">Information Technology - Software Engineering</h3>
+            <h4 class="timeline-company">Damascus University, Damascus, Syria</h4>
+            </div>
+            </div>
+            <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+            <div class="timeline-header">
+            <span class="timeline-date">2018 - 2020</span>
+            </div>
+            <h3 class="timeline-title">Master's degree — Web Science</h3>
+            <h4 class="timeline-company">Syrian Virtual University</h4>
+            <p class="timeline-note">Coursework completed; thesis pending</p>
+            </div>
+            </div>
+          <!-- PRERENDER:end:education-timeline -->
+        </div>
+      </div>
+      <div class="tab-content" id="tab-activities" role="tabpanel" tabindex="0" hidden>
+        <div class="tl" id="activities-timeline" data-prerendered="en">
+          <!-- PRERENDER:start:activities-timeline -->
+            <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+            <div class="timeline-header">
+            <span class="timeline-date">05/2025 - Present</span>
+            <span class="timeline-badge">Current</span>
+            </div>
+            <h3 class="timeline-title">Web Developer</h3>
+            <h4 class="timeline-company">Ataa Hamdan Volunteer Team</h4>
+            <ul class="timeline-list">
+            <li>Design and develop the official website for Ataa Hamdan volunteer team, creating an engaging platform to showcase the team's humanitarian initiatives and volunteer activities.</li><li>Build a cross-platform mobile application to streamline volunteer coordination, event management, and community engagement.</li><li>Implement responsive and user-friendly interfaces to ensure seamless access across all devices.</li><li>Integrate backend systems for volunteer registration, donation tracking, and activity management.</li>
+            </ul>
+            </div>
+            </div>
+            <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+            <div class="timeline-header">
+            <span class="timeline-date">2021 - 2024</span>
+            </div>
+            <h3 class="timeline-title">Social Worker</h3>
+            <h4 class="timeline-company">The Sacred Hearts Society (Organization Center), Damascus, Syria</h4>
+            <div class="timeline-role">
+            <h5 class="role-title">Caseworkers' Team Leader <span class="role-period">(Aug 2023 - Jan 2024)</span></h5>
+            <ul class="timeline-list"><li>Provided leadership and guidance to a team of caseworkers, ensuring effective case management and beneficiaries support.</li><li>Oversaw the development and implementation of new projects.</li><li>Monitored and evaluated the performance of caseworkers and programs.</li><li>Prepared comprehensive monthly reports on casework activities and program outcomes.</li><li>Represented the team and the organization in professional settings and community forums.</li><li>Introduced technical tools for case tracking and monthly reporting that replaced the team's manual, paper-based record-keeping.</li></ul>
+            </div>
+            <div class="timeline-role">
+            <h5 class="role-title">Caseworker <span class="role-period">(May 2021 - Aug 2023)</span></h5>
+            <ul class="timeline-list"><li>Conducted needs assessments and developed personalized case plans for clients.</li><li>Provided counseling and support to individuals and families facing various social challenges.</li><li>Advocated for clients' rights and connected them with necessary services.</li><li>Documented case progress and ensured timely follow-up.</li><li>Maintained open communication with clients, families, and other professionals involved in their cases.</li></ul>
+            </div>
+            </div>
+            </div>
+            <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+            <div class="timeline-header">
+            <span class="timeline-date">2019 - 2022</span>
+            </div>
+            <h3 class="timeline-title">Volunteer</h3>
+            <h4 class="timeline-company">GOPA-DERD, Damascus, Syria</h4>
+            <ul class="timeline-list">
+            <li>Active member of the Outreach and Relief Volunteers (ORV) Team, dedicated to visiting beneficiaries of the organization's social programs.</li><li>Conducted regular visits to beneficiaries, engaging in meaningful conversations and providing support.</li><li>Identified and documented the needs of beneficiaries, ensuring their timely and effective assistance.</li><li>Collaborated with team members to plan and implement outreach initiatives, ensuring the organization's services reach underserved communities.</li><li>Played a crucial role in fostering positive relationships with beneficiaries, demonstrating empathy, understanding, and compassion.</li>
+            </ul>
+            </div>
+            </div>
+            <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+            <div class="timeline-header">
+            <span class="timeline-date">2016 - 2019</span>
+            </div>
+            <h3 class="timeline-title">Volunteer</h3>
+            <h4 class="timeline-company">Charitable Society for Sustainable Development, Damascus, Syria</h4>
+            <ul class="timeline-list">
+            <li>Dedicated volunteer actively involved in the strategic planning and implementation of new social initiatives.</li><li>Conducted comprehensive needs surveys to identify the most pressing needs of the organization's target beneficiaries.</li><li>Collected and analyzed data from surveys to inform the development of effective and targeted projects.</li><li>Proactively followed up on the progress of implemented projects, evaluating their effectiveness and identifying areas for improvement.</li><li>Utilized insights gained from follow-up evaluations to refine future project plans and ensure the organization's resources are allocated efficiently.</li>
+            </ul>
+            </div>
+            </div>
+          <!-- PRERENDER:end:activities-timeline -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certificates -->
+  <section id="certificates" class="alt">
+    <div class="wrap">
+      <div class="shead rv">
+        <div class="eyebrow" data-i18n-common="credentials">Credentials</div>
+        <h2 data-i18n-training="title">Training &amp; Certificates</h2>
+        <p class="sec-meta">
+          <span class="stat-number" id="cert-total">20</span>
+          <span data-i18n-common="totalCertificates">certificates</span>
+          <span class="sec-meta-dot" aria-hidden="true">·</span>
+          <span class="stat-number" id="cert-orgs">10</span>
+          <span data-i18n-common="organizations">organizations</span>
+        </p>
+      </div>
+
+      <div class="cert-filter rv" role="group" aria-label="Filter certificates">
+        <button class="cert-filter-btn active" data-filter="all">All</button>
+        <button class="cert-filter-btn" data-filter="tech">Technical</button>
+        <button class="cert-filter-btn" data-filter="language">Language</button>
+        <button class="cert-filter-btn" data-filter="skills">Soft Skills</button>
+        <button class="cert-filter-btn" data-filter="humanitarian">Humanitarian</button>
+      </div>
+
+      <div class="cert-list rv" id="certificates-grid" data-prerendered="en">
+        <!-- PRERENDER:start:certificates-grid -->
+          <div class="cert tech" data-category="tech">
+          <h3 class="cert-title"><a href="https://coursera.org/share/1988d1bc1755847439d006f8a4afc9cb" target="_blank" rel="noopener" title="View Certificate">Mastering Laravel Framework and PHP</a></h3>
+          <p class="cert-org">Board Infinity</p>
+          <p class="cert-when">Jun 2024</p>
+          <span class="cert-tag tech">Technical</span>
+          </div>
+          <div class="cert language" data-category="language">
+          <h3 class="cert-title"><a href="https://www.facebook.com/profile.php?id=100064771954240" target="_blank" rel="noopener" title="View Certificate">ENGLISH</a></h3>
+          <p class="cert-org">Advanced Language and Training Center</p>
+          <p class="cert-when">Mar 2021 - Mar 2022</p>
+          <span class="cert-tag language">Language</span>
+          </div>
+          <div class="cert tech" data-category="tech">
+          <h3 class="cert-title"><a href="https://www.undp.org/" target="_blank" rel="noopener" title="View Certificate">BENEFICIARIES DATABASE MANAGEMENT</a></h3>
+          <p class="cert-org">UNDP</p>
+          <p class="cert-when">May 2021</p>
+          <span class="cert-tag tech">Technical</span>
+          </div>
+          <div class="cert humanitarian hidden" data-category="humanitarian">
+          <h3 class="cert-title"><a href="https://fdcd.org/" target="_blank" rel="noopener" title="View Certificate">FOOD SECURITY AND LIVELIHOOD</a></h3>
+          <p class="cert-org">Forum for Development, Culture, and Dialogue</p>
+          <p class="cert-when">Jan 2021</p>
+          <span class="cert-tag humanitarian">Humanitarian</span>
+          </div>
+          <div class="cert humanitarian hidden" data-category="humanitarian">
+          <h3 class="cert-title"><a href="https://fdcd.org/" target="_blank" rel="noopener" title="View Certificate">THE SPHERE PROJECT</a></h3>
+          <p class="cert-org">Forum for Development, Culture, and Dialogue</p>
+          <p class="cert-when">Dec 2020</p>
+          <span class="cert-tag humanitarian">Humanitarian</span>
+          </div>
+          <div class="cert humanitarian hidden" data-category="humanitarian">
+          <h3 class="cert-title"><a href="https://fdcd.org/" target="_blank" rel="noopener" title="View Certificate">PSYCHOSOCIAL SUPPORT</a></h3>
+          <p class="cert-org">Forum for Development, Culture, and Dialogue</p>
+          <p class="cert-when">Mar 2020</p>
+          <span class="cert-tag humanitarian">Humanitarian</span>
+          </div>
+          <div class="cert skills" data-category="skills">
+          <h3 class="cert-title"><a href="https://www.undp.org/" target="_blank" rel="noopener" title="View Certificate">SOFT SKILLS</a></h3>
+          <p class="cert-org">UNDP</p>
+          <p class="cert-when">Oct 2019</p>
+          <span class="cert-tag skills">Soft Skills</span>
+          </div>
+          <div class="cert skills" data-category="skills">
+          <h3 class="cert-title"><a href="https://www.undp.org/" target="_blank" rel="noopener" title="View Certificate">PROPOSAL WRITING</a></h3>
+          <p class="cert-org">UNDP</p>
+          <p class="cert-when">Sep 2019</p>
+          <span class="cert-tag skills">Soft Skills</span>
+          </div>
+          <div class="cert humanitarian hidden" data-category="humanitarian">
+          <h3 class="cert-title"><a href="https://fdcd.org/" target="_blank" rel="noopener" title="View Certificate">PROTECTION, PSYCHOSOCIAL SUPPORT AND REFERRALS</a></h3>
+          <p class="cert-org">Forum for Development, Culture, and Dialogue</p>
+          <p class="cert-when">Mar 2019</p>
+          <span class="cert-tag humanitarian">Humanitarian</span>
+          </div>
+          <div class="cert humanitarian hidden" data-category="humanitarian">
+          <h3 class="cert-title"><a href="https://fdcd.org/" target="_blank" rel="noopener" title="View Certificate">PSYCHOSOCIAL SUPPORT TO CHILDREN IN EMERGENCY</a></h3>
+          <p class="cert-org">Forum for Development, Culture, and Dialogue</p>
+          <p class="cert-when">Apr 2018</p>
+          <span class="cert-tag humanitarian">Humanitarian</span>
+          </div>
+          <div class="cert language" data-category="language">
+          <h3 class="cert-title"><a href="https://linguaphone.co.uk/" target="_blank" rel="noopener" title="View Certificate">ENGLISH</a></h3>
+          <p class="cert-org">Linguaphone</p>
+          <p class="cert-when">Sep 2017 - Feb 2018</p>
+          <span class="cert-tag language">Language</span>
+          </div>
+          <div class="cert humanitarian hidden" data-category="humanitarian">
+          <h3 class="cert-title"><a href="https://cssd-ngos.org/" target="_blank" rel="noopener" title="View Certificate">MINIMUM STANDARDS FOR HUMANITARIAN ACTION THE SPHERE PROJECT</a></h3>
+          <p class="cert-org">The Charitable Society for Sustainable Development</p>
+          <p class="cert-when">Dec 2017</p>
+          <span class="cert-tag humanitarian">Humanitarian</span>
+          </div>
+          <div class="cert humanitarian hidden" data-category="humanitarian">
+          <h3 class="cert-title"><a href="https://cssd-ngos.org/" target="_blank" rel="noopener" title="View Certificate">CHILD PROTECTION AND ACTIVITY PLANNING</a></h3>
+          <p class="cert-org">The Charitable Society for Sustainable Development</p>
+          <p class="cert-when">Nov 2017</p>
+          <span class="cert-tag humanitarian">Humanitarian</span>
+          </div>
+          <div class="cert humanitarian hidden" data-category="humanitarian">
+          <h3 class="cert-title"><a href="https://www.mecc.org/" target="_blank" rel="noopener" title="View Certificate">CHILD SAFEGUARDING POLICY</a></h3>
+          <p class="cert-org">The Middle East Council of Churches</p>
+          <p class="cert-when">Nov 2017</p>
+          <span class="cert-tag humanitarian">Humanitarian</span>
+          </div>
+          <div class="cert humanitarian hidden" data-category="humanitarian">
+          <h3 class="cert-title"><a href="https://www.sebcsyria.com/" target="_blank" rel="noopener" title="View Certificate">LOGICAL FRAMEWORK APPROACH-PROJECT CYCLE MANAGEMENT</a></h3>
+          <p class="cert-org">Syrian-European Business Consultancy</p>
+          <p class="cert-when">Sep 2017</p>
+          <span class="cert-tag humanitarian">Humanitarian</span>
+          </div>
+          <div class="cert humanitarian hidden" data-category="humanitarian">
+          <h3 class="cert-title"><a href="https://cssd-ngos.org/" target="_blank" rel="noopener" title="View Certificate">BASIC CHILD PROTECTION</a></h3>
+          <p class="cert-org">The Charitable Society for Sustainable Development</p>
+          <p class="cert-when">Aug 2017</p>
+          <span class="cert-tag humanitarian">Humanitarian</span>
+          </div>
+          <div class="cert skills" data-category="skills">
+          <h3 class="cert-title"><a href="http://www.ichc.info/" target="_blank" rel="noopener" title="View Certificate">DIPLOMA ASSOCIATE OF NEURO LINGUISTIC PROGRAMMING</a></h3>
+          <p class="cert-org">International Center for Human Construction</p>
+          <p class="cert-when">Feb 2015 - Mar 2015</p>
+          <span class="cert-tag skills">Soft Skills</span>
+          </div>
+          <div class="cert skills" data-category="skills">
+          <h3 class="cert-title"><a href="http://www.ichc.info/" target="_blank" rel="noopener" title="View Certificate">TIME MANAGEMENT</a></h3>
+          <p class="cert-org">International Center for Human Construction</p>
+          <p class="cert-when">Mar 2015</p>
+          <span class="cert-tag skills">Soft Skills</span>
+          </div>
+          <div class="cert skills" data-category="skills">
+          <h3 class="cert-title"><a href="https://www.sebcsyria.com/" target="_blank" rel="noopener" title="View Certificate">ENTREPRENEURIAL SKILLS & BUSINESS MANAGEMENT</a></h3>
+          <p class="cert-org">Syrian-European Business Consultancy</p>
+          <p class="cert-when">Aug 2014</p>
+          <span class="cert-tag skills">Soft Skills</span>
+          </div>
+          <div class="cert tech" data-category="tech">
+          <h3 class="cert-title"><a href="https://www.newhorizons.com/" target="_blank" rel="noopener" title="View Certificate">MOBILE MAINTENANCE</a></h3>
+          <p class="cert-org">New Horizons</p>
+          <p class="cert-when">May 2014 - Jul 2014</p>
+          <span class="cert-tag tech">Technical</span>
+          </div>
+        <!-- PRERENDER:end:certificates-grid -->
+      </div>
+
+      <div class="cert-more">
+        <button class="btn s" id="load-more-certs"><span data-i18n-common="showAll">Show all certificates</span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- References -->
+  <section id="testimonials">
+    <div class="wrap">
+      <div class="shead rv">
+        <div class="eyebrow" data-i18n-references="title">References</div>
+      </div>
+      <div class="ref-list rv" id="references-grid" data-prerendered="en">
+        <!-- PRERENDER:start:references-grid -->
+          <div class="ref">
+          <span class="ref-initials" aria-hidden="true">MR</span>
+          <div class="ref-who">
+          <h3 class="ref-name">MAGD RADWANIAN</h3>
+          <p class="ref-position">CEO <span class="company">at CSSD</span></p>
+          </div>
+          </div>
+          <div class="ref">
+          <span class="ref-initials" aria-hidden="true">NK</span>
+          <div class="ref-who">
+          <h3 class="ref-name">NOUR KALAJI</h3>
+          <p class="ref-position">Marketing Manager <span class="company">at Masar Syria</span></p>
+          </div>
+          </div>
+          <div class="ref">
+          <span class="ref-initials" aria-hidden="true">TA</span>
+          <div class="ref-who">
+          <h3 class="ref-name">TAREK ADAWES</h3>
+          <p class="ref-position">CEO <span class="company">at Elite WhereGo</span></p>
+          </div>
+          </div>
+          <div class="ref">
+          <span class="ref-initials" aria-hidden="true">FM</span>
+          <div class="ref-who">
+          <h3 class="ref-name">Fridy Mctrade</h3>
+          <p class="ref-position">Owner <span class="company">at 3nab Cafe</span></p>
+          </div>
+          </div>
+          <div class="ref">
+          <span class="ref-initials" aria-hidden="true">DA</span>
+          <div class="ref-who">
+          <h3 class="ref-name">DIAB AL ASSAF</h3>
+          <p class="ref-position">Coordinator <span class="company">at The Sacred Hearts Society</span></p>
+          </div>
+          </div>
+          <div class="ref">
+          <span class="ref-initials" aria-hidden="true">RW</span>
+          <div class="ref-who">
+          <h3 class="ref-name">RIMON WEHBI</h3>
+          <p class="ref-position">CEO <span class="company">at Yawna</span></p>
+          </div>
+          </div>
+        <!-- PRERENDER:end:references-grid -->
+      </div>
+      <p class="ref-note">
+        <span id="ref-on-request">References available on request</span>
+        <a href="#contact" class="ref-note-link" data-i18n-common="getInTouch">Get In Touch</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="alt">
+    <div class="wrap">
+      <div class="shead rv">
+        <div class="eyebrow" data-i18n-nav="about">About</div>
+        <h2 data-i18n-about="title">About</h2>
+      </div>
+      <div class="about-grid rv">
+        <div class="about-body">
           <p class="about-description">
             I am an IT consultant and senior full stack developer based in Dubai, with 8 years building
             enterprise applications end to end. My work centres on ASP.NET Core, C#, SQL Server and React with
@@ -239,1913 +836,67 @@
             AI-enabled features &mdash; always with full Arabic and English support. I take projects from
             requirements through architecture, development, deployment and handover.
           </p>
-
-          <div class="about-info">
-            <div class="info-item">
-              <i class="bx bx-user"></i>
-              <div>
-                <span class="info-label">Name</span>
-                <span class="info-value">Fadi Barhoum</span>
-              </div>
-            </div>
-            <div class="info-item">
-              <i class="bx bx-map"></i>
-              <div>
-                <span class="info-label">Location</span>
-                <span class="info-value">Dubai, UAE</span>
-              </div>
-            </div>
-            <div class="info-item">
-              <i class="bx bx-envelope"></i>
-              <div>
-                <span class="info-label">Email</span>
-                <span class="info-value">en.fadi.barhoum@gmail.com</span>
-              </div>
-            </div>
-            <div class="info-item">
-              <i class="bx bx-phone"></i>
-              <div>
-                <span class="info-label">Phone</span>
-                <span class="info-value">+971 507 704 776</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="about-cta">
-            <a href="#contact" class="btn btn-primary">
-              <span>Let's Talk</span>
-              <i class="bx bx-conversation"></i>
-            </a>
-          </div>
+          <dl class="facts">
+            <div class="fact"><dt class="info-label">Location</dt><dd class="info-value">Dubai, United Arab Emirates</dd></div>
+            <div class="fact"><dt class="info-label">Email</dt><dd class="info-value"><a href="mailto:en.fadi.barhoum@gmail.com">en.fadi.barhoum@gmail.com</a></dd></div>
+            <div class="fact"><dt class="info-label">Phone</dt><dd class="info-value"><a href="tel:+971507704776">+971 507 704 776</a></dd></div>
+            <div class="fact"><dt class="info-label">Nationality</dt><dd class="info-value">Syrian</dd></div>
+          </dl>
         </div>
+        <figure class="about-figure">
+          <img src="assets/img/profile-img-304.jpg"
+               srcset="assets/img/profile-img-152.jpg 152w, assets/img/profile-img-304.jpg 304w, assets/img/profile-img-440.jpg 440w"
+               sizes="(max-width: 760px) 150px, 220px"
+               alt="" role="presentation" class="about-portrait"
+               width="220" height="220" loading="lazy" decoding="async">
+        </figure>
       </div>
     </div>
   </section>
 
-  <!-- Skills Section -->
-  <section id="skills" class="section skills">
-    <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <span class="section-subtitle">What I Do</span>
-        <h2 class="section-title">Skills & Expertise</h2>
+  <!-- Contact -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="shead rv">
+        <div class="eyebrow" data-i18n="contact.subtitle">Get In Touch</div>
+        <h2 data-i18n="contact.title">Let's Work Together</h2>
+        <p data-i18n="contact.description">Ready to bring your ideas to life? Let's connect and discuss how I can help with your next project.</p>
       </div>
 
-      <div class="skills-categories">
-        <!-- Technical Skills -->
-        <div class="skills-category" data-aos="fade-up">
-          <h3 class="category-title">
-            <i class="bx bx-code-alt"></i>
-            Technical Skills
-          </h3>
-          <div class="skill-groups" id="technical-skills" data-prerendered="en">
-            <!-- PRERENDER:start:technical-skills -->
-              <div class="skill-group" data-aos="fade-up" data-aos-delay="0">
-              <h4 class="skill-group-title">Backend</h4>
-              <div class="skills-grid"><div class="skill-item">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.17.0/icons/csharp/csharp-original.svg" alt="C#" loading="lazy"
-              onerror="this.remove(); this.parentElement.classList.add('no-icon');">
-              <span>C#</span>
-              </div><div class="skill-item">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.17.0/icons/dotnetcore/dotnetcore-original.svg" alt="ASP.NET Core" loading="lazy"
-              onerror="this.remove(); this.parentElement.classList.add('no-icon');">
-              <span>ASP.NET Core</span>
-              </div><div class="skill-item">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.17.0/icons/dot-net/dot-net-original.svg" alt=".NET 8" loading="lazy"
-              onerror="this.remove(); this.parentElement.classList.add('no-icon');">
-              <span>.NET 8</span>
-              </div><div class="skill-item no-icon"><span>Web API</span></div><div class="skill-item no-icon"><span>Entity Framework Core</span></div><div class="skill-item">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.17.0/icons/php/php-original.svg" alt="PHP" loading="lazy"
-              onerror="this.remove(); this.parentElement.classList.add('no-icon');">
-              <span>PHP</span>
-              </div><div class="skill-item">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.17.0/icons/laravel/laravel-original.svg" alt="Laravel" loading="lazy"
-              onerror="this.remove(); this.parentElement.classList.add('no-icon');">
-              <span>Laravel</span>
-              </div></div>
-              </div>
-              <div class="skill-group" data-aos="fade-up" data-aos-delay="50">
-              <h4 class="skill-group-title">Frontend</h4>
-              <div class="skills-grid"><div class="skill-item">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.17.0/icons/react/react-original.svg" alt="React" loading="lazy"
-              onerror="this.remove(); this.parentElement.classList.add('no-icon');">
-              <span>React</span>
-              </div><div class="skill-item">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.17.0/icons/typescript/typescript-original.svg" alt="TypeScript" loading="lazy"
-              onerror="this.remove(); this.parentElement.classList.add('no-icon');">
-              <span>TypeScript</span>
-              </div><div class="skill-item">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.17.0/icons/javascript/javascript-original.svg" alt="JavaScript" loading="lazy"
-              onerror="this.remove(); this.parentElement.classList.add('no-icon');">
-              <span>JavaScript</span>
-              </div><div class="skill-item">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.17.0/icons/vitejs/vitejs-original.svg" alt="Vite" loading="lazy"
-              onerror="this.remove(); this.parentElement.classList.add('no-icon');">
-              <span>Vite</span>
-              </div><div class="skill-item">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.17.0/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS" loading="lazy"
-              onerror="this.remove(); this.parentElement.classList.add('no-icon');">
-              <span>Tailwind CSS</span>
-              </div><div class="skill-item">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.17.0/icons/html5/html5-original.svg" alt="HTML" loading="lazy"
-              onerror="this.remove(); this.parentElement.classList.add('no-icon');">
-              <span>HTML</span>
-              </div><div class="skill-item">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.17.0/icons/css3/css3-original.svg" alt="CSS" loading="lazy"
-              onerror="this.remove(); this.parentElement.classList.add('no-icon');">
-              <span>CSS</span>
-              </div><div class="skill-item">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.17.0/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" loading="lazy"
-              onerror="this.remove(); this.parentElement.classList.add('no-icon');">
-              <span>Bootstrap</span>
-              </div><div class="skill-item no-icon"><span>RTL / Bilingual UI</span></div></div>
-              </div>
-              <div class="skill-group" data-aos="fade-up" data-aos-delay="100">
-              <h4 class="skill-group-title">Database</h4>
-              <div class="skills-grid"><div class="skill-item">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.17.0/icons/microsoftsqlserver/microsoftsqlserver-original.svg" alt="SQL Server" loading="lazy"
-              onerror="this.remove(); this.parentElement.classList.add('no-icon');">
-              <span>SQL Server</span>
-              </div><div class="skill-item no-icon"><span>T-SQL</span></div><div class="skill-item">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.17.0/icons/mysql/mysql-original.svg" alt="MySQL" loading="lazy"
-              onerror="this.remove(); this.parentElement.classList.add('no-icon');">
-              <span>MySQL</span>
-              </div><div class="skill-item no-icon"><span>Database Design</span></div></div>
-              </div>
-              <div class="skill-group" data-aos="fade-up" data-aos-delay="150">
-              <h4 class="skill-group-title">Integration</h4>
-              <div class="skills-grid"><div class="skill-item">
-              <img src="assets/img/skills/rest-api.png" alt="REST APIs" loading="lazy"
-              onerror="this.remove(); this.parentElement.classList.add('no-icon');">
-              <span>REST APIs</span>
-              </div><div class="skill-item no-icon"><span>OAuth 2.0</span></div><div class="skill-item no-icon"><span>OpenID Connect</span></div><div class="skill-item no-icon"><span>JWT</span></div><div class="skill-item no-icon"><span>SSO</span></div><div class="skill-item no-icon"><span>LDAP / Active Directory</span></div><div class="skill-item no-icon"><span>Azure OpenAI</span></div></div>
-              </div>
-              <div class="skill-group" data-aos="fade-up" data-aos-delay="200">
-              <h4 class="skill-group-title">Tools</h4>
-              <div class="skills-grid"><div class="skill-item">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.17.0/icons/git/git-original.svg" alt="Git" loading="lazy"
-              onerror="this.remove(); this.parentElement.classList.add('no-icon');">
-              <span>Git</span>
-              </div><div class="skill-item no-icon"><span>IIS</span></div><div class="skill-item">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.17.0/icons/windows8/windows8-original.svg" alt="Windows Server" loading="lazy"
-              onerror="this.remove(); this.parentElement.classList.add('no-icon');">
-              <span>Windows Server</span>
-              </div><div class="skill-item">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.17.0/icons/swagger/swagger-original.svg" alt="Swagger" loading="lazy"
-              onerror="this.remove(); this.parentElement.classList.add('no-icon');">
-              <span>Swagger</span>
-              </div><div class="skill-item">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.17.0/icons/azure/azure-original.svg" alt="Azure" loading="lazy"
-              onerror="this.remove(); this.parentElement.classList.add('no-icon');">
-              <span>Azure</span>
-              </div><div class="skill-item">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.17.0/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" loading="lazy"
-              onerror="this.remove(); this.parentElement.classList.add('no-icon');">
-              <span>AWS</span>
-              </div></div>
-              </div>
-              <div class="skill-group" data-aos="fade-up" data-aos-delay="250">
-              <h4 class="skill-group-title">CMS</h4>
-              <div class="skills-grid"><div class="skill-item">
-              <img src="assets/img/skills/sitecore.png" alt="Sitecore" loading="lazy"
-              onerror="this.remove(); this.parentElement.classList.add('no-icon');">
-              <span>Sitecore</span>
-              </div><div class="skill-item">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.17.0/icons/wordpress/wordpress-original.svg" alt="WordPress" loading="lazy"
-              onerror="this.remove(); this.parentElement.classList.add('no-icon');">
-              <span>WordPress</span>
-              </div></div>
-              </div>
-            <!-- PRERENDER:end:technical-skills -->
-          </div>
-        </div>
+      <dl class="channels rv">
+        <div class="channel"><dt class="info-label" data-i18n="contact.emailLabel">Email</dt><dd class="info-value"><a href="mailto:en.fadi.barhoum@gmail.com">en.fadi.barhoum@gmail.com</a></dd></div>
+        <div class="channel"><dt class="info-label" data-i18n="contact.phoneLabel">Phone</dt><dd class="info-value"><a href="tel:+971507704776">+971 507 704 776</a></dd></div>
+        <div class="channel"><dt class="info-label" data-i18n="contact.whatsappLabel">WhatsApp</dt><dd class="info-value"><a href="https://wa.me/971507704776" target="_blank" rel="noopener">+971 507 704 776</a></dd></div>
+        <div class="channel"><dt class="info-label" data-i18n="contact.locationLabel">Location</dt><dd class="info-value" data-i18n="contact.locationValue">Dubai, United Arab Emirates</dd></div>
+      </dl>
 
-        <!-- Soft Skills -->
-        <div class="skills-category" data-aos="fade-up" data-aos-delay="100">
-          <h3 class="category-title">
-            <i class="bx bx-brain"></i>
-            Soft Skills
-          </h3>
-          <div class="skills-grid soft-skills-grid" id="soft-skills" data-prerendered="en">
-            <!-- PRERENDER:start:soft-skills -->
-              <div class="skill-item" data-aos="fade-up" data-aos-delay="0">
-              <img src="assets/img/skills/time-management.png" alt="Time Management" onerror="this.style.display='none'">
-              <span>Time Management</span>
-              </div>
-              <div class="skill-item" data-aos="fade-up" data-aos-delay="50">
-              <img src="assets/img/skills/teamwork.png" alt="Teamwork" onerror="this.style.display='none'">
-              <span>Teamwork</span>
-              </div>
-              <div class="skill-item" data-aos="fade-up" data-aos-delay="100">
-              <img src="assets/img/skills/Leadership.png" alt="Leadership" onerror="this.style.display='none'">
-              <span>Leadership</span>
-              </div>
-              <div class="skill-item" data-aos="fade-up" data-aos-delay="150">
-              <img src="assets/img/skills/Problem-solving.png" alt="Problem Solving" onerror="this.style.display='none'">
-              <span>Problem Solving</span>
-              </div>
-              <div class="skill-item" data-aos="fade-up" data-aos-delay="200">
-              <img src="assets/img/skills/Creativity.png" alt="Creativity" onerror="this.style.display='none'">
-              <span>Creativity</span>
-              </div>
-            <!-- PRERENDER:end:soft-skills -->
-          </div>
-        </div>
-      </div>
-
+      <p class="channels-social rv">
+        <a href="https://www.linkedin.com/in/fadi-barhoum/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/Fadi-Barhoum" target="_blank" rel="noopener">GitHub</a>
+      </p>
     </div>
   </section>
 
-  <!-- Experience Section -->
-  <section id="experience" class="section experience">
-    <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <span class="section-subtitle">My Journey</span>
-        <h2 class="section-title">Experience & Education</h2>
+  </main>
+
+  <footer class="site-foot">
+    <div class="wrap foot-inner">
+      <div>
+        <p class="foot-name" data-i18n-profile="name">Fadi Barhoum</p>
+        <p class="foot-title">IT Consultant &amp; Senior Full Stack Developer</p>
       </div>
-
-      <div class="experience-tabs" data-aos="fade-up">
-        <button class="tab-btn active" data-tab="work">
-          <i class="bx bx-briefcase"></i>
-          <span>Work Experience</span>
-        </button>
-        <button class="tab-btn" data-tab="education">
-          <i class="bx bx-book"></i>
-          <span>Education</span>
-        </button>
-        <button class="tab-btn" data-tab="activities">
-          <i class="bx bx-heart"></i>
-          <span>Activities</span>
-        </button>
-      </div>
-
-      <div class="experience-content">
-        <!-- Work Experience -->
-        <div class="tab-content active" id="work">
-          <div class="timeline" id="work-timeline" data-prerendered="en">
-            <!-- PRERENDER:start:work-timeline -->
-              <div class="timeline-item" data-aos="fade-up" data-aos-delay="0">
-              <div class="timeline-marker"></div>
-              <div class="timeline-content">
-              <div class="timeline-header">
-              <span class="timeline-date">10/2025 - Present</span>
-              <span class="timeline-badge">Current</span>
-              </div>
-              <h3 class="timeline-title">IT Consultant</h3>
-              <h4 class="timeline-company">IMPACT iN, Dubai, UAE</h4>
-              <ul class="timeline-list">
-              <li>Lead digital transformation initiatives and technology consulting for government and private sector clients. Design and implement scalable web and mobile solutions with focus on modern architecture and seamless user experiences.</li><li>Conduct comprehensive technology audits covering cloud infrastructure, system integration, database optimization, and cybersecurity compliance. Advise on authentication frameworks, access control, and secure deployment strategies.</li><li>Ensure alignment with global digital service excellence standards, including UAE's regulatory requirements. Perform structured evaluations of system performance and deliver data-driven recommendations for optimization.</li><li>Collaborate cross-functionally across the full project lifecycle, bridging technical and business stakeholders to deliver end-to-end solutions.</li>
-              </ul>
-              </div>
-              </div>
-              <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
-              <div class="timeline-marker"></div>
-              <div class="timeline-content">
-              <div class="timeline-header">
-              <span class="timeline-date">04/2024 - 09/2025</span>
-              </div>
-              <h3 class="timeline-title">Full Stack Developer</h3>
-              <h4 class="timeline-company">Elite WhereGO</h4>
-              <ul class="timeline-list">
-              <li>Develop and maintain a comprehensive website showcasing company services and integrating it with a mobile application to enhance user experience.</li><li>Integrated the website with the mobile application, enabling seamless order placement and account management across platforms.</li>
-              </ul>
-              </div>
-              </div>
-              <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
-              <div class="timeline-marker"></div>
-              <div class="timeline-content">
-              <div class="timeline-header">
-              <span class="timeline-date">02/2018 - 08/2025</span>
-              </div>
-              <h3 class="timeline-title">Web Developer | Full Stack Developer</h3>
-              <h4 class="timeline-company">Freelancer</h4>
-              <ul class="timeline-list">
-              <li>Collaborates with clients to define functional requirements and project scope.</li><li>Design and develop user-friendly web interfaces that meet client expectations.</li><li>Build and maintain scalable and efficient databases to support website functionality.</li><li>Create comprehensive software documentation for future reference and maintenance.</li><li>Successfully develop and deploy high-quality websites for clients across industries.</li>
-              </ul>
-              </div>
-              </div>
-              <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
-              <div class="timeline-marker"></div>
-              <div class="timeline-content">
-              <div class="timeline-header">
-              <span class="timeline-date">01/2021 - 03/2022</span>
-              </div>
-              <h3 class="timeline-title">Web Developer | Full Stack Developer</h3>
-              <h4 class="timeline-company">Masar Syria, Damascus, Syria</h4>
-              <ul class="timeline-list">
-              <li>Collaborated effectively with clients to understand their functional requirements and project scope.</li><li>Successfully designed and developed user-friendly web interfaces that met client expectations.</li><li>Constructed and maintained efficient and scalable databases to support website functionality.</li><li>Created comprehensive software documentation for future reference and maintenance.</li><li>Introduced caching, asset optimisation and database query tuning to reduce page load times across client websites.</li>
-              </ul>
-              </div>
-              </div>
-              <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
-              <div class="timeline-marker"></div>
-              <div class="timeline-content">
-              <div class="timeline-header">
-              <span class="timeline-date">09/2019 - 04/2023</span>
-              </div>
-              <h3 class="timeline-title">Software Developer</h3>
-              <h4 class="timeline-company">Charitable Society for Sustainable Development, Damascus, Syria</h4>
-              <ul class="timeline-list">
-              <li>Built and deployed internal software solutions that replaced the organisation's manual, paper-based workflows for beneficiary and programme records.</li><li>Identified recurring operational bottlenecks and delivered technical solutions that consolidated case tracking and reporting into a single system.</li><li>Created comprehensive software documentation to ensure clear understanding and maintainability of code.</li><li>Employed robust security measures to protect the organization's digital assets and data.</li>
-              </ul>
-              </div>
-              </div>
-            <!-- PRERENDER:end:work-timeline -->
-          </div>
-        </div>
-
-        <!-- Education -->
-        <div class="tab-content" id="education">
-          <div class="timeline" id="education-timeline" data-prerendered="en">
-            <!-- PRERENDER:start:education-timeline -->
-              <div class="timeline-item" data-aos="fade-up" data-aos-delay="0">
-              <div class="timeline-marker"></div>
-              <div class="timeline-content">
-              <div class="timeline-header">
-              <span class="timeline-date">2012 - 2018</span>
-              </div>
-              <h3 class="timeline-title">Information Technology - Software Engineering</h3>
-              <h4 class="timeline-company">Damascus University, Damascus, Syria</h4>
-              </div>
-              </div>
-              <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
-              <div class="timeline-marker"></div>
-              <div class="timeline-content">
-              <div class="timeline-header">
-              <span class="timeline-date">2018 - 2020</span>
-              </div>
-              <h3 class="timeline-title">Master's degree — Web Science</h3>
-              <h4 class="timeline-company">Syrian Virtual University</h4>
-              <p class="timeline-note">Coursework completed; thesis pending</p>
-              </div>
-              </div>
-            <!-- PRERENDER:end:education-timeline -->
-          </div>
-        </div>
-
-        <!-- Activities -->
-        <div class="tab-content" id="activities">
-          <div class="timeline" id="activities-timeline" data-prerendered="en">
-            <!-- PRERENDER:start:activities-timeline -->
-              <div class="timeline-item" data-aos="fade-up" data-aos-delay="0">
-              <div class="timeline-marker"></div>
-              <div class="timeline-content">
-              <div class="timeline-header">
-              <span class="timeline-date">05/2025 - Present</span>
-              <span class="timeline-badge">Current</span>
-              </div>
-              <h3 class="timeline-title">Web Developer</h3>
-              <h4 class="timeline-company">Ataa Hamdan Volunteer Team</h4>
-              <ul class="timeline-list">
-              <li>Design and develop the official website for Ataa Hamdan volunteer team, creating an engaging platform to showcase the team's humanitarian initiatives and volunteer activities.</li><li>Build a cross-platform mobile application to streamline volunteer coordination, event management, and community engagement.</li><li>Implement responsive and user-friendly interfaces to ensure seamless access across all devices.</li><li>Integrate backend systems for volunteer registration, donation tracking, and activity management.</li>
-              </ul>
-              </div>
-              </div>
-              <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
-              <div class="timeline-marker"></div>
-              <div class="timeline-content">
-              <div class="timeline-header">
-              <span class="timeline-date">2021 - 2024</span>
-              </div>
-              <h3 class="timeline-title">Social Worker</h3>
-              <h4 class="timeline-company">The Sacred Hearts Society (Organization Center), Damascus, Syria</h4>
-              <div class="timeline-role">
-              <h5 class="role-title">Caseworkers' Team Leader <span class="role-period">(Aug 2023 - Jan 2024)</span></h5>
-              <ul class="timeline-list"><li>Provided leadership and guidance to a team of caseworkers, ensuring effective case management and beneficiaries support.</li><li>Oversaw the development and implementation of new projects.</li><li>Monitored and evaluated the performance of caseworkers and programs.</li><li>Prepared comprehensive monthly reports on casework activities and program outcomes.</li><li>Represented the team and the organization in professional settings and community forums.</li><li>Introduced technical tools for case tracking and monthly reporting that replaced the team's manual, paper-based record-keeping.</li></ul>
-              </div>
-              <div class="timeline-role">
-              <h5 class="role-title">Caseworker <span class="role-period">(May 2021 - Aug 2023)</span></h5>
-              <ul class="timeline-list"><li>Conducted needs assessments and developed personalized case plans for clients.</li><li>Provided counseling and support to individuals and families facing various social challenges.</li><li>Advocated for clients' rights and connected them with necessary services.</li><li>Documented case progress and ensured timely follow-up.</li><li>Maintained open communication with clients, families, and other professionals involved in their cases.</li></ul>
-              </div>
-              </div>
-              </div>
-              <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
-              <div class="timeline-marker"></div>
-              <div class="timeline-content">
-              <div class="timeline-header">
-              <span class="timeline-date">2019 - 2022</span>
-              </div>
-              <h3 class="timeline-title">Volunteer</h3>
-              <h4 class="timeline-company">GOPA-DERD, Damascus, Syria</h4>
-              <ul class="timeline-list">
-              <li>Active member of the Outreach and Relief Volunteers (ORV) Team, dedicated to visiting beneficiaries of the organization's social programs.</li><li>Conducted regular visits to beneficiaries, engaging in meaningful conversations and providing support.</li><li>Identified and documented the needs of beneficiaries, ensuring their timely and effective assistance.</li><li>Collaborated with team members to plan and implement outreach initiatives, ensuring the organization's services reach underserved communities.</li><li>Played a crucial role in fostering positive relationships with beneficiaries, demonstrating empathy, understanding, and compassion.</li>
-              </ul>
-              </div>
-              </div>
-              <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
-              <div class="timeline-marker"></div>
-              <div class="timeline-content">
-              <div class="timeline-header">
-              <span class="timeline-date">2016 - 2019</span>
-              </div>
-              <h3 class="timeline-title">Volunteer</h3>
-              <h4 class="timeline-company">Charitable Society for Sustainable Development, Damascus, Syria</h4>
-              <ul class="timeline-list">
-              <li>Dedicated volunteer actively involved in the strategic planning and implementation of new social initiatives.</li><li>Conducted comprehensive needs surveys to identify the most pressing needs of the organization's target beneficiaries.</li><li>Collected and analyzed data from surveys to inform the development of effective and targeted projects.</li><li>Proactively followed up on the progress of implemented projects, evaluating their effectiveness and identifying areas for improvement.</li><li>Utilized insights gained from follow-up evaluations to refine future project plans and ensure the organization's resources are allocated efficiently.</li>
-              </ul>
-              </div>
-              </div>
-            <!-- PRERENDER:end:activities-timeline -->
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Portfolio Section -->
-  <section id="portfolio" class="section portfolio">
-    <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <span class="section-subtitle">My Work</span>
-        <h2 class="section-title">Featured Projects</h2>
-      </div>
-
-      <div class="portfolio-filter" data-aos="fade-up">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="enterprise">Enterprise Systems</button>
-        <button class="filter-btn" data-filter="webapp">Web Applications</button>
-        <button class="filter-btn" data-filter="website">Websites</button>
-        <button class="filter-btn" data-filter="github">GitHub</button>
-      </div>
-
-      <div class="portfolio-grid" id="portfolio-grid" data-prerendered="en">
-        <!-- PRERENDER:start:portfolio-grid -->
-          <div class="portfolio-item enterprise featured" data-aos="fade-up" data-aos-delay="0">
-          <div class="portfolio-card">
-          <div class="portfolio-image">
-          <img src="assets/img/portfolio/default.png" alt="ZeroX" onerror="this.src='assets/img/portfolio/default.png'">
-          </div>
-          <div class="portfolio-info">
-          <h4>ZeroX</h4>
-          <p class="project-subtitle">Government Bureaucracy Reduction Platform</p>
-          <div class="portfolio-description">
-          <p class="project-headline">A bilingual (Arabic/English) platform built for the UAE Ministry of Industry and Advanced Technology, digitising how government services and internal processes are assessed, simplified, and measured before and after reduction.</p>
-          <div class="project-stack">
-          <span class="stack-label">Built with</span>
-          <div class="stack-chips"><span class="stack-chip">ASP.NET Core 8</span><span class="stack-chip">React 19</span><span class="stack-chip">TypeScript</span><span class="stack-chip">SQL Server</span><span class="stack-chip">Entity Framework Core</span></div>
-          </div><p class="features-intro">Key capabilities:</p><ul class="project-features-list"><li><strong>UAE Pass Integration:</strong> National single sign-on via a custom OAuth 2.0 authorization code flow built to match the ministry's identity gateway</li><li><strong>Multi-Axis Assessment:</strong> Services scored across five weighted evaluation axes with a matrix-based classification engine</li><li><strong>Process Zeroing:</strong> Full organizational hierarchy from sector down to individual procedure steps, with automatic before/after reduction comparison</li><li><strong>Bulk Import:</strong> Transactional Excel import that maps flat spreadsheets into a five-level hierarchy with rollback on conflict</li><li><strong>Fully Bilingual:</strong> Arabic/English with complete RTL support across every screen</li></ul>
-          </div>
-          </div>
-          </div>
-          </div>
-          <div class="portfolio-item enterprise featured" data-aos="fade-up" data-aos-delay="100">
-          <div class="portfolio-card">
-          <div class="portfolio-image">
-          <img src="assets/img/skills/7s.png" alt="Impact7S" onerror="this.src='assets/img/portfolio/default.png'">
-          </div>
-          <div class="portfolio-info">
-          <h4>Impact7S</h4>
-          <p class="project-subtitle">Seven-Star Service Excellence Assessment Platform</p>
-          <div class="portfolio-description">
-          <p class="project-headline">An enterprise platform for organizational excellence assessment, deployed at UAE government and private sector entities to run the full evaluation cycle from questions and evidence through scoring, improvement planning and follow-up.</p>
-          <div class="project-stack">
-          <span class="stack-label">Built with</span>
-          <div class="stack-chips"><span class="stack-chip">ASP.NET Core 8</span><span class="stack-chip">React 19</span><span class="stack-chip">TypeScript</span><span class="stack-chip">SQL Server</span><span class="stack-chip">Entity Framework Core</span><span class="stack-chip">Azure OpenAI</span></div>
-          </div><p class="features-intro">Key capabilities:</p><ul class="project-features-list"><li><strong>Maturity Scoring Engine:</strong> Multi-level weighted scoring across service channels and entity-level evidence, producing a 0–7 star rating</li><li><strong>Hybrid Authentication:</strong> Enterprise LDAP/Active Directory unified with local accounts behind a single sign-in flow</li><li><strong>Granular Permissions:</strong> Six roles scoped by service channel and center</li><li><strong>Action Planning:</strong> Improvement tracking with priorities, follow-ups and Kanban task management</li><li><strong>AI Assistant:</strong> Integrated Azure OpenAI assistant answering questions from the system's own data</li><li><strong>Centers Management:</strong> Geolocation and interactive mapping for multi-site evaluation</li><li><strong>Reporting:</strong> Arabic-capable PDF report generation</li></ul>
-          </div>
-          </div>
-          </div>
-          </div>
-          <div class="portfolio-item enterprise featured" data-aos="fade-up" data-aos-delay="200">
-          <div class="portfolio-card">
-          <div class="portfolio-image">
-          <img src="assets/img/skills/SPcx.png" alt="ImpactSPcx" onerror="this.src='assets/img/portfolio/default.png'">
-          </div>
-          <div class="portfolio-info">
-          <h4>ImpactSPcx</h4>
-          <p class="project-subtitle">Process, Service & Customer Experience Management</p>
-          <div class="portfolio-description">
-          <p class="project-headline">A digital repository replacing scattered Word and Visio documents with a single governed system for process documentation, service cards, customer journey mapping and measurable before/after improvement — deployed at UAE government and private sector entities.</p>
-          <div class="project-stack">
-          <span class="stack-label">Built with</span>
-          <div class="stack-chips"><span class="stack-chip">ASP.NET Core 8</span><span class="stack-chip">React 19</span><span class="stack-chip">TypeScript</span><span class="stack-chip">SQL Server</span><span class="stack-chip">Entity Framework Core</span><span class="stack-chip">Azure OpenAI</span></div>
-          </div><p class="features-intro">Key capabilities:</p><ul class="project-features-list"><li><strong>Interactive Diagram Editor:</strong> RTL-aware process diagramming with undo/redo and image/PDF export</li><li><strong>Visio Import:</strong> Dependency-free in-browser .vsdx importer built without external libraries</li><li><strong>Approval Workflow:</strong> Coordinator changes tracked against an audit ledger with automatic rollback on rejection across five action types</li><li><strong>Customer Journey Mapping:</strong> Current and future state experience mapping with sentiment tracking</li><li><strong>Service Cards:</strong> Complete service documentation covering channels, requirements, fees and timing</li><li><strong>AI Assistant:</strong> Azure OpenAI assistant querying the system's own data</li><li><strong>Export:</strong> PDF and Excel output across all modules</li></ul>
-          </div>
-          </div>
-          </div>
-          </div>
-          <div class="portfolio-item enterprise featured" data-aos="fade-up" data-aos-delay="0">
-          <div class="portfolio-card">
-          <div class="portfolio-image">
-          <img src="assets/img/portfolio/default.png" alt="ImpactST (S-Track)" onerror="this.src='assets/img/portfolio/default.png'">
-          </div>
-          <div class="portfolio-info">
-          <h4>ImpactST (S-Track)</h4>
-          <p class="project-subtitle">Strategic Performance Management Platform</p>
-          <div class="portfolio-description">
-          <p class="project-headline">A strategy-to-execution platform for government entities, connecting vision and objectives to KPIs, operational plans and verified performance reporting in one governed path.</p>
-          <div class="project-stack">
-          <span class="stack-label">Built with</span>
-          <div class="stack-chips"><span class="stack-chip">ASP.NET Core 8</span><span class="stack-chip">React 19</span><span class="stack-chip">TypeScript</span><span class="stack-chip">Tailwind CSS</span><span class="stack-chip">SQL Server</span><span class="stack-chip">Entity Framework Core</span><span class="stack-chip">Azure OpenAI</span></div>
-          </div><p class="features-intro">Key capabilities:</p><ul class="project-features-list"><li><strong>Objectives Hierarchy:</strong> Parent-scoped strategic objectives with cycle detection and weight-cap enforcement to prevent double-counting across the reporting layer</li><li><strong>KPI Formula Engine:</strong> Server-side expression evaluator supporting manual, formula-driven and external API data sources, with full audit capture of inputs</li><li><strong>Operational Planning:</strong> Projects, initiatives and activities with milestones and task tracking</li><li><strong>Verification Workflow:</strong> Department submissions reviewed and approved before entering reports</li><li><strong>Executive Dashboards:</strong> Strategy maps, department comparison and KPI analytics</li><li><strong>Full Audit Log:</strong> Every change tracked with optimistic concurrency control</li></ul>
-          </div>
-          </div>
-          </div>
-          </div>
-          <div class="portfolio-item enterprise featured" data-aos="fade-up" data-aos-delay="100">
-          <div class="portfolio-card">
-          <div class="portfolio-image">
-          <img src="assets/img/portfolio/default.png" alt="ImpactLS" onerror="this.src='assets/img/portfolio/default.png'">
-          </div>
-          <div class="portfolio-info">
-          <h4>ImpactLS</h4>
-          <p class="project-subtitle">Software Licensing & Entitlement Platform</p>
-          <div class="portfolio-description">
-          <p class="project-headline">An in-house platform that issues and governs license keys for the company's product suite, letting each client activate the systems they purchased with defined subscription terms and user limits.</p>
-          <div class="project-stack">
-          <span class="stack-label">Built with</span>
-          <div class="stack-chips"><span class="stack-chip">ASP.NET Core 10</span><span class="stack-chip">React 19</span><span class="stack-chip">TypeScript</span><span class="stack-chip">SQL Server</span><span class="stack-chip">Entity Framework Core</span></div>
-          </div><p class="features-intro">Key capabilities:</p><ul class="project-features-list"><li><strong>Digitally Signed Licenses:</strong> Each license cryptographically signed and verifiable, so altered terms are rejected automatically</li><li><strong>Offline Verification:</strong> Licensed systems validate entirely on their own, with no network call to a license server — essential for closed government networks</li><li><strong>Entitlement Control:</strong> Per-client expiry dates and user limits enforced at the product level</li><li><strong>Multi-Product:</strong> Governs four separate company products from one console</li><li><strong>Integration Documentation:</strong> Full specification authored for consuming product teams</li></ul>
-          </div>
-          </div>
-          </div>
-          </div>
-          <div class="portfolio-item enterprise featured" data-aos="fade-up" data-aos-delay="200">
-          <div class="portfolio-card">
-          <div class="portfolio-image">
-          <img src="assets/img/portfolio/default.png" alt="ImpactMS" onerror="this.src='assets/img/portfolio/default.png'">
-          </div>
-          <div class="portfolio-info">
-          <h4>ImpactMS</h4>
-          <p class="project-subtitle">Mystery Shopping Operations Platform</p>
-          <div class="portfolio-description">
-          <p class="project-headline">The operations platform powering the company's mystery-shopping service line for UAE government clients — covering questionnaire design, field assignment to shoppers, auditing of submitted reports, and final client reporting.</p>
-          <div class="project-stack">
-          <span class="stack-label">Built with</span>
-          <div class="stack-chips"><span class="stack-chip">Laravel 11</span><span class="stack-chip">PHP 8.2</span><span class="stack-chip">React 18</span><span class="stack-chip">MySQL</span><span class="stack-chip">Vite</span></div>
-          </div><p class="features-intro">Key capabilities:</p><ul class="project-features-list"><li><strong>Questionnaire Builder:</strong> Drag-and-drop builder supporting twelve question types across paged forms</li><li><strong>Four-Role Workflow:</strong> Administrator, project manager, shopper and auditor, each scoped to their own data</li><li><strong>Task State Machine:</strong> Nine explicit states with enforced transitions preventing stage skipping</li><li><strong>Field Assignment:</strong> Location-based visit assignment with interactive mapping</li><li><strong>Auditing & Scoring:</strong> Per-question review with points, comments and validity flags</li><li><strong>Client Reporting:</strong> Branded PDF reports generated to a corporate design specification</li><li><strong>Bilingual:</strong> Arabic/English with RTL support</li></ul>
-          </div>
-          </div>
-          </div>
-          </div>
-          <div class="portfolio-item webapp featured" data-aos="fade-up" data-aos-delay="0">
-          <div class="portfolio-card">
-          <div class="portfolio-image">
-          <img src="assets/img/portfolio/default.png" alt="Ivari Hair Center" onerror="this.src='assets/img/portfolio/default.png'">
-          <div class="portfolio-overlay">
-          <div class="overlay-content">
-          <div class="overlay-actions">
-          <a href="https://ivarihair.com" target="_blank" class="btn-icon" title="Visit Site"><i class="bx bx-link-external"></i></a>
-          </div>
-          </div>
-          </div>
-          </div>
-          <div class="portfolio-info">
-          <h4>Ivari Hair Center</h4>
-          <p class="project-subtitle">Bilingual E-Commerce & Appointment Booking Platform</p>
-          <div class="portfolio-description">
-          <p class="project-headline">A production e-commerce and appointment-booking platform for a Dubai hair centre, selling products with colour and length variants while handling service bookings and installation appointments in one system.</p>
-          <div class="project-stack">
-          <span class="stack-label">Built with</span>
-          <div class="stack-chips"><span class="stack-chip">Laravel 12</span><span class="stack-chip">PHP 8.2</span><span class="stack-chip">React 19</span><span class="stack-chip">TypeScript</span><span class="stack-chip">Inertia.js</span><span class="stack-chip">Filament 5</span><span class="stack-chip">Tailwind CSS 4</span><span class="stack-chip">Vite 7</span><span class="stack-chip">MySQL</span></div>
-          </div><p class="features-intro">Key capabilities:</p><ul class="project-features-list"><li><strong>Dual Payment Gateways:</strong> Card payments and buy-now-pay-later instalments, both through a secure server-side redirect flow so no card data touches the server</li><li><strong>Three Purchase Flows:</strong> Package with appointment, standard product order, standalone booking</li><li><strong>Appointment Engine:</strong> Work schedules, time slots and availability management</li><li><strong>Product Variants:</strong> Colour and length variants with custom manual ordering</li><li><strong>Admin Console:</strong> Filament-based panel covering products, orders, appointments, payments, content</li><li><strong>Fully Bilingual:</strong> Arabic/English with complete RTL across storefront and checkout</li></ul>
-          </div>
-          </div>
-          </div>
-          </div>
-          <div class="portfolio-item webapp featured" data-aos="fade-up" data-aos-delay="100">
-          <div class="portfolio-card">
-          <div class="portfolio-image">
-          <img src="assets/img/portfolio/Logos/marmusa.png" alt="Mar Musa" onerror="this.src='assets/img/portfolio/default.png'">
-          </div>
-          <div class="portfolio-info">
-          <h4>Mar Musa</h4>
-          <p class="project-subtitle">Multi-Currency Financial Management System</p>
-          <div class="portfolio-description">
-          <p class="project-headline">A custom accounting platform for a non-profit managing a central fund, projects and individual member accounts across five currencies — roughly 20,000 lines of custom PHP behind 65 admin screens and 11 purpose-built database tables.</p>
-          <div class="project-stack">
-          <span class="stack-label">Built with</span>
-          <div class="stack-chips"><span class="stack-chip">PHP</span><span class="stack-chip">MariaDB</span><span class="stack-chip">JavaScript</span><span class="stack-chip">PhpSpreadsheet</span><span class="stack-chip">WordPress as application framework</span></div>
-          </div><p class="features-intro">Key capabilities:</p><ul class="project-features-list"><li><strong>Six Transaction Types:</strong> Deposits, payments, withdrawals, income, expenses, currency exchange and debts, unified in one ledger</li><li><strong>Global Receipt Numbering:</strong> A system-wide unique receipt-number constraint enforced across six separate transaction tables</li><li><strong>Export & Import:</strong> 29 endpoints producing Excel, PDF and ZIP reports, plus Excel import templates with data-validated dropdowns bound to live data</li><li><strong>Role Separation:</strong> Managers see everything, members see only their own records</li><li><strong>Receipt Imaging:</strong> Photo attachments per transaction with resilient path handling across environments</li><li><strong>Four Languages:</strong> Arabic, English, French and Italian with full RTL support</li></ul>
-          </div>
-          </div>
-          </div>
-          </div>
-          <div class="portfolio-item webapp" data-aos="fade-up" data-aos-delay="200">
-          <div class="portfolio-card">
-          <div class="portfolio-image">
-          <img src="assets/img/portfolio/Logos/rihlaty.png" alt="Rihlaty Dashboard" onerror="this.src='assets/img/portfolio/default.png'">
-          </div>
-          <div class="portfolio-info">
-          <h4>Rihlaty Dashboard</h4>
-          <p class="project-subtitle">Travel Agency Operations Dashboard</p>
-          <div class="portfolio-description">
-          <p class="project-headline">A bilingual front-end admin dashboard for a travel agency that builds tour packages, transport bookings and reusable templates through multi-step wizards, then exports client-ready documents. Built for the same client as the Rihlaty public site, as their separate internal tool.</p>
-          <div class="project-stack">
-          <span class="stack-label">Built with</span>
-          <div class="stack-chips"><span class="stack-chip">React 18</span><span class="stack-chip">Vite</span><span class="stack-chip">React Router</span><span class="stack-chip">Custom i18n</span><span class="stack-chip">Client-side PDF generation</span></div>
-          </div><p class="features-intro">Key capabilities:</p><ul class="project-features-list"><li><strong>Three Multi-Step Wizards:</strong> Package builder, template builder, transport builder</li><li><strong>Document Export:</strong> Proposals, invoices and hotel vouchers exported to PDF in the browser, preserving Arabic text shaping and RTL layout</li><li><strong>Date Integrity Engine:</strong> Editing hotel nights redistributes the difference across the remaining stay so total nights and departure date stay fixed</li><li><strong>Hierarchical Selection:</strong> Country to city to hotel to room, with pick order carried through the itinerary and exported documents</li><li><strong>Reference Data:</strong> Countries, cities, airports, airlines, hotels, rooms and tours</li><li><strong>Full Translation Parity:</strong> Complete English/Arabic coverage across every screen</li><li><strong>Front-End Only:</strong> A client-side application with no backend — data persists in browser storage, and the user switcher is a placeholder rather than real authentication</li></ul>
-          </div>
-          </div>
-          </div>
-          </div>
-          <div class="portfolio-item webapp" data-aos="fade-up" data-aos-delay="0">
-          <div class="portfolio-card">
-          <div class="portfolio-image">
-          <img src="assets/img/portfolio/Logos/ssdf.png" alt="SSDF" onerror="this.src='assets/img/portfolio/default.png'">
-          <div class="portfolio-overlay">
-          <div class="overlay-content">
-          <div class="overlay-actions">
-          <a href="assets/img/portfolio/gifs/ssdf.gif" target="_blank" class="btn-icon" title="View Demo"><i class="bx bx-play-circle"></i></a>
-          </div>
-          </div>
-          </div>
-          </div>
-          <div class="portfolio-info">
-          <h4>SSDF</h4>
-          <div class="portfolio-description">
-          <p class="project-headline">A grant submission and evaluation workflow system for the SSDF charity, serving three distinct user types — beneficiaries, administrators and board members — with automated proposal evaluation and project follow-up tracking.</p><p class="features-section-title"><strong>Beneficiaries:</strong></p><ul class="project-features-list"><li><strong>Streamlined project submission:</strong> Empowers beneficiaries to seamlessly submit project proposals.</li><li><strong>Project management capabilities:</strong> Enables effective project management through a dedicated section.</li></ul><p class="features-section-title"><strong>Admin:</strong></p><ul class="project-features-list"><li><strong>Centralized management dashboard:</strong> Comprehensive control panel for managing all aspects of project funding.</li><li><strong>Simplified project evaluation:</strong> Automated evaluation system for prompt assessment.</li><li><strong>Effortless project tracking:</strong> Follow-up forms for continuous project monitoring.</li></ul><p class="features-section-title"><strong>Chairman Members:</strong></p><ul class="project-features-list"><li><strong>Comprehensive project overview:</strong> Access to comprehensive reports on all project aspects.</li><li><strong>Strategic decision-making support:</strong> Actionable insights for informed strategic decisions.</li></ul>
-          </div>
-          </div>
-          </div>
-          </div>
-          <div class="portfolio-item webapp" data-aos="fade-up" data-aos-delay="100">
-          <div class="portfolio-card">
-          <div class="portfolio-image">
-          <img src="assets/img/portfolio/Logos/nojoud.png" alt="Nujoud Express" onerror="this.src='assets/img/portfolio/default.png'">
-          <div class="portfolio-overlay">
-          <div class="overlay-content">
-          <div class="overlay-actions">
-          <a href="assets/img/portfolio/gifs/nujoud/admin.gif" target="_blank" class="btn-icon" title="View Gallery"><i class="bx bx-images"></i></a>
-          </div>
-          </div>
-          </div>
-          </div>
-          <div class="portfolio-info">
-          <h4>Nujoud Express</h4>
-          <div class="portfolio-description">
-          <p class="project-headline">A laundry operations management system with an admin panel for services and pricing, a customer service dashboard for order intake and tracking, and a reporting module.</p><p class="features-intro">Key features include:</p><ul class="project-features-list"><li><strong>Admin panel:</strong> Effortlessly create, edit, and manage services, garment types, and pricing options.</li><li><strong>Customer service dashboard:</strong> Streamline order intake, track progress, and maintain customer records efficiently.</li><li><strong>Reporting module:</strong> Generate detailed reports on orders, revenue, inventory, and customer behavior.</li></ul>
-          </div>
-          </div>
-          </div>
-          </div>
-          <div class="portfolio-item webapp" data-aos="fade-up" data-aos-delay="200">
-          <div class="portfolio-card">
-          <div class="portfolio-image">
-          <img src="assets/img/portfolio/Logos/bluebus.png" alt="Blue Bus" onerror="this.src='assets/img/portfolio/default.png'">
-          <div class="portfolio-overlay">
-          <div class="overlay-content">
-          <div class="overlay-actions">
-          <a href="https://bluebus.sy/" target="_blank" class="btn-icon" title="Visit Site"><i class="bx bx-link-external"></i></a>
-          <a href="assets/img/portfolio/gifs/bluebus.jpg" target="_blank" class="btn-icon" title="View Demo"><i class="bx bx-play-circle"></i></a>
-          </div>
-          </div>
-          </div>
-          </div>
-          <div class="portfolio-info">
-          <h4>Blue Bus</h4>
-          <div class="portfolio-description">
-          <p class="project-headline">A seat booking and trip management system with a scheduling control panel and real-time trip information.</p>
-          <div class="project-stack">
-          <span class="stack-label">Built with</span>
-          <div class="stack-chips"><span class="stack-chip">WordPress (custom-coded)</span><span class="stack-chip">PHP</span><span class="stack-chip">MySQL</span><span class="stack-chip">JavaScript</span></div>
-          </div><ul class="project-features-list"><li><strong>Seamless booking experience:</strong> User-friendly web application for booking seats on short trips.</li><li><strong>Streamlined trip management:</strong> Comprehensive control panel for trip planning and scheduling.</li><li><strong>Enhanced transparency:</strong> Real-time trip information display.</li></ul>
-          </div>
-          </div>
-          </div>
-          </div>
-          <div class="portfolio-item webapp" data-aos="fade-up" data-aos-delay="0">
-          <div class="portfolio-card">
-          <div class="portfolio-image">
-          <img src="assets/img/portfolio/default.png" alt="Clay Design" onerror="this.src='assets/img/portfolio/default.png'">
-          <div class="portfolio-overlay">
-          <div class="overlay-content">
-          <div class="overlay-actions">
-          <a href="https://claydesign.ae/" target="_blank" class="btn-icon" title="Visit Site"><i class="bx bx-link-external"></i></a>
-          </div>
-          </div>
-          </div>
-          </div>
-          <div class="portfolio-info">
-          <h4>Clay Design</h4>
-          <div class="portfolio-description">
-          <ul class="project-description-list"><li>An e-commerce application with cart, secure checkout, and product and order administration.</li><li>Customers browse collections, view detailed product information and complete purchases on a responsive storefront.</li></ul>
-          </div>
-          </div>
-          </div>
-          </div>
-          <div class="portfolio-item webapp" data-aos="fade-up" data-aos-delay="100">
-          <div class="portfolio-card">
-          <div class="portfolio-image">
-          <img src="assets/img/portfolio/Logos/3nab.png" alt="3nab Cafe" onerror="this.src='assets/img/portfolio/default.png'">
-          <div class="portfolio-overlay">
-          <div class="overlay-content">
-          <div class="overlay-actions">
-          <a href="https://3nab.cafe/" target="_blank" class="btn-icon" title="Visit Site"><i class="bx bx-link-external"></i></a>
-          <a href="assets/img/portfolio/gifs/3nab.jpg" target="_blank" class="btn-icon" title="View Demo"><i class="bx bx-play-circle"></i></a>
-          </div>
-          </div>
-          </div>
-          </div>
-          <div class="portfolio-info">
-          <h4>3nab Cafe</h4>
-          <div class="portfolio-description">
-          <p class="project-headline">Designed a dynamic menu website for 3nab Café & Restaurant, transforming both owner and customer experiences.</p>
-          <div class="project-stack">
-          <span class="stack-label">Built with</span>
-          <div class="stack-chips"><span class="stack-chip">WordPress</span><span class="stack-chip">PHP</span><span class="stack-chip">MySQL</span></div>
-          </div><p class="features-section-title"><strong>Owners enjoy:</strong></p><ul class="project-features-list"><li>Seamless menu management through an intuitive interface.</li><li>Enhanced customer engagement with clear product descriptions and pricing.</li><li>Direct customer feedback via an online complaint system.</li></ul><p class="features-section-title"><strong>Customers benefit from:</strong></p><ul class="project-features-list"><li>Exploring the menu conveniently before stepping into the café.</li><li>Making informed choices with detailed descriptions and prices.</li><li>Providing valuable feedback directly to the management.</li></ul>
-          </div>
-          </div>
-          </div>
-          </div>
-          <div class="portfolio-item webapp" data-aos="fade-up" data-aos-delay="200">
-          <div class="portfolio-card">
-          <div class="portfolio-image">
-          <img src="assets/img/portfolio/Logos/nelite.webp" alt="Elite Wherego" onerror="this.src='assets/img/portfolio/default.png'">
-          <div class="portfolio-overlay">
-          <div class="overlay-content">
-          <div class="overlay-actions">
-          <a href="https://elitewherego.com/" target="_blank" class="btn-icon" title="Visit Site"><i class="bx bx-link-external"></i></a>
-          <a href="assets/img/portfolio/gifs/elite.gif" target="_blank" class="btn-icon" title="View Demo"><i class="bx bx-play-circle"></i></a>
-          </div>
-          </div>
-          </div>
-          </div>
-          <div class="portfolio-info">
-          <h4>Elite Wherego</h4>
-          <div class="portfolio-description">
-          <div class="project-stack">
-          <span class="stack-label">Built with</span>
-          <div class="stack-chips"><span class="stack-chip">WordPress (custom-coded)</span><span class="stack-chip">PHP</span><span class="stack-chip">MySQL</span><span class="stack-chip">JavaScript</span></div>
-          </div><ul class="project-description-list"><li>A company web platform integrated with the mobile application backend, giving users access to all twelve mobile services directly from the web.</li><li>Enables users to place orders and manage their accounts seamlessly across web and mobile.</li></ul>
-          </div>
-          </div>
-          </div>
-          </div>
-          <div class="portfolio-item website" data-aos="fade-up" data-aos-delay="0">
-          <div class="portfolio-card">
-          <div class="portfolio-image">
-          <img src="assets/img/portfolio/Logos/rihlaty.png" alt="Rihlaty" onerror="this.src='assets/img/portfolio/default.png'">
-          <div class="portfolio-overlay">
-          <div class="overlay-content">
-          <div class="overlay-actions">
-          <a href="https://rihlaty.com/" target="_blank" class="btn-icon" title="Visit Site"><i class="bx bx-link-external"></i></a>
-          </div>
-          </div>
-          </div>
-          </div>
-          <div class="portfolio-info">
-          <h4>Rihlaty</h4>
-          <div class="portfolio-description">
-          <div class="project-stack">
-          <span class="stack-label">Built with</span>
-          <div class="stack-chips"><span class="stack-chip">WordPress</span><span class="stack-chip">PHP</span><span class="stack-chip">MySQL</span></div>
-          </div><ul class="project-description-list"><li>Developed a fully functional e-commerce website for trip and travel package bookings.</li><li>The platform allows users to browse, book, and manage trips effortlessly.</li><li>The site reflects Rihlaty's premium offerings and integrates secure booking functionality tailored for Arab tourists</li></ul>
-          </div>
-          </div>
-          </div>
-          </div>
-          <div class="portfolio-item website" data-aos="fade-up" data-aos-delay="100">
-          <div class="portfolio-card">
-          <div class="portfolio-image">
-          <img src="assets/img/portfolio/Logos/cssd.png" alt="CSSD" onerror="this.src='assets/img/portfolio/default.png'">
-          <div class="portfolio-overlay">
-          <div class="overlay-content">
-          <div class="overlay-actions">
-          <a href="https://cssd-ngos.org/" target="_blank" class="btn-icon" title="Visit Site"><i class="bx bx-link-external"></i></a>
-          <a href="assets/img/portfolio/gifs/cssd.gif" target="_blank" class="btn-icon" title="View Demo"><i class="bx bx-play-circle"></i></a>
-          </div>
-          </div>
-          </div>
-          </div>
-          <div class="portfolio-info">
-          <h4>CSSD</h4>
-          <div class="portfolio-description">
-          <div class="project-stack">
-          <span class="stack-label">Built with</span>
-          <div class="stack-chips"><span class="stack-chip">WordPress</span><span class="stack-chip">PHP</span><span class="stack-chip">MySQL</span></div>
-          </div><ul class="project-features-list"><li><strong>Enhanced organizational visibility:</strong> Comprehensive website showcasing the organization's mission and impact.</li><li><strong>Streamlined content management:</strong> User-friendly control panel for effortless content updates.</li><li><strong>Engagement platform:</strong> Dedicated blog for sharing inspiring stories.</li><li><strong>User-friendly interface:</strong> Modern design that effectively conveys the charity's mission.</li></ul>
-          </div>
-          </div>
-          </div>
-          </div>
-          <div class="portfolio-item website" data-aos="fade-up" data-aos-delay="200">
-          <div class="portfolio-card">
-          <div class="portfolio-image">
-          <img src="assets/img/portfolio/Logos/yawna.png" alt="Yawna" onerror="this.src='assets/img/portfolio/default.png'">
-          <div class="portfolio-overlay">
-          <div class="overlay-content">
-          <div class="overlay-actions">
-          <a href="https://yawna.org/" target="_blank" class="btn-icon" title="Visit Site"><i class="bx bx-link-external"></i></a>
-          <a href="assets/img/portfolio/gifs/yawna.gif" target="_blank" class="btn-icon" title="View Demo"><i class="bx bx-play-circle"></i></a>
-          </div>
-          </div>
-          </div>
-          </div>
-          <div class="portfolio-info">
-          <h4>Yawna</h4>
-          <div class="portfolio-description">
-          <div class="project-stack">
-          <span class="stack-label">Built with</span>
-          <div class="stack-chips"><span class="stack-chip">WordPress</span><span class="stack-chip">PHP</span><span class="stack-chip">MySQL</span></div>
-          </div><ul class="project-description-list"><li>Website showcasing the work of researcher Raymond Wihbe on Aramaic language and Maaloula antiquities.</li><li>Comprehensive CMS for easy content management.</li><li>Visually appealing interface with multimedia elements.</li></ul>
-          </div>
-          </div>
-          </div>
-          </div>
-          <div class="portfolio-item website" data-aos="fade-up" data-aos-delay="0">
-          <div class="portfolio-card">
-          <div class="portfolio-image">
-          <img src="assets/img/portfolio/Logos/aplus.png" alt="Aplus Restaurant" onerror="this.src='assets/img/portfolio/default.png'">
-          <div class="portfolio-overlay">
-          <div class="overlay-content">
-          <div class="overlay-actions">
-          <a href="assets/img/portfolio/gifs/aplus.gif" target="_blank" class="btn-icon" title="View Demo"><i class="bx bx-play-circle"></i></a>
-          </div>
-          </div>
-          </div>
-          </div>
-          <div class="portfolio-info">
-          <h4>Aplus Restaurant</h4>
-          <div class="portfolio-description">
-          <div class="project-stack">
-          <span class="stack-label">Built with</span>
-          <div class="stack-chips"><span class="stack-chip">WordPress</span><span class="stack-chip">PHP</span><span class="stack-chip">MySQL</span></div>
-          </div><ul class="project-features-list"><li><strong>Enhanced online presence:</strong> User-friendly website with interactive menu and event management.</li><li><strong>Streamlined operations:</strong> Back-end management system for menu and order optimization.</li></ul>
-          </div>
-          </div>
-          </div>
-          </div>
-          <div class="portfolio-item website" data-aos="fade-up" data-aos-delay="100">
-          <div class="portfolio-card">
-          <div class="portfolio-image">
-          <img src="assets/img/portfolio/Logos/jory.png" alt="Jory Café" onerror="this.src='assets/img/portfolio/default.png'">
-          <div class="portfolio-overlay">
-          <div class="overlay-content">
-          <div class="overlay-actions">
-          <a href="assets/img/portfolio/gifs/jory.gif" target="_blank" class="btn-icon" title="View Demo"><i class="bx bx-play-circle"></i></a>
-          </div>
-          </div>
-          </div>
-          </div>
-          <div class="portfolio-info">
-          <h4>Jory Café</h4>
-          <div class="portfolio-description">
-          <div class="project-stack">
-          <span class="stack-label">Built with</span>
-          <div class="stack-chips"><span class="stack-chip">WordPress</span><span class="stack-chip">PHP</span><span class="stack-chip">MySQL</span></div>
-          </div><ul class="project-features-list"><li><strong>Enhanced online presence:</strong> User-friendly website with interactive menu and event management.</li><li><strong>Streamlined operations:</strong> Back-end management system for efficient operations.</li></ul>
-          </div>
-          </div>
-          </div>
-          </div>
-          <div class="portfolio-item website" data-aos="fade-up" data-aos-delay="200">
-          <div class="portfolio-card">
-          <div class="portfolio-image">
-          <img src="assets/img/portfolio/Logos/casacafe.png" alt="Casa Café" onerror="this.src='assets/img/portfolio/default.png'">
-          <div class="portfolio-overlay">
-          <div class="overlay-content">
-          <div class="overlay-actions">
-          <a href="assets/img/portfolio/gifs/casacafe.gif" target="_blank" class="btn-icon" title="View Demo"><i class="bx bx-play-circle"></i></a>
-          </div>
-          </div>
-          </div>
-          </div>
-          <div class="portfolio-info">
-          <h4>Casa Café</h4>
-          <div class="portfolio-description">
-          <div class="project-stack">
-          <span class="stack-label">Built with</span>
-          <div class="stack-chips"><span class="stack-chip">WordPress</span><span class="stack-chip">PHP</span><span class="stack-chip">MySQL</span></div>
-          </div><ul class="project-features-list"><li><strong>Enhanced online presence:</strong> User-friendly website for CASA Cafe & Restaurant in UAE.</li><li><strong>Streamlined operations:</strong> Back-end management system for data-driven decision-making.</li></ul>
-          </div>
-          </div>
-          </div>
-          </div>
-          <div class="portfolio-item website" data-aos="fade-up" data-aos-delay="0">
-          <div class="portfolio-card">
-          <div class="portfolio-image">
-          <img src="assets/img/portfolio/Logos/sgg.png" alt="Safe Gate Group" onerror="this.src='assets/img/portfolio/default.png'">
-          <div class="portfolio-overlay">
-          <div class="overlay-content">
-          <div class="overlay-actions">
-          <a href="https://safegategroup.com/" target="_blank" class="btn-icon" title="Visit Site"><i class="bx bx-link-external"></i></a>
-          </div>
-          </div>
-          </div>
-          </div>
-          <div class="portfolio-info">
-          <h4>Safe Gate Group</h4>
-          <div class="portfolio-description">
-          <div class="project-stack">
-          <span class="stack-label">Built with</span>
-          <div class="stack-chips"><span class="stack-chip">WordPress</span><span class="stack-chip">PHP</span></div>
-          </div><ul class="project-description-list"><li>A corporate site presenting Safe Gate Group's medical solutions, mission and global reach.</li></ul>
-          </div>
-          </div>
-          </div>
-          </div>
-          <div class="portfolio-item website" data-aos="fade-up" data-aos-delay="100">
-          <div class="portfolio-card">
-          <div class="portfolio-image">
-          <img src="assets/img/portfolio/Logos/hml.png" alt="HML Steel" onerror="this.src='assets/img/portfolio/default.png'">
-          <div class="portfolio-overlay">
-          <div class="overlay-content">
-          <div class="overlay-actions">
-          <a href="https://hmlsteelcontracting.com/" target="_blank" class="btn-icon" title="Visit Site"><i class="bx bx-link-external"></i></a>
-          </div>
-          </div>
-          </div>
-          </div>
-          <div class="portfolio-info">
-          <h4>HML Steel</h4>
-          <div class="portfolio-description">
-          <div class="project-stack">
-          <span class="stack-label">Built with</span>
-          <div class="stack-chips"><span class="stack-chip">WordPress</span><span class="stack-chip">PHP</span></div>
-          </div><ul class="project-description-list"><li>A corporate site presenting HML Steel's steel construction capabilities and industry track record.</li></ul>
-          </div>
-          </div>
-          </div>
-          </div>
-          <div class="portfolio-item website" data-aos="fade-up" data-aos-delay="200">
-          <div class="portfolio-card">
-          <div class="portfolio-image">
-          <img src="assets/img/portfolio/Logos/bin.png" alt="Bin Lahej" onerror="this.src='assets/img/portfolio/default.png'">
-          <div class="portfolio-overlay">
-          <div class="overlay-content">
-          <div class="overlay-actions">
-          <a href="https://binlahejcontracting.com/" target="_blank" class="btn-icon" title="Visit Site"><i class="bx bx-link-external"></i></a>
-          </div>
-          </div>
-          </div>
-          </div>
-          <div class="portfolio-info">
-          <h4>Bin Lahej</h4>
-          <div class="portfolio-description">
-          <div class="project-stack">
-          <span class="stack-label">Built with</span>
-          <div class="stack-chips"><span class="stack-chip">WordPress</span><span class="stack-chip">PHP</span></div>
-          </div><ul class="project-description-list"><li>A corporate site presenting Bin Lahej's construction services, values and completed projects.</li></ul>
-          </div>
-          </div>
-          </div>
-          </div>
-          <div class="portfolio-item github" data-aos="fade-up" data-aos-delay="0">
-          <div class="portfolio-card">
-          <div class="portfolio-image">
-          <img src="assets/img/portfolio/Github/Chat-app/app-image.png" alt="Chat App" onerror="this.src='assets/img/portfolio/default.png'">
-          <div class="portfolio-overlay">
-          <div class="overlay-content">
-          <div class="overlay-actions">
-          <a href="https://github.com/Fadi-Barhoum/Real-time-Chat-App" target="_blank" class="btn-icon" title="View Code"><i class="bx bxl-github"></i></a>
-          <a href="assets/img/portfolio/Github/Chat-app/signin.PNG" target="_blank" class="btn-icon" title="View Gallery"><i class="bx bx-images"></i></a>
-          </div>
-          </div>
-          </div>
-          </div>
-          <div class="portfolio-info">
-          <h4>Chat App</h4>
-          <div class="portfolio-description">
-          <ul class="project-description-list"><li>Real-time chat application using PHP, HTML, CSS, JavaScript, and MySQL.</li><li>Real-time message delivery to all connected users.</li><li>User-friendly interface for effortless messaging.</li></ul>
-          </div>
-          </div>
-          </div>
-          </div>
-          <div class="portfolio-item github" data-aos="fade-up" data-aos-delay="100">
-          <div class="portfolio-card">
-          <div class="portfolio-image">
-          <img src="assets/img/portfolio/Github/Image-Generator.PNG" alt="Images Generator" onerror="this.src='assets/img/portfolio/default.png'">
-          <div class="portfolio-overlay">
-          <div class="overlay-content">
-          <div class="overlay-actions">
-          <a href="https://github.com/Fadi-Barhoum/Images-Generator" target="_blank" class="btn-icon" title="View Code"><i class="bx bxl-github"></i></a>
-          </div>
-          </div>
-          </div>
-          </div>
-          <div class="portfolio-info">
-          <h4>Images Generator</h4>
-          <div class="portfolio-description">
-          <ul class="project-description-list"><li>Image generation website using HTML, CSS, and JavaScript.</li><li>Integrated OpenAI API for text-to-image generation.</li><li>Users can input descriptions and specify image quantity.</li></ul>
-          </div>
-          </div>
-          </div>
-          </div>
-        <!-- PRERENDER:end:portfolio-grid -->
-      </div>
-
-      <div class="portfolio-cta" data-aos="fade-up">
-        <a href="https://github.com/Fadi-Barhoum" target="_blank" class="btn btn-outline">
-          <i class="bx bxl-github"></i>
-          <span>View All Projects on GitHub</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Certificates Section -->
-  <section id="certificates" class="section certificates">
-    <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <span class="section-subtitle">Credentials</span>
-        <h2 class="section-title">Certificates & Training</h2>
-        <p class="section-description">Professional development and certifications that enhance my expertise</p>
-      </div>
-
-      <!-- Stats Summary -->
-      <div class="certificates-stats" data-aos="fade-up">
-        <div class="cert-stat">
-          <span class="stat-number" id="cert-total">20</span>
-          <span class="stat-label">Total Certificates</span>
-        </div>
-        <div class="cert-stat">
-          <span class="stat-number" id="cert-orgs">10</span>
-          <span class="stat-label">Organizations</span>
-        </div>
-      </div>
-
-      <!-- Filter Buttons -->
-      <div class="certificates-filter" data-aos="fade-up">
-        <button class="cert-filter-btn active" data-filter="all">All</button>
-        <button class="cert-filter-btn" data-filter="tech">Technical</button>
-        <button class="cert-filter-btn" data-filter="humanitarian">Humanitarian</button>
-        <button class="cert-filter-btn" data-filter="language">Language</button>
-        <button class="cert-filter-btn" data-filter="skills">Soft Skills</button>
-      </div>
-
-      <!-- Certificates Grid -->
-      <div class="certificates-grid" id="certificates-grid" data-prerendered="en" data-aos="fade-up">
-        <!-- PRERENDER:start:certificates-grid -->
-          <div class="certificate-card tech" data-category="tech" data-aos="fade-up" data-aos-delay="0">
-          <div class="cert-header">
-          <div class="cert-icon tech">
-          <i class="bx bx-code-alt"></i>
-          </div>
-          <div class="cert-title-wrap">
-          <h4>Mastering Laravel Framework and PHP</h4>
-          <span class="cert-category tech">Technical</span>
-          </div>
-          </div>
-          <div class="cert-body">
-          <div class="cert-institution">
-          <i class="bx bx-buildings"></i>
-          <span>Board Infinity</span>
-          </div>
-          <div class="cert-date">
-          <i class="bx bx-calendar"></i>
-          <span>Jun 2024</span>
-          </div>
-          </div>
-          <div class="cert-footer">
-          <a href="https://coursera.org/share/1988d1bc1755847439d006f8a4afc9cb" target="_blank" class="cert-link">
-          <span>View Certificate</span>
-          <i class="bx bx-right-arrow-alt"></i>
-          </a>
-          </div>
-          </div>
-          <div class="certificate-card language" data-category="language" data-aos="fade-up" data-aos-delay="100">
-          <div class="cert-header">
-          <div class="cert-icon language">
-          <i class="bx bx-globe"></i>
-          </div>
-          <div class="cert-title-wrap">
-          <h4>ENGLISH</h4>
-          <span class="cert-category language">Language</span>
-          </div>
-          </div>
-          <div class="cert-body">
-          <div class="cert-institution">
-          <i class="bx bx-buildings"></i>
-          <span>Advanced Language and Training Center</span>
-          </div>
-          <div class="cert-date">
-          <i class="bx bx-calendar"></i>
-          <span>Mar 2021 - Mar 2022</span>
-          </div>
-          </div>
-          <div class="cert-footer">
-          <a href="https://www.facebook.com/profile.php?id=100064771954240" target="_blank" class="cert-link">
-          <span>View Certificate</span>
-          <i class="bx bx-right-arrow-alt"></i>
-          </a>
-          </div>
-          </div>
-          <div class="certificate-card tech" data-category="tech" data-aos="fade-up" data-aos-delay="200">
-          <div class="cert-header">
-          <div class="cert-icon tech">
-          <i class="bx bx-code-alt"></i>
-          </div>
-          <div class="cert-title-wrap">
-          <h4>BENEFICIARIES DATABASE MANAGEMENT</h4>
-          <span class="cert-category tech">Technical</span>
-          </div>
-          </div>
-          <div class="cert-body">
-          <div class="cert-institution">
-          <i class="bx bx-buildings"></i>
-          <span>UNDP</span>
-          </div>
-          <div class="cert-date">
-          <i class="bx bx-calendar"></i>
-          <span>May 2021</span>
-          </div>
-          </div>
-          <div class="cert-footer">
-          <a href="https://www.undp.org/" target="_blank" class="cert-link">
-          <span>View Certificate</span>
-          <i class="bx bx-right-arrow-alt"></i>
-          </a>
-          </div>
-          </div>
-          <div class="certificate-card humanitarian hidden" data-category="humanitarian" data-aos="fade-up" data-aos-delay="0">
-          <div class="cert-header">
-          <div class="cert-icon humanitarian">
-          <i class="bx bx-heart"></i>
-          </div>
-          <div class="cert-title-wrap">
-          <h4>FOOD SECURITY AND LIVELIHOOD</h4>
-          <span class="cert-category humanitarian">Humanitarian</span>
-          </div>
-          </div>
-          <div class="cert-body">
-          <div class="cert-institution">
-          <i class="bx bx-buildings"></i>
-          <span>Forum for Development, Culture, and Dialogue</span>
-          </div>
-          <div class="cert-date">
-          <i class="bx bx-calendar"></i>
-          <span>Jan 2021</span>
-          </div>
-          </div>
-          <div class="cert-footer">
-          <a href="https://fdcd.org/" target="_blank" class="cert-link">
-          <span>View Certificate</span>
-          <i class="bx bx-right-arrow-alt"></i>
-          </a>
-          </div>
-          </div>
-          <div class="certificate-card humanitarian hidden" data-category="humanitarian" data-aos="fade-up" data-aos-delay="100">
-          <div class="cert-header">
-          <div class="cert-icon humanitarian">
-          <i class="bx bx-heart"></i>
-          </div>
-          <div class="cert-title-wrap">
-          <h4>THE SPHERE PROJECT</h4>
-          <span class="cert-category humanitarian">Humanitarian</span>
-          </div>
-          </div>
-          <div class="cert-body">
-          <div class="cert-institution">
-          <i class="bx bx-buildings"></i>
-          <span>Forum for Development, Culture, and Dialogue</span>
-          </div>
-          <div class="cert-date">
-          <i class="bx bx-calendar"></i>
-          <span>Dec 2020</span>
-          </div>
-          </div>
-          <div class="cert-footer">
-          <a href="https://fdcd.org/" target="_blank" class="cert-link">
-          <span>View Certificate</span>
-          <i class="bx bx-right-arrow-alt"></i>
-          </a>
-          </div>
-          </div>
-          <div class="certificate-card humanitarian hidden" data-category="humanitarian" data-aos="fade-up" data-aos-delay="200">
-          <div class="cert-header">
-          <div class="cert-icon humanitarian">
-          <i class="bx bx-heart"></i>
-          </div>
-          <div class="cert-title-wrap">
-          <h4>PSYCHOSOCIAL SUPPORT</h4>
-          <span class="cert-category humanitarian">Humanitarian</span>
-          </div>
-          </div>
-          <div class="cert-body">
-          <div class="cert-institution">
-          <i class="bx bx-buildings"></i>
-          <span>Forum for Development, Culture, and Dialogue</span>
-          </div>
-          <div class="cert-date">
-          <i class="bx bx-calendar"></i>
-          <span>Mar 2020</span>
-          </div>
-          </div>
-          <div class="cert-footer">
-          <a href="https://fdcd.org/" target="_blank" class="cert-link">
-          <span>View Certificate</span>
-          <i class="bx bx-right-arrow-alt"></i>
-          </a>
-          </div>
-          </div>
-          <div class="certificate-card skills" data-category="skills" data-aos="fade-up" data-aos-delay="0">
-          <div class="cert-header">
-          <div class="cert-icon skills">
-          <i class="bx bx-bulb"></i>
-          </div>
-          <div class="cert-title-wrap">
-          <h4>SOFT SKILLS</h4>
-          <span class="cert-category skills">Soft Skills</span>
-          </div>
-          </div>
-          <div class="cert-body">
-          <div class="cert-institution">
-          <i class="bx bx-buildings"></i>
-          <span>UNDP</span>
-          </div>
-          <div class="cert-date">
-          <i class="bx bx-calendar"></i>
-          <span>Oct 2019</span>
-          </div>
-          </div>
-          <div class="cert-footer">
-          <a href="https://www.undp.org/" target="_blank" class="cert-link">
-          <span>View Certificate</span>
-          <i class="bx bx-right-arrow-alt"></i>
-          </a>
-          </div>
-          </div>
-          <div class="certificate-card skills" data-category="skills" data-aos="fade-up" data-aos-delay="100">
-          <div class="cert-header">
-          <div class="cert-icon skills">
-          <i class="bx bx-bulb"></i>
-          </div>
-          <div class="cert-title-wrap">
-          <h4>PROPOSAL WRITING</h4>
-          <span class="cert-category skills">Soft Skills</span>
-          </div>
-          </div>
-          <div class="cert-body">
-          <div class="cert-institution">
-          <i class="bx bx-buildings"></i>
-          <span>UNDP</span>
-          </div>
-          <div class="cert-date">
-          <i class="bx bx-calendar"></i>
-          <span>Sep 2019</span>
-          </div>
-          </div>
-          <div class="cert-footer">
-          <a href="https://www.undp.org/" target="_blank" class="cert-link">
-          <span>View Certificate</span>
-          <i class="bx bx-right-arrow-alt"></i>
-          </a>
-          </div>
-          </div>
-          <div class="certificate-card humanitarian hidden" data-category="humanitarian" data-aos="fade-up" data-aos-delay="200">
-          <div class="cert-header">
-          <div class="cert-icon humanitarian">
-          <i class="bx bx-heart"></i>
-          </div>
-          <div class="cert-title-wrap">
-          <h4>PROTECTION, PSYCHOSOCIAL SUPPORT AND REFERRALS</h4>
-          <span class="cert-category humanitarian">Humanitarian</span>
-          </div>
-          </div>
-          <div class="cert-body">
-          <div class="cert-institution">
-          <i class="bx bx-buildings"></i>
-          <span>Forum for Development, Culture, and Dialogue</span>
-          </div>
-          <div class="cert-date">
-          <i class="bx bx-calendar"></i>
-          <span>Mar 2019</span>
-          </div>
-          </div>
-          <div class="cert-footer">
-          <a href="https://fdcd.org/" target="_blank" class="cert-link">
-          <span>View Certificate</span>
-          <i class="bx bx-right-arrow-alt"></i>
-          </a>
-          </div>
-          </div>
-          <div class="certificate-card humanitarian hidden" data-category="humanitarian" data-aos="fade-up" data-aos-delay="0">
-          <div class="cert-header">
-          <div class="cert-icon humanitarian">
-          <i class="bx bx-heart"></i>
-          </div>
-          <div class="cert-title-wrap">
-          <h4>PSYCHOSOCIAL SUPPORT TO CHILDREN IN EMERGENCY</h4>
-          <span class="cert-category humanitarian">Humanitarian</span>
-          </div>
-          </div>
-          <div class="cert-body">
-          <div class="cert-institution">
-          <i class="bx bx-buildings"></i>
-          <span>Forum for Development, Culture, and Dialogue</span>
-          </div>
-          <div class="cert-date">
-          <i class="bx bx-calendar"></i>
-          <span>Apr 2018</span>
-          </div>
-          </div>
-          <div class="cert-footer">
-          <a href="https://fdcd.org/" target="_blank" class="cert-link">
-          <span>View Certificate</span>
-          <i class="bx bx-right-arrow-alt"></i>
-          </a>
-          </div>
-          </div>
-          <div class="certificate-card language" data-category="language" data-aos="fade-up" data-aos-delay="100">
-          <div class="cert-header">
-          <div class="cert-icon language">
-          <i class="bx bx-globe"></i>
-          </div>
-          <div class="cert-title-wrap">
-          <h4>ENGLISH</h4>
-          <span class="cert-category language">Language</span>
-          </div>
-          </div>
-          <div class="cert-body">
-          <div class="cert-institution">
-          <i class="bx bx-buildings"></i>
-          <span>Linguaphone</span>
-          </div>
-          <div class="cert-date">
-          <i class="bx bx-calendar"></i>
-          <span>Sep 2017 - Feb 2018</span>
-          </div>
-          </div>
-          <div class="cert-footer">
-          <a href="https://linguaphone.co.uk/" target="_blank" class="cert-link">
-          <span>View Certificate</span>
-          <i class="bx bx-right-arrow-alt"></i>
-          </a>
-          </div>
-          </div>
-          <div class="certificate-card humanitarian hidden" data-category="humanitarian" data-aos="fade-up" data-aos-delay="200">
-          <div class="cert-header">
-          <div class="cert-icon humanitarian">
-          <i class="bx bx-heart"></i>
-          </div>
-          <div class="cert-title-wrap">
-          <h4>MINIMUM STANDARDS FOR HUMANITARIAN ACTION THE SPHERE PROJECT</h4>
-          <span class="cert-category humanitarian">Humanitarian</span>
-          </div>
-          </div>
-          <div class="cert-body">
-          <div class="cert-institution">
-          <i class="bx bx-buildings"></i>
-          <span>The Charitable Society for Sustainable Development</span>
-          </div>
-          <div class="cert-date">
-          <i class="bx bx-calendar"></i>
-          <span>Dec 2017</span>
-          </div>
-          </div>
-          <div class="cert-footer">
-          <a href="https://cssd-ngos.org/" target="_blank" class="cert-link">
-          <span>View Certificate</span>
-          <i class="bx bx-right-arrow-alt"></i>
-          </a>
-          </div>
-          </div>
-          <div class="certificate-card humanitarian hidden" data-category="humanitarian" data-aos="fade-up" data-aos-delay="0">
-          <div class="cert-header">
-          <div class="cert-icon humanitarian">
-          <i class="bx bx-heart"></i>
-          </div>
-          <div class="cert-title-wrap">
-          <h4>CHILD PROTECTION AND ACTIVITY PLANNING</h4>
-          <span class="cert-category humanitarian">Humanitarian</span>
-          </div>
-          </div>
-          <div class="cert-body">
-          <div class="cert-institution">
-          <i class="bx bx-buildings"></i>
-          <span>The Charitable Society for Sustainable Development</span>
-          </div>
-          <div class="cert-date">
-          <i class="bx bx-calendar"></i>
-          <span>Nov 2017</span>
-          </div>
-          </div>
-          <div class="cert-footer">
-          <a href="https://cssd-ngos.org/" target="_blank" class="cert-link">
-          <span>View Certificate</span>
-          <i class="bx bx-right-arrow-alt"></i>
-          </a>
-          </div>
-          </div>
-          <div class="certificate-card humanitarian hidden" data-category="humanitarian" data-aos="fade-up" data-aos-delay="100">
-          <div class="cert-header">
-          <div class="cert-icon humanitarian">
-          <i class="bx bx-heart"></i>
-          </div>
-          <div class="cert-title-wrap">
-          <h4>CHILD SAFEGUARDING POLICY</h4>
-          <span class="cert-category humanitarian">Humanitarian</span>
-          </div>
-          </div>
-          <div class="cert-body">
-          <div class="cert-institution">
-          <i class="bx bx-buildings"></i>
-          <span>The Middle East Council of Churches</span>
-          </div>
-          <div class="cert-date">
-          <i class="bx bx-calendar"></i>
-          <span>Nov 2017</span>
-          </div>
-          </div>
-          <div class="cert-footer">
-          <a href="https://www.mecc.org/" target="_blank" class="cert-link">
-          <span>View Certificate</span>
-          <i class="bx bx-right-arrow-alt"></i>
-          </a>
-          </div>
-          </div>
-          <div class="certificate-card humanitarian hidden" data-category="humanitarian" data-aos="fade-up" data-aos-delay="200">
-          <div class="cert-header">
-          <div class="cert-icon humanitarian">
-          <i class="bx bx-heart"></i>
-          </div>
-          <div class="cert-title-wrap">
-          <h4>LOGICAL FRAMEWORK APPROACH-PROJECT CYCLE MANAGEMENT</h4>
-          <span class="cert-category humanitarian">Humanitarian</span>
-          </div>
-          </div>
-          <div class="cert-body">
-          <div class="cert-institution">
-          <i class="bx bx-buildings"></i>
-          <span>Syrian-European Business Consultancy</span>
-          </div>
-          <div class="cert-date">
-          <i class="bx bx-calendar"></i>
-          <span>Sep 2017</span>
-          </div>
-          </div>
-          <div class="cert-footer">
-          <a href="https://www.sebcsyria.com/" target="_blank" class="cert-link">
-          <span>View Certificate</span>
-          <i class="bx bx-right-arrow-alt"></i>
-          </a>
-          </div>
-          </div>
-          <div class="certificate-card humanitarian hidden" data-category="humanitarian" data-aos="fade-up" data-aos-delay="0">
-          <div class="cert-header">
-          <div class="cert-icon humanitarian">
-          <i class="bx bx-heart"></i>
-          </div>
-          <div class="cert-title-wrap">
-          <h4>BASIC CHILD PROTECTION</h4>
-          <span class="cert-category humanitarian">Humanitarian</span>
-          </div>
-          </div>
-          <div class="cert-body">
-          <div class="cert-institution">
-          <i class="bx bx-buildings"></i>
-          <span>The Charitable Society for Sustainable Development</span>
-          </div>
-          <div class="cert-date">
-          <i class="bx bx-calendar"></i>
-          <span>Aug 2017</span>
-          </div>
-          </div>
-          <div class="cert-footer">
-          <a href="https://cssd-ngos.org/" target="_blank" class="cert-link">
-          <span>View Certificate</span>
-          <i class="bx bx-right-arrow-alt"></i>
-          </a>
-          </div>
-          </div>
-          <div class="certificate-card skills" data-category="skills" data-aos="fade-up" data-aos-delay="100">
-          <div class="cert-header">
-          <div class="cert-icon skills">
-          <i class="bx bx-bulb"></i>
-          </div>
-          <div class="cert-title-wrap">
-          <h4>DIPLOMA ASSOCIATE OF NEURO LINGUISTIC PROGRAMMING</h4>
-          <span class="cert-category skills">Soft Skills</span>
-          </div>
-          </div>
-          <div class="cert-body">
-          <div class="cert-institution">
-          <i class="bx bx-buildings"></i>
-          <span>International Center for Human Construction</span>
-          </div>
-          <div class="cert-date">
-          <i class="bx bx-calendar"></i>
-          <span>Feb 2015 - Mar 2015</span>
-          </div>
-          </div>
-          <div class="cert-footer">
-          <a href="http://www.ichc.info/" target="_blank" class="cert-link">
-          <span>View Certificate</span>
-          <i class="bx bx-right-arrow-alt"></i>
-          </a>
-          </div>
-          </div>
-          <div class="certificate-card skills" data-category="skills" data-aos="fade-up" data-aos-delay="200">
-          <div class="cert-header">
-          <div class="cert-icon skills">
-          <i class="bx bx-bulb"></i>
-          </div>
-          <div class="cert-title-wrap">
-          <h4>TIME MANAGEMENT</h4>
-          <span class="cert-category skills">Soft Skills</span>
-          </div>
-          </div>
-          <div class="cert-body">
-          <div class="cert-institution">
-          <i class="bx bx-buildings"></i>
-          <span>International Center for Human Construction</span>
-          </div>
-          <div class="cert-date">
-          <i class="bx bx-calendar"></i>
-          <span>Mar 2015</span>
-          </div>
-          </div>
-          <div class="cert-footer">
-          <a href="http://www.ichc.info/" target="_blank" class="cert-link">
-          <span>View Certificate</span>
-          <i class="bx bx-right-arrow-alt"></i>
-          </a>
-          </div>
-          </div>
-          <div class="certificate-card skills" data-category="skills" data-aos="fade-up" data-aos-delay="0">
-          <div class="cert-header">
-          <div class="cert-icon skills">
-          <i class="bx bx-bulb"></i>
-          </div>
-          <div class="cert-title-wrap">
-          <h4>ENTREPRENEURIAL SKILLS & BUSINESS MANAGEMENT</h4>
-          <span class="cert-category skills">Soft Skills</span>
-          </div>
-          </div>
-          <div class="cert-body">
-          <div class="cert-institution">
-          <i class="bx bx-buildings"></i>
-          <span>Syrian-European Business Consultancy</span>
-          </div>
-          <div class="cert-date">
-          <i class="bx bx-calendar"></i>
-          <span>Aug 2014</span>
-          </div>
-          </div>
-          <div class="cert-footer">
-          <a href="https://www.sebcsyria.com/" target="_blank" class="cert-link">
-          <span>View Certificate</span>
-          <i class="bx bx-right-arrow-alt"></i>
-          </a>
-          </div>
-          </div>
-          <div class="certificate-card tech" data-category="tech" data-aos="fade-up" data-aos-delay="100">
-          <div class="cert-header">
-          <div class="cert-icon tech">
-          <i class="bx bx-code-alt"></i>
-          </div>
-          <div class="cert-title-wrap">
-          <h4>MOBILE MAINTENANCE</h4>
-          <span class="cert-category tech">Technical</span>
-          </div>
-          </div>
-          <div class="cert-body">
-          <div class="cert-institution">
-          <i class="bx bx-buildings"></i>
-          <span>New Horizons</span>
-          </div>
-          <div class="cert-date">
-          <i class="bx bx-calendar"></i>
-          <span>May 2014 - Jul 2014</span>
-          </div>
-          </div>
-          <div class="cert-footer">
-          <a href="https://www.newhorizons.com/" target="_blank" class="cert-link">
-          <span>View Certificate</span>
-          <i class="bx bx-right-arrow-alt"></i>
-          </a>
-          </div>
-          </div>
-        <!-- PRERENDER:end:certificates-grid -->
-      </div>
-
-      <!-- View More Button -->
-      <div class="certificates-cta" data-aos="fade-up">
-        <button class="btn btn-outline" id="load-more-certs">
-          <i class="bx bx-plus"></i>
-          <span>Show All Certificates</span>
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- References Section -->
-  <section id="testimonials" class="section references-section">
-    <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <span class="section-subtitle">References</span>
-        <h2 class="section-title">Professional References</h2>
-        <p class="section-description">People I've had the pleasure of working with</p>
-      </div>
-
-      <!-- References Stats -->
-      <div class="references-stats" data-aos="fade-up">
-        <div class="ref-stat">
-          <span class="stat-icon"><i class="bx bx-user-check"></i></span>
-          <div class="stat-content">
-            <span class="stat-number" id="ref-total">6</span>
-            <span class="stat-label">References</span>
-          </div>
-        </div>
-        <div class="ref-stat">
-          <span class="stat-icon"><i class="bx bx-buildings"></i></span>
-          <div class="stat-content">
-            <span class="stat-number" id="ref-companies">6</span>
-            <span class="stat-label">Companies</span>
-          </div>
-        </div>
-        <div class="ref-stat">
-          <span class="stat-icon"><i class="bx bx-briefcase"></i></span>
-          <div class="stat-content">
-            <span class="stat-number" id="ref-industries">5</span>
-            <span class="stat-label">Industries</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- References Grid -->
-      <div class="references-grid" id="references-grid" data-prerendered="en" data-aos="fade-up">
-        <!-- PRERENDER:start:references-grid -->
-          <div class="reference-card" data-aos="fade-up" data-aos-delay="0">
-          <div class="ref-header">
-          <i class="bx bxs-quote-alt-left ref-quote-icon"></i>
-          <div class="ref-image-wrapper">
-          <img src="assets/img/ref/majd.jpg" alt="MAGD RADWANIAN" class="ref-image" onerror="this.src='assets/img/profile-img.jpg'">
-          <span class="ref-badge"><i class="bx bx-check"></i></span>
-          </div>
-          <h4 class="ref-name">MAGD RADWANIAN</h4>
-          <p class="ref-position">CEO <span class="company">at CSSD</span></p>
-          </div>
-          <div class="ref-body">
-          <p class="ref-availability">References available on request</p>
-          <div class="ref-contact-actions">
-          <a href="#contact" class="ref-contact-btn request">
-          <i class="bx bx-envelope"></i>
-          <span>Get In Touch</span>
-          </a>
-          </div>
-          </div>
-          </div>
-          <div class="reference-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="ref-header">
-          <i class="bx bxs-quote-alt-left ref-quote-icon"></i>
-          <div class="ref-image-wrapper">
-          <img src="assets/img/ref/nour.jpg" alt="NOUR KALAJI" class="ref-image" onerror="this.src='assets/img/profile-img.jpg'">
-          <span class="ref-badge"><i class="bx bx-check"></i></span>
-          </div>
-          <h4 class="ref-name">NOUR KALAJI</h4>
-          <p class="ref-position">Marketing Manager <span class="company">at Masar Syria</span></p>
-          </div>
-          <div class="ref-body">
-          <p class="ref-availability">References available on request</p>
-          <div class="ref-contact-actions">
-          <a href="#contact" class="ref-contact-btn request">
-          <i class="bx bx-envelope"></i>
-          <span>Get In Touch</span>
-          </a>
-          </div>
-          </div>
-          </div>
-          <div class="reference-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="ref-header">
-          <i class="bx bxs-quote-alt-left ref-quote-icon"></i>
-          <div class="ref-image-wrapper">
-          <img src="assets/img/ref/tarek.jpg" alt="TAREK ADAWES" class="ref-image" onerror="this.src='assets/img/profile-img.jpg'">
-          <span class="ref-badge"><i class="bx bx-check"></i></span>
-          </div>
-          <h4 class="ref-name">TAREK ADAWES</h4>
-          <p class="ref-position">CEO <span class="company">at Elite WhereGo</span></p>
-          </div>
-          <div class="ref-body">
-          <p class="ref-availability">References available on request</p>
-          <div class="ref-contact-actions">
-          <a href="#contact" class="ref-contact-btn request">
-          <i class="bx bx-envelope"></i>
-          <span>Get In Touch</span>
-          </a>
-          </div>
-          </div>
-          </div>
-          <div class="reference-card" data-aos="fade-up" data-aos-delay="0">
-          <div class="ref-header">
-          <i class="bx bxs-quote-alt-left ref-quote-icon"></i>
-          <div class="ref-image-wrapper">
-          <img src="assets/img/ref/fridy.jpg" alt="Fridy Mctrade" class="ref-image" onerror="this.src='assets/img/profile-img.jpg'">
-          <span class="ref-badge"><i class="bx bx-check"></i></span>
-          </div>
-          <h4 class="ref-name">Fridy Mctrade</h4>
-          <p class="ref-position">Owner <span class="company">at 3nab Cafe</span></p>
-          </div>
-          <div class="ref-body">
-          <p class="ref-availability">References available on request</p>
-          <div class="ref-contact-actions">
-          <a href="#contact" class="ref-contact-btn request">
-          <i class="bx bx-envelope"></i>
-          <span>Get In Touch</span>
-          </a>
-          </div>
-          </div>
-          </div>
-          <div class="reference-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="ref-header">
-          <i class="bx bxs-quote-alt-left ref-quote-icon"></i>
-          <div class="ref-image-wrapper">
-          <img src="assets/img/ref/diab.jpg" alt="DIAB AL ASSAF" class="ref-image" onerror="this.src='assets/img/profile-img.jpg'">
-          <span class="ref-badge"><i class="bx bx-check"></i></span>
-          </div>
-          <h4 class="ref-name">DIAB AL ASSAF</h4>
-          <p class="ref-position">Coordinator <span class="company">at The Sacred Hearts Society</span></p>
-          </div>
-          <div class="ref-body">
-          <p class="ref-availability">References available on request</p>
-          <div class="ref-contact-actions">
-          <a href="#contact" class="ref-contact-btn request">
-          <i class="bx bx-envelope"></i>
-          <span>Get In Touch</span>
-          </a>
-          </div>
-          </div>
-          </div>
-          <div class="reference-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="ref-header">
-          <i class="bx bxs-quote-alt-left ref-quote-icon"></i>
-          <div class="ref-image-wrapper">
-          <img src="assets/img/ref/rimon.jpg" alt="RIMON WEHBI" class="ref-image" onerror="this.src='assets/img/profile-img.jpg'">
-          <span class="ref-badge"><i class="bx bx-check"></i></span>
-          </div>
-          <h4 class="ref-name">RIMON WEHBI</h4>
-          <p class="ref-position">CEO <span class="company">at Yawna</span></p>
-          </div>
-          <div class="ref-body">
-          <p class="ref-availability">References available on request</p>
-          <div class="ref-contact-actions">
-          <a href="#contact" class="ref-contact-btn request">
-          <i class="bx bx-envelope"></i>
-          <span>Get In Touch</span>
-          </a>
-          </div>
-          </div>
-          </div>
-        <!-- PRERENDER:end:references-grid -->
-      </div>
-
-      <!-- Contact CTA -->
-      <div class="references-cta" data-aos="fade-up">
-        <p>Interested in speaking with my references?</p>
-        <a href="#contact" class="btn btn-primary">
-          <i class="bx bx-envelope"></i>
-          <span>Get In Touch</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="section contact">
-    <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <span class="section-subtitle" data-i18n="contact.subtitle">Get In Touch</span>
-        <h2 class="section-title" data-i18n="contact.title">Let's Work Together</h2>
-        <p class="section-description" data-i18n="contact.description">Ready to bring your ideas to life? Let's connect and discuss how I can help with your next project.</p>
-      </div>
-
-      <!-- Contact Cards Grid -->
-      <div class="contact-cards-grid">
-        <!-- Email Card -->
-        <a href="mailto:en.fadi.barhoum@gmail.com" class="contact-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="contact-card-icon email">
-            <i class="bx bx-envelope"></i>
-          </div>
-          <div class="contact-card-content">
-            <h4 data-i18n="contact.emailLabel">Email Me</h4>
-            <p>en.fadi.barhoum@gmail.com</p>
-          </div>
-          <div class="contact-card-arrow">
-            <i class="bx bx-right-arrow-alt"></i>
-          </div>
-        </a>
-
-        <!-- Phone Card -->
-        <a href="tel:+971507704776" class="contact-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="contact-card-icon phone">
-            <i class="bx bx-phone-call"></i>
-          </div>
-          <div class="contact-card-content">
-            <h4 data-i18n="contact.phoneLabel">Call Me</h4>
-            <p>+971 507 704 776</p>
-          </div>
-          <div class="contact-card-arrow">
-            <i class="bx bx-right-arrow-alt"></i>
-          </div>
-        </a>
-
-        <!-- WhatsApp Card -->
-        <a href="https://wa.me/971507704776" target="_blank" class="contact-card" data-aos="fade-up" data-aos-delay="300">
-          <div class="contact-card-icon whatsapp">
-            <i class="bx bxl-whatsapp"></i>
-          </div>
-          <div class="contact-card-content">
-            <h4 data-i18n="contact.whatsappLabel">WhatsApp</h4>
-            <p>+971 507 704 776</p>
-          </div>
-          <div class="contact-card-arrow">
-            <i class="bx bx-right-arrow-alt"></i>
-          </div>
-        </a>
-
-      </div>
-
-      <!-- Social Connect Section -->
-      <div class="contact-social-section" data-aos="fade-up" data-aos-delay="500">
-        <div class="social-section-header">
-          <h3 data-i18n="contact.connectTitle">Connect With Me</h3>
-          <p data-i18n="contact.connectSubtitle">Follow me on social media for updates and insights</p>
-        </div>
-        <div class="contact-social-links">
-          <a href="https://www.linkedin.com/in/fadi-barhoum/" target="_blank" class="social-card linkedin">
-            <i class="bx bxl-linkedin"></i>
-            <span>LinkedIn</span>
-          </a>
-          <a href="https://github.com/Fadi-Barhoum" target="_blank" class="social-card github">
-            <i class="bx bxl-github"></i>
-            <span>GitHub</span>
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <!-- Footer Top - Main Content -->
-      <div class="footer-main">
-        <!-- Brand Column -->
-        <div class="footer-brand">
-          <div class="footer-logo-wrapper">
-            <span class="footer-logo">FB</span>
-            <div class="footer-name">
-              <span class="name">Fadi Barhoum</span>
-              <span class="title">IT Consultant &amp; Senior Full Stack Developer</span>
-            </div>
-          </div>
-          <p class="footer-tagline">Building digital experiences that make a difference. Passionate about creating innovative web solutions.</p>
-          <div class="footer-social">
-            <a href="https://www.linkedin.com/in/fadi-barhoum/" target="_blank" class="social-link linkedin" aria-label="LinkedIn">
-              <i class="bx bxl-linkedin"></i>
-            </a>
-            <a href="https://github.com/Fadi-Barhoum" target="_blank" class="social-link github" aria-label="GitHub">
-              <i class="bx bxl-github"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Quick Links -->
-        <div class="footer-links-group">
-          <h4>Quick Links</h4>
-          <div class="footer-links">
-            <a href="#home"><i class="bx bx-chevron-right"></i>Home</a>
-            <a href="#about"><i class="bx bx-chevron-right"></i>About</a>
-            <a href="#skills"><i class="bx bx-chevron-right"></i>Skills</a>
-            <a href="#experience"><i class="bx bx-chevron-right"></i>Experience</a>
-            <a href="#portfolio"><i class="bx bx-chevron-right"></i>Portfolio</a>
-            <a href="#certificates"><i class="bx bx-chevron-right"></i>Certificates</a>
-            <a href="#contact"><i class="bx bx-chevron-right"></i>Contact</a>
-          </div>
-        </div>
-
-        <!-- Contact Info -->
-        <div class="footer-contact">
-          <h4>Get In Touch</h4>
-          <div class="contact-items">
-            <a href="mailto:en.fadi.barhoum@gmail.com" class="contact-item">
-              <i class="bx bx-envelope"></i>
-              <span>en.fadi.barhoum@gmail.com</span>
-            </a>
-            <a href="tel:+971507704776" class="contact-item">
-              <i class="bx bx-phone"></i>
-              <span>+971 507 704 776</span>
-            </a>
-            <a href="https://wa.me/971507704776" target="_blank" class="contact-item">
-              <i class="bx bxl-whatsapp"></i>
-              <span>WhatsApp</span>
-            </a>
-            <div class="contact-item location">
-              <i class="bx bx-map"></i>
-              <span>Dubai, UAE</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Footer Bottom -->
-      <div class="footer-bottom">
-        <div class="footer-bottom-content">
-          <p class="copyright">&copy; <span id="current-year">2025</span> Fadi Barhoum. All rights reserved.</p>
-        </div>
-      </div>
+      <nav class="foot-links" aria-label="Footer">
+        <a href="mailto:en.fadi.barhoum@gmail.com">en.fadi.barhoum@gmail.com</a>
+        <a href="tel:+971507704776">+971 507 704 776</a>
+        <a href="https://wa.me/971507704776" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://www.linkedin.com/in/fadi-barhoum/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/Fadi-Barhoum" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+      <p class="foot-legal">&copy; <span id="current-year">2026</span> Fadi Barhoum. <span data-i18n="footer.copyright">All rights reserved.</span></p>
     </div>
   </footer>
 
-  <!-- Back to Top -->
-  <a href="#home" class="back-to-top" id="back-to-top">
-    <i class="bx bx-up-arrow-alt"></i>
-  </a>
-
   <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="assets/js/data.js"></script>
   <script src="assets/js/lang.js"></script>
   <script src="assets/js/modern.js"></script>

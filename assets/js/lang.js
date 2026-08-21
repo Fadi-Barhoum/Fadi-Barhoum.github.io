@@ -43,6 +43,10 @@ const translations = {
     // Hero Section
     hero: {
       description: "I build enterprise platforms for UAE government and private sector organisations — bilingual systems for service assessment, process management, strategic performance and national identity integration.",
+      role: ["IT Consultant", "Government Digital Transformation", "Senior Full Stack Developer"],
+      tagline: "builds the systems governments run on.",
+      viewWork: "See the systems",
+      location: "Dubai, United Arab Emirates",
       typedItems: ["IT Consultant", "Senior Full Stack Developer", "Digital Transformation Specialist", ".NET & React Engineer"]
     },
 
@@ -66,6 +70,8 @@ const translations = {
       },
       bio: "I am an IT consultant and senior full stack developer based in Dubai, with 8 years building enterprise applications end to end. My work centres on ASP.NET Core, C#, SQL Server and React with TypeScript, alongside Laravel and PHP. I have delivered platforms for UAE government entities including national identity single sign-on integration, enterprise directory authentication, and AI-enabled features — always with full Arabic and English support. I take projects from requirements through architecture, development, deployment and handover."
     },
+
+    strip: { years: "years", platforms: "enterprise platforms", languages: "languages, RTL native" },
 
     // Skills Section (technical skills are not translated)
     skills: {
@@ -267,7 +273,16 @@ const translations = {
 
     // Portfolio Section
     portfolio: {
-      title: "Portfolio",
+      title: "Work",
+      selectedWork: "Selected work",
+      enterpriseHeadline: "Six platforms, built end to end.",
+      enterpriseIntro: "Six enterprise platforms built end to end — from requirements and architecture through development, deployment and handover. Most are internal government systems, so the work is described rather than shown.",
+      sections: {
+        enterprise: "Enterprise Systems",
+        webapp: "Web Applications",
+        website: "Websites",
+        github: "Open Source"
+      },
       viewGif: "View Demo",
       viewSite: "Visit Website",
       notAvailable: "Not available",
@@ -719,7 +734,10 @@ const translations = {
       viewGallery: "View Gallery",
       viewCode: "View Code",
       current: "Current",
-      getInTouch: "Get In Touch"
+      getInTouch: "Get In Touch",
+      skipToContent: "Skip to content",
+      capability: "Capability",
+      credentials: "Credentials"
     }
   },
 
@@ -762,6 +780,10 @@ const translations = {
     // Hero Section
     hero: {
       description: "أبني منصات مؤسسية لجهات حكومية وجهات من القطاع الخاص في دولة الإمارات — أنظمة ثنائية اللغة لتقييم الخدمات وإدارة العمليات والأداء الاستراتيجي والتكامل مع الهوية الرقمية الوطنية.",
+      role: ["مستشار تقنية معلومات", "التحول الرقمي الحكومي", "مطور Full Stack أول"],
+      tagline: "يبني الأنظمة التي تُدار بها الحكومات.",
+      viewWork: "استعرض الأنظمة",
+      location: "دبي، الإمارات العربية المتحدة",
       typedItems: ["مستشار تقنية معلومات", "مطور Full Stack أول", "أخصائي تحول رقمي", "مهندس .NET و React"]
     },
 
@@ -785,6 +807,8 @@ const translations = {
       },
       bio: "أنا مستشار تقنية معلومات ومطور Full Stack أول مقيم في دبي، بخبرة 8 سنوات في بناء التطبيقات المؤسسية من أولها إلى آخرها. يتركز عملي على ASP.NET Core وC# وSQL Server وReact مع TypeScript، إلى جانب Laravel وPHP. قدّمت منصات لجهات حكومية في دولة الإمارات شملت التكامل مع تسجيل الدخول الموحّد للهوية الوطنية، والمصادقة عبر دليل المؤسسة، وميزات مدعومة بالذكاء الاصطناعي — مع دعم كامل للغتين العربية والإنجليزية دائماً. أتولى المشاريع من تحليل المتطلبات مروراً بالبنية والتطوير والنشر وحتى التسليم."
     },
+
+    strip: { years: "سنوات خبرة", platforms: "منصات مؤسسية", languages: "لغتان، دعم RTL أصيل" },
 
     // Skills Section (technical skills are not translated)
     skills: {
@@ -986,7 +1010,16 @@ const translations = {
 
     // Portfolio Section
     portfolio: {
-      title: "أعمالي",
+      title: "الأعمال",
+      selectedWork: "أعمال مختارة",
+      enterpriseHeadline: "ست منصات، بُنيت من أولها لآخرها.",
+      enterpriseIntro: "ست منصات مؤسسية بُنيت من أولها لآخرها — من تحليل المتطلبات والتصميم المعماري إلى التطوير والنشر ونقل المعرفة. معظمها أنظمة حكومية داخلية، لذلك يُوصف العمل بدل أن يُعرض.",
+      sections: {
+        enterprise: "الأنظمة المؤسسية",
+        webapp: "تطبيقات الويب",
+        website: "المواقع",
+        github: "مفتوح المصدر"
+      },
       viewGif: "عرض العرض التوضيحي",
       viewSite: "زيارة الموقع",
       notAvailable: "غير متاح",
@@ -1416,7 +1449,10 @@ const translations = {
       viewGallery: "معرض الصور",
       viewCode: "عرض الكود",
       current: "حالي",
-      getInTouch: "تواصل معي"
+      getInTouch: "تواصل معي",
+      skipToContent: "تخطَّ إلى المحتوى",
+      capability: "الكفاءات",
+      credentials: "المؤهلات"
     }
   }
 

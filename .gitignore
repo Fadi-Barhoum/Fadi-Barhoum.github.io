@@ -1,0 +1,4 @@
+# Assets retired during the 2026 redesign. Kept on local disk so they can be
+# restored in seconds, but no longer served or tracked.
+# See assets/_unused/README.md for what is in here and why.
+assets/_unused/
