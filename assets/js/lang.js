@@ -45,6 +45,8 @@ const translations = {
       description: "I build enterprise platforms for UAE government and private sector organisations — bilingual systems for service assessment, process management, strategic performance and national identity integration.",
       role: ["IT Consultant", "Government Digital Transformation", "Senior Full Stack Developer"],
       tagline: "builds the systems governments run on.",
+      architecture: "System architecture",
+      layers: { presentation: "Presentation", application: "Application", data: "Data", identity: "Identity" },
       viewWork: "See the systems",
       location: "Dubai, United Arab Emirates",
       typedItems: ["IT Consultant", "Senior Full Stack Developer", "Digital Transformation Specialist", ".NET & React Engineer"]
@@ -276,6 +278,12 @@ const translations = {
       title: "Work",
       selectedWork: "Selected work",
       enterpriseHeadline: "Six platforms, built end to end.",
+      summaries: {
+        enterprise: "six platforms · ASP.NET Core · React · SQL Server",
+        webapp: "nine applications · Laravel · React · payment gateways"
+      },
+      websitesNote: "Also delivered nine corporate and content sites on WordPress for clients in hospitality, construction and the non-profit sector.",
+      openSourceNote: "Two open-source projects on GitHub:",
       enterpriseIntro: "Six enterprise platforms built end to end — from requirements and architecture through development, deployment and handover. Most are internal government systems, so the work is described rather than shown.",
       sections: {
         enterprise: "Enterprise Systems",
@@ -782,6 +790,8 @@ const translations = {
       description: "أبني منصات مؤسسية لجهات حكومية وجهات من القطاع الخاص في دولة الإمارات — أنظمة ثنائية اللغة لتقييم الخدمات وإدارة العمليات والأداء الاستراتيجي والتكامل مع الهوية الرقمية الوطنية.",
       role: ["مستشار تقنية معلومات", "التحول الرقمي الحكومي", "مطور Full Stack أول"],
       tagline: "يبني الأنظمة التي تُدار بها الحكومات.",
+      architecture: "بنية النظام",
+      layers: { presentation: "طبقة العرض", application: "طبقة التطبيق", data: "طبقة البيانات", identity: "طبقة الهوية" },
       viewWork: "استعرض الأنظمة",
       location: "دبي، الإمارات العربية المتحدة",
       typedItems: ["مستشار تقنية معلومات", "مطور Full Stack أول", "أخصائي تحول رقمي", "مهندس .NET و React"]
@@ -1013,6 +1023,12 @@ const translations = {
       title: "الأعمال",
       selectedWork: "أعمال مختارة",
       enterpriseHeadline: "ست منصات، بُنيت من أولها لآخرها.",
+      summaries: {
+        enterprise: "ست منصات · ASP.NET Core · React · SQL Server",
+        webapp: "تسعة تطبيقات · Laravel · React · بوابات دفع"
+      },
+      websitesNote: "كما سلّمت تسعة مواقع تعريفية ومحتوى على WordPress لعملاء في الضيافة والإنشاءات والقطاع غير الربحي.",
+      openSourceNote: "مشروعان مفتوحا المصدر على GitHub:",
       enterpriseIntro: "ست منصات مؤسسية بُنيت من أولها لآخرها — من تحليل المتطلبات والتصميم المعماري إلى التطوير والنشر ونقل المعرفة. معظمها أنظمة حكومية داخلية، لذلك يُوصف العمل بدل أن يُعرض.",
       sections: {
         enterprise: "الأنظمة المؤسسية",

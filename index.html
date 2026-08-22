@@ -137,21 +137,27 @@
           </div>
         </div>
 
-        <div class="stage" aria-hidden="true">
-          <div class="stack" id="stack">
-            <svg class="conn" id="conn" viewBox="0 0 400 400"></svg>
-            <div class="layer" data-d="0"><div class="grid-face"></div>
-              <div class="lbl">Presentation</div><div class="name">React 19 &middot; TypeScript</div>
-              <div class="meta">Bilingual RTL / LTR</div><div class="dots"><i></i><i></i><i></i></div></div>
-            <div class="layer" data-d="1"><div class="grid-face"></div>
-              <div class="lbl">Application</div><div class="name">ASP.NET Core 8</div>
-              <div class="meta">Web API &middot; Domain logic</div><div class="dots"><i></i><i></i><i></i></div></div>
-            <div class="layer" data-d="2"><div class="grid-face"></div>
-              <div class="lbl">Data</div><div class="name">SQL Server &middot; EF Core</div>
-              <div class="meta">Migrations &middot; Transactions</div><div class="dots"><i></i><i></i><i></i></div></div>
-            <div class="layer gold" data-d="3"><div class="grid-face"></div>
-              <div class="lbl">Identity</div><div class="name">UAE Pass &middot; LDAP</div>
-              <div class="meta">OAuth 2.0 &middot; PKCE &middot; JWT</div><div class="dots"><i></i><i></i><i></i></div></div>
+        <div class="stagewrap">
+          <p class="stage-title" data-i18n="hero.architecture">System architecture</p>
+          <div class="stage" aria-hidden="true">
+            <div class="stack" id="stack">
+              <div class="layer" data-d="0"><div class="grid-face"></div>
+                <div class="lbl" data-layer="presentation">Presentation</div>
+                <div class="name">React 19 &middot; TypeScript</div>
+                <div class="meta">Bilingual RTL / LTR</div><div class="dots"><i></i><i></i><i></i></div></div>
+              <div class="layer" data-d="1"><div class="grid-face"></div>
+                <div class="lbl" data-layer="application">Application</div>
+                <div class="name">ASP.NET Core 8 &middot; Laravel 12</div>
+                <div class="meta">Web API &middot; Domain logic</div><div class="dots"><i></i><i></i><i></i></div></div>
+              <div class="layer" data-d="2"><div class="grid-face"></div>
+                <div class="lbl" data-layer="data">Data</div>
+                <div class="name">SQL Server &middot; EF Core &middot; MySQL</div>
+                <div class="meta">Migrations &middot; Transactions</div><div class="dots"><i></i><i></i><i></i></div></div>
+              <div class="layer gold" data-d="3"><div class="grid-face"></div>
+                <div class="lbl" data-layer="identity">Identity</div>
+                <div class="name">UAE Pass SSO &middot; LDAP</div>
+                <div class="meta">OAuth 2.0 &middot; PKCE &middot; JWT</div><div class="dots"><i></i><i></i><i></i></div></div>
+            </div>
           </div>
         </div>
       </div>
@@ -173,6 +179,7 @@
       <div class="shead rv">
         <div class="eyebrow" data-i18n-section="enterprise">Enterprise Systems</div>
         <h2 data-i18n="portfolio.enterpriseHeadline">Six platforms, built end to end.</h2>
+        <p class="cat-sum" data-cat-sum="enterprise">six platforms &middot; ASP.NET Core &middot; React &middot; SQL Server</p>
         <p id="enterprise-intro">Six enterprise platforms built end to end &mdash; from requirements and architecture through development, deployment and handover. Most are internal government systems, so the work is described rather than shown.</p>
       </div>
       <div id="enterprise-list" data-prerendered="en">
@@ -248,6 +255,7 @@
 
       <div class="shead sub rv">
         <div class="eyebrow" data-i18n-section="webapp">Web Applications</div>
+        <p class="cat-sum" data-cat-sum="webapp">nine applications &middot; Laravel &middot; React &middot; payment gateways</p>
       </div>
       <div class="apps" id="webapp-list" data-prerendered="en">
         <!-- PRERENDER:start:webapp-list -->
@@ -306,65 +314,19 @@
         <!-- PRERENDER:end:webapp-list -->
       </div>
 
-      <div class="shead sub rv">
-        <div class="eyebrow" data-i18n-section="website">Websites</div>
-      </div>
-      <div class="sitelist" id="website-list" data-prerendered="en">
+      <div class="folds" id="website-list" data-prerendered="en">
         <!-- PRERENDER:start:website-list -->
-          <div class="site rv">
-          <h3 class="site-name"><a href="https://rihlaty.com/" target="_blank" rel="noopener">Rihlaty</a></h3>
-          <p class="site-line">Developed a fully functional e-commerce website for trip and travel package bookings.</p>
-          <div class="chips"><span class="chip">WordPress</span><span class="chip">PHP</span><span class="chip">MySQL</span></div></div>
-          <div class="site rv">
-          <h3 class="site-name"><a href="https://cssd-ngos.org/" target="_blank" rel="noopener">CSSD</a></h3>
-          <p class="site-line">Comprehensive website showcasing the organization's mission and impact.</p>
-          <div class="chips"><span class="chip">WordPress</span><span class="chip">PHP</span><span class="chip">MySQL</span></div></div>
-          <div class="site rv">
-          <h3 class="site-name"><a href="https://yawna.org/" target="_blank" rel="noopener">Yawna</a></h3>
-          <p class="site-line">Website showcasing the work of researcher Raymond Wihbe on Aramaic language and Maaloula antiquities.</p>
-          <div class="chips"><span class="chip">WordPress</span><span class="chip">PHP</span><span class="chip">MySQL</span></div></div>
-          <div class="site rv">
-          <h3 class="site-name">Aplus Restaurant</h3>
-          <p class="site-line">User-friendly website with interactive menu and event management.</p>
-          <div class="chips"><span class="chip">WordPress</span><span class="chip">PHP</span><span class="chip">MySQL</span></div></div>
-          <div class="site rv">
-          <h3 class="site-name">Jory Café</h3>
-          <p class="site-line">User-friendly website with interactive menu and event management.</p>
-          <div class="chips"><span class="chip">WordPress</span><span class="chip">PHP</span><span class="chip">MySQL</span></div></div>
-          <div class="site rv">
-          <h3 class="site-name">Casa Café</h3>
-          <p class="site-line">User-friendly website for CASA Cafe & Restaurant in UAE.</p>
-          <div class="chips"><span class="chip">WordPress</span><span class="chip">PHP</span><span class="chip">MySQL</span></div></div>
-          <div class="site rv">
-          <h3 class="site-name"><a href="https://safegategroup.com/" target="_blank" rel="noopener">Safe Gate Group</a></h3>
-          <p class="site-line">A corporate site presenting Safe Gate Group's medical solutions, mission and global reach.</p>
-          <div class="chips"><span class="chip">WordPress</span><span class="chip">PHP</span></div></div>
-          <div class="site rv">
-          <h3 class="site-name"><a href="https://hmlsteelcontracting.com/" target="_blank" rel="noopener">HML Steel</a></h3>
-          <p class="site-line">A corporate site presenting HML Steel's steel construction capabilities and industry track record.</p>
-          <div class="chips"><span class="chip">WordPress</span><span class="chip">PHP</span></div></div>
-          <div class="site rv">
-          <h3 class="site-name"><a href="https://binlahejcontracting.com/" target="_blank" rel="noopener">Bin Lahej</a></h3>
-          <p class="site-line">A corporate site presenting Bin Lahej's construction services, values and completed projects.</p>
-          <div class="chips"><span class="chip">WordPress</span><span class="chip">PHP</span></div></div>
+          <div class="fold rv">
+          <p class="fold-note">Also delivered nine corporate and content sites on WordPress for clients in hospitality, construction and the non-profit sector.</p>
+          <p class="fold-names"><a href="https://rihlaty.com/" target="_blank" rel="noopener">Rihlaty</a><i class="sep" aria-hidden="true">·</i><a href="https://cssd-ngos.org/" target="_blank" rel="noopener">CSSD</a><i class="sep" aria-hidden="true">·</i><a href="https://yawna.org/" target="_blank" rel="noopener">Yawna</a><i class="sep" aria-hidden="true">·</i><span class="nolink">Aplus Restaurant</span><i class="sep" aria-hidden="true">·</i><span class="nolink">Jory Café</span><i class="sep" aria-hidden="true">·</i><span class="nolink">Casa Café</span><i class="sep" aria-hidden="true">·</i><a href="https://safegategroup.com/" target="_blank" rel="noopener">Safe Gate Group</a><i class="sep" aria-hidden="true">·</i><a href="https://hmlsteelcontracting.com/" target="_blank" rel="noopener">HML Steel</a><i class="sep" aria-hidden="true">·</i><a href="https://binlahejcontracting.com/" target="_blank" rel="noopener">Bin Lahej</a></p></div>
         <!-- PRERENDER:end:website-list -->
       </div>
 
-      <div class="shead sub rv">
-        <div class="eyebrow" data-i18n-section="github">Open Source</div>
-      </div>
-      <div class="repos" id="github-list" data-prerendered="en">
+      <div class="folds" id="github-list" data-prerendered="en">
         <!-- PRERENDER:start:github-list -->
-          <div class="repo rv">
-          <h3 class="repo-name"><a href="https://github.com/Fadi-Barhoum/Real-time-Chat-App" target="_blank" rel="noopener">Chat App</a></h3>
-          <p class="app-headline">Real-time chat application using PHP, HTML, CSS, JavaScript, and MySQL. Real-time message delivery to all connected users. User-friendly interface for effortless messaging.</p>
-          <div class="chips"><span class="chip">PHP</span><span class="chip">MySQL</span><span class="chip">JavaScript</span><span class="chip">HTML</span><span class="chip">CSS</span></div>
-          <p class="repolink"><a href="https://github.com/Fadi-Barhoum/Real-time-Chat-App" target="_blank" rel="noopener">View Code &rarr;</a></p></div>
-          <div class="repo rv">
-          <h3 class="repo-name"><a href="https://github.com/Fadi-Barhoum/Images-Generator" target="_blank" rel="noopener">Images Generator</a></h3>
-          <p class="app-headline">Image generation website using HTML, CSS, and JavaScript. Integrated OpenAI API for text-to-image generation. Users can input descriptions and specify image quantity.</p>
-          <div class="chips"><span class="chip">JavaScript</span><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">OpenAI API</span></div>
-          <p class="repolink"><a href="https://github.com/Fadi-Barhoum/Images-Generator" target="_blank" rel="noopener">View Code &rarr;</a></p></div>
+          <div class="fold rv">
+          <p class="fold-note">Two open-source projects on GitHub:</p>
+          <p class="fold-names"><a href="https://github.com/Fadi-Barhoum/Real-time-Chat-App" target="_blank" rel="noopener">Chat App</a><i class="sep" aria-hidden="true">·</i><a href="https://github.com/Fadi-Barhoum/Images-Generator" target="_blank" rel="noopener">Images Generator</a></p></div>
         <!-- PRERENDER:end:github-list -->
       </div>
     </div>

@@ -26,6 +26,8 @@ document.addEventListener('DOMContentLoaded', function() {
   Testimonials.init();
   Certificates.init();
   ScrollEffects.init();
+  // must come last: the renderers above replace the markup Motion observes
+  Motion.arm();
   console.log('All modules initialized');
 
 });
@@ -277,6 +279,12 @@ const About = {
     const entIntro = document.getElementById('enterprise-intro');
     if (entIntro && lang.portfolio && lang.portfolio.enterpriseIntro) entIntro.textContent = lang.portfolio.enterpriseIntro;
 
+    const sums = (lang.portfolio && lang.portfolio.summaries) || {};
+    document.querySelectorAll('[data-cat-sum]').forEach(el => {
+      const k = el.getAttribute('data-cat-sum');
+      if (sums[k]) el.textContent = sums[k];
+    });
+
     const onReq = document.getElementById('ref-on-request');
     if (onReq && lang.common && lang.common.referencesOnRequest) onReq.textContent = lang.common.referencesOnRequest;
   },
@@ -311,6 +319,13 @@ const About = {
     if (heroGiven) heroGiven.textContent = lang.profile?.name || 'Fadi Barhoum';
     const heroTag = document.querySelector('.hero-name em');
     if (heroTag && lang.hero?.tagline) heroTag.textContent = lang.hero.tagline;
+
+    // architecture layer labels — the label is the information, so it translates
+    const layers = lang.hero?.layers || {};
+    document.querySelectorAll('.layer .lbl[data-layer]').forEach(el => {
+      const k = el.getAttribute('data-layer');
+      if (layers[k]) el.textContent = layers[k];
+    });
 
     const heroDesc = document.querySelector('.hero-description');
     if (heroDesc && lang.hero?.description) {
@@ -682,41 +697,42 @@ const Portfolio = {
   websites(list, get) {
     const el = document.getElementById('website-list');
     if (!el || usePrerendered(el)) return;
+    const t = this.lang().portfolio || {};
     el.innerHTML = '';
-    list.forEach(p => {
+
+    const names = list.map(p => {
       const d = get(p.id);
-      const line = Array.isArray(d.description)
-        ? (typeof d.description[0] === 'string' ? d.description[0] : d.description[0]?.text || '')
-        : (d.description || d.headline || '');
-      const row = document.createElement('div');
-      row.className = 'site rv';
-      row.innerHTML = `
-        <h3 class="site-name">${p.link
-          ? `<a href="${p.link}" target="_blank" rel="noopener">${d.name || ''}</a>`
-          : (d.name || '')}</h3>
-        <p class="site-line">${line}</p>
-        ${this.chips(d.builtWith)}`;
-      el.appendChild(row);
-    });
+      return p.link
+        ? `<a href="${p.link}" target="_blank" rel="noopener">${d.name || ''}</a>`
+        : `<span class="nolink">${d.name || ''}</span>`;
+    }).join('<i class="sep" aria-hidden="true">·</i>');
+
+    const box = document.createElement('div');
+    box.className = 'fold rv';
+    box.innerHTML = `
+      <p class="fold-note">${t.websitesNote || ''}</p>
+      <p class="fold-names">${names}</p>`;
+    el.appendChild(box);
   },
 
   repos() {
     const el = document.getElementById('github-list');
     if (!el || usePrerendered(el) || typeof portfolioData === 'undefined') return;
-    el.innerHTML = '';
     const gh = this.lang().github?.items || [];
-    const label = this.common().viewCode || 'View Code';
-    portfolioData.githubProjects.forEach(p => {
+    const t = this.lang().portfolio || {};
+    el.innerHTML = '';
+
+    const links = portfolioData.githubProjects.map(p => {
       const d = gh.find(x => x.id === p.id) || {};
-      const row = document.createElement('div');
-      row.className = 'repo rv';
-      row.innerHTML = `
-        <h3 class="repo-name"><a href="${p.github}" target="_blank" rel="noopener">${d.name || ''}</a></h3>
-        ${this.prose(d.description, 'app-headline')}
-        ${this.chips(d.builtWith)}
-        <p class="repolink"><a href="${p.github}" target="_blank" rel="noopener">${label} &rarr;</a></p>`;
-      el.appendChild(row);
-    });
+      return `<a href="${p.github}" target="_blank" rel="noopener">${d.name || ''}</a>`;
+    }).join('<i class="sep" aria-hidden="true">·</i>');
+
+    const box = document.createElement('div');
+    box.className = 'fold rv';
+    box.innerHTML = `
+      <p class="fold-note">${t.openSourceNote || ''}</p>
+      <p class="fold-names">${links}</p>`;
+    el.appendChild(box);
   }
 };
 
@@ -1183,7 +1199,7 @@ const Motion = {
     this.reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
     this.buildField();
     this.stack();
-    this.reveals();
+    // reveals are armed by Motion.arm() once the renderers have run
     if (this.reduce) {
       // no loop under reduced motion, so nav still needs its own listener
       addEventListener('scroll', () => {
@@ -1246,16 +1262,33 @@ const Motion = {
     this.glowB = document.querySelector('.glow.b');
   },
 
+  // geometry: a shallower tilt and a wider gap so all four layers read as
+  // four, with each layer's label and technology line fully clear of the one above
+  // Y and Z steps are independent. They must be: the stack's own rotateX(rx)
+  // maps a layer centre to y_screen = dy*cos|rx| - dz_gap*sin|rx|, so depth
+  // SUBTRACTS from vertical offset. Coupling them (the earlier bug) collapsed
+  // four layers into a smear. Y is sized to clear the label+name band (~49px
+  // projected); Z stays small and only supplies the depth cue.
+  STEP_Y: 108,      // on-screen vertical step between layers, px
+  STEP_Z: 46,       // depth step, px
+  SPREAD_Y: 26,     // extra vertical opening on scroll
+  SPREAD_Z: 34,     // extra depth opening on scroll
+  TILT: 42,         // per-layer rotateX, was 58 — less flattened
+  BASE_RX: -12,     // stack tilt; shallower than -16 to reduce the subtraction
+
   stack() {
     this.stackEl = document.getElementById('stack');
     if (!this.stackEl) return;
     this.layers = [...this.stackEl.querySelectorAll('.layer')];
     this.stage = this.stackEl.parentElement;
+    this.conns = document.getElementById('conns');
+    this.buildRisers();
 
     // RTL mirrors the tilt so depth still recedes away from the reading edge
     const rtl = document.documentElement.dir === 'rtl';
     this.baseRy = rtl ? 24 : -24;
     this.ry = this.baseRy;
+    this.rx = this.BASE_RX;
 
     if (this.reduce) { this.spread = 0.6; this.place(); return; }
 
@@ -1263,18 +1296,52 @@ const Motion = {
     addEventListener('mousemove', e => {
       const cx = innerWidth / 2, cy = innerHeight / 2;
       this.ry = this.baseRy + ((e.clientX - cx) / cx) * 13;
-      this.rx = -16 - ((e.clientY - cy) / cy) * 9;
+      this.rx = this.BASE_RX - ((e.clientY - cy) / cy) * 7;
     }, { passive: true });
+  },
+
+  // one riser per adjacent pair of layers
+  buildRisers() {
+    if (!this.stackEl) return;
+    this.stackEl.querySelectorAll('.conn-riser').forEach(el => el.remove());
+    this.risers = [];
+    for (let i = 0; i < this.layers.length - 1; i++) {
+      const r = document.createElement('div');
+      r.className = 'conn-riser';
+      // sibling of .layer, so the shared preserve-3d context depth-sorts them
+      this.stackEl.appendChild(r);
+      this.risers.push(r);
+    }
   },
 
   place() {
     if (!this.layers) return;
+    const dy = this.STEP_Y + this.spread * this.SPREAD_Y;
+    const dz = this.STEP_Z + this.spread * this.SPREAD_Z;
+    const tilt = this.TILT - this.spread * 6;
+    const n = this.layers.length;
+
     this.layers.forEach((l, i) => {
-      const gap = 34 + this.spread * 54;
       l.style.transform =
-        `translate3d(0,${(i - 1.5) * gap * 0.42}px,${-(i - 1.5) * gap}px) rotateX(${58 - this.spread * 8}deg) rotateZ(0deg)`;
-      l.style.opacity = 1 - i * 0.06;
+        `translate3d(0,${(i - (n - 1) / 2) * dy}px,${-(i - (n - 1) / 2) * dz}px) rotateX(${tilt}deg)`;
+      // fully opaque: a translucent layer lets the one behind print through its
+      // text, which reads as a rendering fault rather than depth
+      l.style.opacity = '1';
     });
+
+    // one riser per pair, anchored at the upper layer's centre and pointing at
+    // the next centre. Direction in stack space is (dy, -dz).
+    if (this.risers) {
+      const len = Math.hypot(dy, dz);
+      const deg = Math.atan2(-dz, dy) * 180 / Math.PI;
+      this.risers.forEach((r, i) => {
+        const y = (i - (n - 1) / 2) * dy;
+        const z = -(i - (n - 1) / 2) * dz;
+        r.style.height = len + 'px';
+        r.style.transform = `translate3d(0,${y}px,${z}px) rotateX(${deg}deg)`;
+      });
+    }
+
     this.stackEl.style.transform = `rotateX(${this.rx}deg) rotateY(${this.ry}deg)`;
   },
 
@@ -1308,20 +1375,33 @@ const Motion = {
     requestAnimationFrame(step);
   },
 
+  // Safe to call repeatedly: anything already revealed is skipped, and a fresh
+  // observer is created so nodes replaced by a re-render get picked up.
   reveals() {
-    const els = document.querySelectorAll('.rv');
+    const els = [...document.querySelectorAll('.rv:not(.in)')];
+    if (!els.length) return;
     if (this.reduce) { els.forEach(e => e.classList.add('in')); return; }
-    const io = new IntersectionObserver(entries => {
+
+    if (this.io) this.io.disconnect();
+    this.io = new IntersectionObserver(entries => {
       entries.forEach(e => {
-        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+        if (e.isIntersecting) { e.target.classList.add('in'); this.io.unobserve(e.target); }
       });
     }, { threshold: .12 });
+
     els.forEach((el, i) => {
       el.style.transitionDelay = (Math.min(i, 6) * 55) + 'ms';
-      io.observe(el);
+      this.io.observe(el);
     });
   },
 
-  // re-observe after a language switch replaces markup
-  refresh() { this.reveals(); if (!this.reduce) { this.stack(); } }
+  // called once the renderers have produced their markup, and again after any
+  // language switch replaces it
+  arm() {
+    this.reveals();
+    this.stack();
+    this.place();
+  },
+
+  refresh() { this.arm(); }
 };
