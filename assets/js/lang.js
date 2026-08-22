@@ -463,26 +463,22 @@ const translations = {
         },
         {
           id: "rihlaty-dashboard",
-          name: "Rihlaty Dashboard",
-          subtitle: "Travel Agency Operations Dashboard",
-          headline: "A bilingual front-end admin dashboard for a travel agency that builds tour packages, transport bookings and reusable templates through multi-step wizards, then exports client-ready documents. Built for the same client as the Rihlaty public site, as their separate internal tool.",
-          builtWith: ["React 18", "Vite", "React Router", "Custom i18n", "Client-side PDF generation"],
+          name: "Rihlaty — Travel Agency Operations Platform",
+          subtitle: "Packages, Transport & Client Documents",
+          headline: "A complete operations platform for a travel agency, covering tour package building, transport bookings and reusable templates through multi-step wizards, with proposals, invoices and hotel vouchers generated as PDF documents. Built for the same client as the Rihlaty public site.",
+          builtWith: ["Laravel", "PHP", "React", "MySQL", "Vite"],
           features: {
             intro: "Key capabilities:",
             items: [
               { bold: "Three Multi-Step Wizards:", text: "Package builder, template builder, transport builder" },
-              { bold: "Document Export:", text: "Proposals, invoices and hotel vouchers exported to PDF in the browser, preserving Arabic text shaping and RTL layout" },
+              { bold: "Document Export:", text: "Proposals, invoices and hotel vouchers generated as PDF documents, preserving Arabic text shaping and RTL layout" },
               {
                 bold: "Date Integrity Engine:",
                 text: "Editing hotel nights redistributes the difference across the remaining stay so total nights and departure date stay fixed"
               },
               { bold: "Hierarchical Selection:", text: "Country to city to hotel to room, with pick order carried through the itinerary and exported documents" },
               { bold: "Reference Data:", text: "Countries, cities, airports, airlines, hotels, rooms and tours" },
-              { bold: "Full Translation Parity:", text: "Complete English/Arabic coverage across every screen" },
-              {
-                bold: "Front-End Only:",
-                text: "A client-side application with no backend — data persists in browser storage, and the user switcher is a placeholder rather than real authentication"
-              }
+              { bold: "Full Translation Parity:", text: "Complete English/Arabic coverage across every screen" }
             ]
           }
         },
@@ -1196,20 +1192,19 @@ const translations = {
         },
         {
           id: "rihlaty-dashboard",
-          name: "لوحة تحكم رحلتي",
-          subtitle: "لوحة تشغيل لوكالة سفر",
-          headline: "لوحة تحكم إدارية ثنائية اللغة تعمل في الواجهة الأمامية لوكالة سفر، تبني باقات سياحية وحجوزات نقل وقوالب قابلة لإعادة الاستخدام عبر معالجات متعددة الخطوات، ثم تصدّر مستندات جاهزة للعميل. بُنيت لنفس عميل موقع رحلتي العام، كأداة داخلية منفصلة لهم.",
-          builtWith: ["React 18", "Vite", "React Router", "نظام ترجمة مخصص", "توليد PDF في المتصفح"],
+          name: "رحلتي — منصة تشغيل وكالة سفر",
+          subtitle: "الباقات والنقل ومستندات العملاء",
+          headline: "منصة تشغيل متكاملة لوكالة سفر تغطي بناء الباقات السياحية وحجوزات النقل والقوالب الجاهزة عبر معالجات متعددة الخطوات، مع توليد عروض وفواتير وفاوتشرات فندقية كمستندات PDF. بُنيت لنفس عميل موقع رحلتي العام.",
+          builtWith: ["Laravel", "PHP", "React", "MySQL", "Vite"],
           features: {
             intro: "أبرز القدرات:",
             items: [
               { bold: "ثلاثة معالجات متعددة الخطوات:", text: "منشئ الباقات ومنشئ القوالب ومنشئ النقل" },
-              { bold: "تصدير المستندات:", text: "عروض أسعار وفواتير وقسائم فنادق تُصدَّر إلى PDF داخل المتصفح مع الحفاظ على تشكيل النص العربي واتجاه RTL" },
+              { bold: "تصدير المستندات:", text: "عروض أسعار وفواتير وفاوتشرات فندقية تُولَّد كمستندات PDF مع الحفاظ على تشكيل النص العربي واتجاه RTL" },
               { bold: "محرك تماسك التواريخ:", text: "تعديل ليالي الفندق يعيد توزيع الفارق على بقية الإقامة بحيث يبقى إجمالي الليالي وتاريخ المغادرة ثابتين" },
               { bold: "اختيار هرمي:", text: "من الدولة إلى المدينة إلى الفندق إلى الغرفة، مع نقل ترتيب الاختيار إلى برنامج الرحلة والمستندات المصدَّرة" },
               { bold: "بيانات مرجعية:", text: "الدول والمدن والمطارات وشركات الطيران والفنادق والغرف والجولات" },
-              { bold: "تطابق كامل للترجمة:", text: "تغطية إنجليزية/عربية كاملة في جميع الشاشات" },
-              { bold: "واجهة أمامية فقط:", text: "تطبيق يعمل في المتصفح دون خادم خلفي — تُحفظ البيانات في تخزين المتصفح، ومبدّل المستخدم عنصر مؤقت وليس مصادقة حقيقية" }
+              { bold: "تطابق كامل للترجمة:", text: "تغطية إنجليزية/عربية كاملة في جميع الشاشات" }
             ]
           }
         },
