@@ -130,25 +130,23 @@ const translations = {
           company: "Elite WhereGO",
           link: "https://elitewherego.com/",
           responsibilities: [
-            "Develop and maintain a comprehensive website showcasing company services and integrating it with a mobile application to enhance user experience.",
-            "Integrated the website with the mobile application, enabling seamless order placement and account management across platforms."
+            "Built dedicated web pages integrated with the mobile application backend, giving users access to all twelve mobile services directly from the website.",
+            "Developed a responsive, high-performance corporate website for partners, riders and end users, with strong Lighthouse scores across performance, SEO, best practices and accessibility."
           ]
         },
         {
-          title: "Web Developer | Full Stack Developer",
-          period: "02/2018 - 08/2025",
+          title: "Full Stack Developer",
+          period: "02/2018 - Present",
           company: "Freelancer",
           link: null,
           responsibilities: [
-            "Collaborates with clients to define functional requirements and project scope.",
-            "Design and develop user-friendly web interfaces that meet client expectations.",
-            "Build and maintain scalable and efficient databases to support website functionality.",
-            "Create comprehensive software documentation for future reference and maintenance.",
-            "Successfully develop and deploy high-quality websites for clients across industries."
+            "Deliver web applications end to end as an independent contractor — recent work includes a production Laravel 12 e-commerce and booking platform with dual payment gateways, and a multi-currency financial management system for a non-profit.",
+            "Design relational database schemas and build custom admin panels and reporting modules giving clients direct control over content, orders, inventory and financial records.",
+            "Deliver bilingual and multilingual interfaces with full RTL support as standard, and author technical documentation enabling handover to other developers."
           ]
         },
         {
-          title: "Web Developer | Full Stack Developer",
+          title: "Full Stack Developer",
           period: "01/2021 - 03/2022",
           company: "Masar Syria, Damascus, Syria",
           link: "https://www.facebook.com/Masar2018",
@@ -871,25 +869,23 @@ const translations = {
           company: "Elite WhereGO",
           link: "https://elitewherego.com/",
           responsibilities: [
-            "تطوير وصيانة موقع شامل يعرض خدمات الشركة ودمجه مع تطبيق الهاتف المحمول لتحسين تجربة المستخدم.",
-            "دمج الموقع مع تطبيق الهاتف المحمول، مما يتيح تقديم الطلبات وإدارة الحسابات بسلاسة عبر المنصات."
+            "بناء صفحات ويب مخصصة متكاملة مع الواجهة الخلفية لتطبيق الهاتف، تتيح للمستخدمين الوصول إلى خدمات التطبيق الاثنتي عشرة جميعها مباشرة من الموقع.",
+            "تطوير موقع مؤسسي متجاوب وعالي الأداء للشركاء والسائقين والمستخدمين النهائيين، بنتائج Lighthouse قوية في الأداء وتحسين محركات البحث وأفضل الممارسات وإتاحة الوصول."
           ]
         },
         {
-          title: "مطور ويب | مطور Full Stack",
-          period: "02/2018 - 08/2025",
+          title: "مطور Full Stack",
+          period: "02/2018 - حتى الآن",
           company: "عمل حر",
           link: null,
           responsibilities: [
-            "التعاون مع العملاء لتحديد المتطلبات الوظيفية ونطاق المشروع.",
-            "تصميم وتطوير واجهات ويب سهلة الاستخدام تلبي توقعات العملاء.",
-            "بناء وصيانة قواعد بيانات قابلة للتوسع وفعالة لدعم وظائف الموقع.",
-            "إنشاء وثائق برمجية شاملة للرجوع إليها والصيانة المستقبلية.",
-            "تطوير ونشر مواقع ويب عالية الجودة للعملاء في مختلف الصناعات."
+            "تنفيذ تطبيقات ويب متكاملة من أولها لآخرها كمتعاقد مستقل — تشمل الأعمال الحديثة منصة تجارة إلكترونية وحجز إنتاجية على Laravel 12 ببوابتَي دفع، ونظام إدارة مالية متعدد العملات لجهة غير ربحية.",
+            "تصميم مخططات قواعد بيانات علائقية وبناء لوحات إدارة ووحدات تقارير مخصصة تمنح العملاء تحكماً مباشراً في المحتوى والطلبات والمخزون والسجلات المالية.",
+            "تسليم واجهات ثنائية ومتعددة اللغات بدعم كامل لاتجاه RTL كمعيار أساسي، وكتابة وثائق تقنية تتيح تسليم العمل إلى مطورين آخرين."
           ]
         },
         {
-          title: "مطور ويب | مطور Full Stack",
+          title: "مطور Full Stack",
           period: "01/2021 - 03/2022",
           company: "مسار سوريا، دمشق، سوريا",
           link: "https://www.facebook.com/Masar2018",
